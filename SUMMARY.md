@@ -8,5 +8,5 @@
 
 ## Styling <a id="styling-1"></a>
 
-* [Untitled](styling-1/untitled.md)
+* [Opacity](styling-1/untitled.md)
 
