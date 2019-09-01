@@ -1,33 +1,6 @@
----
-description: >-
-  Below is information on how to style text in your application. Several utility
-  classes are provided to help you easily style your text in a way that is
-  consistent and easy to maintain.
----
+# Text Size
 
-# Text
 
-## Weights & Styles
-
-The following two weights are available as utility classes.
-
-### Bold
-
-Use the `.text-bold` utility class to bold text.
-
-```text
-<Label StyleClass="text-bold" Text="Lots of trouble. Lots of bubble." />
-```
-
-### Underline
-
-Use the `.text-underline` utility class to underline text.
-
-```text
-<Label StyleClass="text-underline" Text="Lots of trouble. Lots of bubble." />
-```
-
-## Text Sizes
 
 Several utility classes have been created to help you size your text. Apple and Google both have styling standards for various types of text in your application. We've provided a set of classes for their UI patterns as well as a general set if you prefer to go your own way.
 
@@ -79,39 +52,4 @@ Not to add yet another sizing pattern, but we've added utility classes for headi
 | .heading4 | 16 |
 | .heading5 | 14 |
 | .heading6 | 14 |
-
-## Decoration
-
-Mobile applications have limited ability to decorate text, therefore, we only have a few options for styling.
-
-### Underline
-
-Use the `.text-underline` utility class to underline text.
-
-```text
-<Label StyleClass="text-underline" Text="Lots of trouble. Lots of bubble." />
-```
-
-### Strikethrough
-
-Use the `.text-strikethrough` utility class to place a line through your text.
-
-```text
-<Label StyleClass="text-strikethrough" Text="Lots of trouble. Lots of bubble." />
-```
-
-## Line Height
-
-Leading is the amount of space between the lines of a paragraph. Below are utility classes that allow you to select the right amount for your application.
-
-| Class | Properties |
-| :--- | :--- |
-| .leading-none | line-height: 1; |
-| .leading-tight | line-height: 1.1; |
-| .leading-snug | line-height: 1.2; |
-| .leading-normal | line-height: 1.25; |
-| .leading-relaxed | line-height: 1.4; |
-| .leading-loose | line-height: 1.6; |
-
-![](../.gitbook/assets/leading-example.jpg)
 
