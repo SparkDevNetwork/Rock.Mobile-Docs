@@ -5,6 +5,7 @@
 * [Form Fields](form-fields.md)
 * [Field Types](field-types.md)
 * [TODO](todo.md)
+* [Colors](colors.md)
 
 ## Styling <a id="styling-1"></a>
 
