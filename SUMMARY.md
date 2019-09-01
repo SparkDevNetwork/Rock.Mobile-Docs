@@ -8,8 +8,8 @@
 
 ## Styling <a id="styling-1"></a>
 
-* [Intro to Styling](styling-1/intro-to-styling/README.md)
-  * [Colors](styling-1/intro-to-styling/colors.md)
+* [Intro to Styling](styling-1/intro-to-styling.md)
+* [Colors](styling-1/colors.md)
 * [Visibility / Opacity](styling-1/untitled.md)
 * [Text](styling-1/text.md)
 
