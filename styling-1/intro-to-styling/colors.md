@@ -12,7 +12,7 @@ We've provided two sets of colors for you to use. The first, Application Colors,
 
 The following colors are available for you to use and customize for your application. 
 
-![](.gitbook/assets/application-colors.jpg)
+![](../../.gitbook/assets/application-colors.jpg)
 
 ## Palette Colors
 
@@ -22,41 +22,41 @@ When using these colors you'll reference the color name and the saturation value
 
 ### Gray
 
-![](.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image%20%288%29.png)
 
 ### Red
 
-![](.gitbook/assets/image.png)
+![](../../.gitbook/assets/image.png)
 
 ### Orange
 
-![](.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/image%20%283%29.png)
 
 ### Yellow
 
-![](.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 
 ### Green
 
-![](.gitbook/assets/image%20%281%29.png)
+![](../../.gitbook/assets/image%20%281%29.png)
 
 ### Teal
 
-![](.gitbook/assets/image%20%284%29.png)
+![](../../.gitbook/assets/image%20%284%29.png)
 
 ### Blue
 
-![](.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%285%29.png)
 
 ### Indigo
 
-![](.gitbook/assets/image%20%282%29.png)
+![](../../.gitbook/assets/image%20%282%29.png)
 
 ### Purple
 
-![](.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%289%29.png)
 
 ### Pink
 
-![](.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 
