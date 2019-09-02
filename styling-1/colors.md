@@ -10,7 +10,7 @@ We've provided two sets of colors for you to use. The first, Application Colors,
 
 ## Application Colors
 
-The following colors are available for you to use and customize for your application. 
+The following colors are available for you to use and customize for your application. You can access these colors in your CSS using the notation `?color-colorname` \(e.g. `?color-primary`\).
 
 ![](../.gitbook/assets/application-colors.jpg)
 
@@ -19,6 +19,8 @@ The following colors are available for you to use and customize for your applica
 Creating sets of well matched colors can be difficult. We've incorporated the well-balanced colors of the [Tailwind CSS framework](https://tailwindcss.com/docs/customizing-colors) so you'll have easy access to a great set of colors for your application.
 
 When using these colors you'll reference the color name and the saturation value. For example to use the 600 weight of gray for text you'd use `.text-gray-600`. To use the same gray as a background you'd reference `.bg-gray-600`. 
+
+You can access these colors in your CSS using the notation `?color-colorname-intensity` \(e.g. `?color-gray-400`\).
 
 ### Gray
 
