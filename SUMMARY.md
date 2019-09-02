@@ -12,6 +12,7 @@
 * [Colors](styling-1/colors.md)
 * [Margins](styling-1/margins.md)
 * [Padding](styling-1/padding.md)
+* [Buttons](styling-1/buttons.md)
 * [Text](styling-1/text/README.md)
   * [Text Size](styling-1/text/text-size.md)
   * [Alignment](styling-1/text/alignment.md)

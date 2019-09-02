@@ -4,6 +4,10 @@ Applies to: [Button](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.b
 
 We've seen the [colors that the Downhill framework provides](../colors.md) us for use in our applications. These colors can be used with text also. Below are a listing of the various ways we can colorize the text of our applications.
 
+## Links
+
+You can give links a different color using the `.link` class. This is defaulted to the `Primary` Application Color. This class is applied for you when converting from HTML or Markdown.
+
 ## Application Colors
 
 Note that the actual colors you select will be substituted for the `?color-value`.
