@@ -16,7 +16,7 @@ The first way to display one of these fields is just by itself without a contain
 <Rock:TextBox Label="Name" Placeholder="Your Name" />
 ```
 
-![Layout Sample](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/LayoutSample-1.png)
+![](.gitbook/assets/formfield-1.png)
 
 Notice that there is no border or anything. It may not look like it, but that is a text box the user can tap on to bring up the keyboard. All the fields will behave this way, meaning not show any border or their own label. This is handled by the container views.
 
@@ -26,7 +26,7 @@ Notice that there is no border or anything. It may not look like it, but that is
 </Rock:FormField>
 ```
 
-![Layout Sample](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/LayoutSample-2.png)
+![](.gitbook/assets/formfield-1%20%281%29.png)
 
 The `<Rock:FormField>` view provides a way to show the label. It also handles showing a required indicator. This will be covered in more detail when reading up on that view itself.
 
@@ -38,7 +38,7 @@ The `<Rock:FormField>` view provides a way to show the label. It also handles sh
 </Rock:FormGroup>
 ```
 
-![Layout Sample](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/LayoutSample-3.png)
+![](.gitbook/assets/layoutsample-3.png)
 
 Now we're talking. The `<Rock:FormGroup>` adds a border as well as some other sugar to your layout. Again, you can get all the details by reading up on the `FormGroup` view. However, note that in this sample we removed the `Label` from the `TextBox` and moved it to the `Title` property of the `FormGroup`. When displaying a single field this works well.
 
@@ -70,7 +70,7 @@ This view provides a field that allows the user to enter an address, or display 
 </Rock:FormGroup>
 ```
 
-![Address](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/Address-1.png)
+![](.gitbook/assets/address-1.png)
 
 If you need to provide a default address to be displayed when the view is rendered, you can do so as follows:
 
@@ -109,7 +109,7 @@ _See_ [_Picker_](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-R
 </Rock:FormGroup>
 ```
 
-![Campus Picker](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/CampusPicker-1.png)
+![](.gitbook/assets/campuspicker-1.png)
 
 ### CurrencyBox
 
@@ -131,7 +131,7 @@ _See_ [_NumberBox_](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Develope
 </Rock:FormGroup>
 ```
 
-![Currency Box](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/CurrencyBox-1.png)
+![](.gitbook/assets/currencybox-1.png)
 
 ### DatePicker
 
@@ -158,9 +158,9 @@ Presents a field that displays the selected date \(or placeholder text\) and all
 </Rock:FormGroup>
 ```
 
-![Date Picker](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/DatePicker-1.png)
+![](.gitbook/assets/datepicker-1.png)
 
-![Date Picker](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/DatePicker-2.png)
+![](.gitbook/assets/datepicker-2.png)
 
 ### EmailBox
 
@@ -182,7 +182,7 @@ _See_ [_TextBox_](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-
 </Rock:FormGroup>
 ```
 
-![Email Box](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/EmailBox-1.png)
+![](.gitbook/assets/emailbox-1.png)
 
 ### Image
 
@@ -222,9 +222,9 @@ The multi picker will allow the user to make multiple selections from a list of 
 </Rock:FormGroup>
 ```
 
-![Multi Picker](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/MultiPicker-1.png)
+![](.gitbook/assets/multipicker-1.png)
 
-![Multi Picker](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/MultiPicker-2.png)
+![](.gitbook/assets/multipicker-2.png)
 
 As you can see in this example, the `SelectedValues` property can be used to _set_ the initial selection with a comma delimited string. There is some magic happening in XAML that allows that to work. But you try to bind to that property or read it's value then you get an array of strings back. That is why the `SelectedValuesAsDelimited` property exists, it automatically converts that array into a comma delimited string for you.
 
@@ -248,7 +248,7 @@ _See_ [_TextBox_](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-
 </Rock:FormGroup>
 ```
 
-![Number Box](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/NumberBox-1.png)
+![](.gitbook/assets/numberbox-1.png)
 
 ### PhoneNumberBox
 
@@ -277,7 +277,7 @@ If the entered country code and phone number match one of the formatting express
 </Rock:FormGroup>
 ```
 
-![Phone Number Box](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/PhoneNumberBox-1.png)
+![](.gitbook/assets/phonenumberbox-1.png)
 
 The example above includes the country code so you can see what it looks like. Most Rock installations will probably have only one country code so that picker will not be visible.
 
@@ -315,9 +315,9 @@ The picker will allow the user to select from a list of available items. If the 
 </Rock:FormGroup>
 ```
 
-![Picker](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/Picker-1.png)
+![](.gitbook/assets/picker-1.png)
 
-![Picker](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/Picker-2.png)
+![](.gitbook/assets/picker-2.png)
 
 ### TextBox
 
@@ -345,7 +345,7 @@ Come on. Do we really need to explain what a text box is for? But seriously, as 
 </Rock:FormGroup>
 ```
 
-![Text Box](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/TextBox-1.png)
+![](.gitbook/assets/textbox-1.png)
 
 ### 
 
