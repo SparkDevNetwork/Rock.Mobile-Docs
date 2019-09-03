@@ -35,7 +35,7 @@ The ActivityIndicator will begin "working" when it becomes visible on screen. In
 <Rock:ActivityIndicator />
 ```
 
-![ActivityIndicator](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/ActivityIndicator-1.png)
+![](.gitbook/assets/activityindicator-1.png)
 
 ### FollowingIcon
 
@@ -78,9 +78,9 @@ The example below demonstrates how to display a group's name and a following ico
 </StackLayout>
 ```
 
-![Not Followed](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/FollowingIcon-1.png)
+![](.gitbook/assets/followingicon-1.png)
 
-![Followed](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/FollowingIcon-2.png)
+![](.gitbook/assets/followingicon-2.png)
 
 ### FormFieldStack
 
@@ -110,7 +110,7 @@ When displaying a [FormField](https://github.com/SparkDevNetwork/Rock.Mobile/wik
 </Rock:FormFieldStack>
 ```
 
-![FormField](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/FormFieldStack-1.png)
+![](.gitbook/assets/formfieldstack-1.png)
 
 ### Html
 
@@ -162,7 +162,7 @@ It should be noted that because you are defining your HTML content in an XML fil
 </Rock:Html>
 ```
 
-![Html](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/Html-1.png)
+![](.gitbook/assets/html-1.png)
 
 ### Icon
 
@@ -191,7 +191,7 @@ Unlike on the web, you must specific the icon family that you wish to display fr
 </StackLayout>
 ```
 
-![Icon](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/Icon-1.png)
+![](.gitbook/assets/icon-1.png)
 
 ### ItemsView
 
@@ -246,7 +246,7 @@ In the following examples we are specifying an array of strings as the `ItemsSou
 </Rock:ItemsView>
 ```
 
-![ItemsView](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/ItemsView-1.png)
+![](.gitbook/assets/itemsview-1.png)
 
 **Example**
 
@@ -295,7 +295,7 @@ In the following examples we are specifying an array of strings as the `ItemsSou
 </Rock:ItemsView>
 ```
 
-![ItemsView](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/ItemsView-2.png)
+![](.gitbook/assets/itemsview-2.png)
 
 If we had enough items to fill the screen in this second example, you would see that initially only the **Fixed Header**, **Header**, a number of items and the **Fixed Footer** would be visible. The **Footer** would be off-screen because it would be inside the scroll view. If you were to scroll that long list of items up you would push the **Header** off screen and eventually the **Footer** would appear. Both the **Fixed Header** and **Fixed Footer** would always stay visible.
 
@@ -332,7 +332,7 @@ Okay let's face it. You aren't going to be using this view on any old page. It's
 <Rock:LoginStatus />
 ```
 
-![LoginStatus](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/LoginStatus-1.png)
+![](.gitbook/assets/loginstatus-1.png)
 
 ### Markdown
 
@@ -374,7 +374,7 @@ This is some **bold** text.
 </Rock:Markdown>
 ```
 
-![Markdown](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/Markdown-1.png)
+![](.gitbook/assets/markdown-1.png)
 
 ### NotificationBox
 
@@ -400,7 +400,7 @@ The NotificationBox allows you to display a color-coded notification on the page
                       Text="Please update your information below to keep our records current." />
 ```
 
-![NotificationBox](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/NotificationBox-1.png)
+![](.gitbook/assets/notificationbox-1.png)
 
 ### VideoPlayer
 
@@ -425,7 +425,7 @@ While there are block commands that will allow you to start playback of an audio
                   AutoPlay="false" />
 ```
 
-![Video Player](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference-Images/VideoPlayer-1.png)
+![](.gitbook/assets/videoplayer-1.png)
 
 > Note: Currently on Android it will just show a black box with the play button if AutoPlay is false. The above screenshot is how it will look on iOS devices. If we can figure out how to get Android to display a thumbnail image as well then we will.
 
