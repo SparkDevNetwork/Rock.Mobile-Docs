@@ -5,8 +5,8 @@
 * [Form Fields](form-fields.md)
 * [Field Types](field-types.md)
 * [Block Commands](block-commands.md)
-* [Advanced: Dynamic Content](advanced-dynamic-content.md)
 * [Lava](lava.md)
+* [Advanced: Dynamic Content](advanced-dynamic-content.md)
 
 ## Styling <a id="styling-1"></a>
 
