@@ -4,7 +4,9 @@
 * [Views](views.md)
 * [Form Fields](form-fields.md)
 * [Field Types](field-types.md)
-* [TODO](todo.md)
+* [Block Commands](block-commands.md)
+* [Advanced: Dynamic Content](advanced-dynamic-content.md)
+* [Lava](lava.md)
 
 ## Styling <a id="styling-1"></a>
 
@@ -26,4 +28,9 @@
   * [Border Color](styling-1/borders/border-color.md)
   * [Border Radius](styling-1/borders/border-radius.md)
   * [Border Width](styling-1/borders/border-width.md)
+
+## Developers
+
+* [Fundamentals](developers/fundamentals.md)
+* [Custom Blocks](developers/custom-blocks.md)
 
