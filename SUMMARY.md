@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome](README.md)
+* [Welcome 👋](README.md)
 * [Views](views.md)
 * [Form Fields](form-fields.md)
 * [Field Types](field-types.md)

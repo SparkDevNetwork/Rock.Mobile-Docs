@@ -4,7 +4,7 @@ description: >-
   for building mobile applications that are linked to Rock.
 ---
 
-# Welcome
+# Welcome 👋
 
 ![](.gitbook/assets/header.png)
 
