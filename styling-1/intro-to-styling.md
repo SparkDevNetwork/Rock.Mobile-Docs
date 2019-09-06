@@ -7,6 +7,14 @@ description: >-
 
 # Intro to Styling
 
+## CSS Styling in Xamarin.Forms
+
+CSS styling is a powerful way to style your applications. It's also a simple way to bring consistency to your project. Unfortunately, there are a few limitations you should be aware of.
+
+* XAML styling is the first class citizen in Xamarin.Forms
+* CSS plays a side role in providing a familiar approach to styling XAML elements
+* One cannot do everything in CSS that is doable in XAML styling
+
 Topics  
 + StyleClass  
 + Pixel Units
