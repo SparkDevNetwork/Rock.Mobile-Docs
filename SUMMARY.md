@@ -22,7 +22,7 @@
   * [Line Height](styling/text/line-height.md)
   * [Weights & Styles](styling/text/weights-and-styles.md)
   * [Decoration](styling/text/decoration.md)
-* [Visibility / Opacity](styling/untitled.md)
+* [Visibility / Opacity](styling/visibility-opacity.md)
 * [Background Color](styling/background-color.md)
 * [Borders](styling/borders/README.md)
   * [Border Color](styling/borders/border-color.md)
