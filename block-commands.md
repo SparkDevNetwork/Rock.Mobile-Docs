@@ -13,15 +13,18 @@ Each block implements a number of standard commands to help you navigate around 
 
 First, lets look at a simple button that we want to open up a browser window when the user taps on it.
 
-```text
+```xaml
 <StackLayout>
-    <Button Text="Search" StyleClass="btn, btn-primary" Command="{Binding OpenBrowser}" CommandParameter="https://www.google.com/search?q=rockrms" />
+    <Button Text="Search"
+            StyleClass="btn, btn-primary"
+            Command="{Binding OpenBrowser}"
+            CommandParameter="https://www.google.com/search?q=rockrms" />
 </StackLayout>
 ```
 
 What we are doing is binding the `Command` parameter of the button to the `OpenBrowser` handler built into all blocks. Next we are passing the URL to open via the `CommandParameter`. Now, lets say we want to be able to have a textbox on screen for the user to put in a search term and then use that as the search term for Google to use.
 
-```text
+```xaml
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -29,13 +32,16 @@ What we are doing is binding the `Command` parameter of the button to the `OpenB
         </Rock:FormField>
     </Rock:FormGroup>
 
-    <Button Text="Search" StyleClass="btn, btn-primary" Command="{Binding OpenBrowser}" CommandParameter="https://www.google.com/search?q=rockrms" />
+    <Button Text="Search"
+            StyleClass="btn, btn-primary"
+            Command="{Binding OpenBrowser}"
+            CommandParameter="https://www.google.com/search?q=rockrms" />
 </StackLayout>
 ```
 
 Okay, that renders a nice text box but our search button is still using the hard coded URL. To fix that we are going to change the button definition so we can create a special object as the `CommandParameter`:
 
-```text
+```xaml
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -43,10 +49,13 @@ Okay, that renders a nice text box but our search button is still using the hard
         </Rock:FormField>
     </Rock:FormGroup>
 
-    <Button Text="Search" StyleClass="btn, btn-primary" Command="{Binding OpenBrowser}">
+    <Button Text="Search"
+            StyleClass="btn, btn-primary"
+            Command="{Binding OpenBrowser}">
         <Button.CommandParameter>
             <Rock:Action Url="https://www.google.com/search">
-                <Rock:ActionParameter Name="q" Value="{Binding Source={x:Reference SearchTerm}, Path=Text}" />
+                <Rock:ActionParameter Name="q"
+                                      Value="{Binding Source={x:Reference SearchTerm}, Path=Text}" />
             </Rock:Action>
         </Button.CommandParameter>
     </Button>
