@@ -79,7 +79,13 @@ The mobile application provides a few additional Lava commands that you can use 
 
 #### setpagevalue
 
-This command allows you to set a specific value in the [PageValues](#PageValues) dictionary. The syntax is `{% setpagevalue key, value %}`. Both `key` and `value` can either be specified as literal values or as variable references, so both of the following are functionally the same:
+This command allows you to set a specific value in the [PageValues](#PageValues) dictionary.
+
+```text
+{% setpagevalue key, value %}
+```
+
+Both `key` and `value` can either be specified as literal values or as variable references, so both of the following are functionally the same.
 
 ```text
 {% assign name = 'MaxLength' %}
