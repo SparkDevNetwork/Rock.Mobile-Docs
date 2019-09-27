@@ -58,7 +58,7 @@ The Device variable gives you access to the type of device in use by the user. A
 
 ### PageValues
 
-Page values are used along with Page Events to allow you to customize your user experience. The `PageValues` object is just a dictionary of string/object pairs that you can use any way you want. There is no defined structure to them. You can read more about their use in the [Page Events](advanced-dynamic-content.md#PageEvents) section.
+Page values are used along with Page Events to allow you to customize your user experience. The `PageValues` object is just a dictionary of string/object pairs that you can use any way you want. There is no defined structure to them. You can read more about their use in the [Page Events](advanced-dynamic-content.md#Page-Events) section.
 
 ## Server Lava Variables
 
