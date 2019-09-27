@@ -13,7 +13,7 @@ Each block implements a number of standard commands to help you navigate around 
 
 First, lets look at a simple button that we want to open up a browser window when the user taps on it.
 
-```xaml
+```xml
 <StackLayout>
     <Button Text="Search"
             StyleClass="btn, btn-primary"
