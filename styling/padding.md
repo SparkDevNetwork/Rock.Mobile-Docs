@@ -6,7 +6,7 @@ Applies to: [Button](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user
 
 Below are the utility classes for adding padding.
 
-The format for specifying margins is `.p{sides}-{size}`. 
+The format for specifying margins is `.p{sides}-{size}`.
 
 Where the sizes is one of the follow:
 

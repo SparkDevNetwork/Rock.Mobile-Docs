@@ -13,7 +13,7 @@ Each block implements a number of standard commands to help you navigate around 
 
 First, lets look at a simple button that we want to open up a browser window when the user taps on it.
 
-```xml
+```markup
 <StackLayout>
     <Button Text="Search"
             StyleClass="btn, btn-primary"
@@ -24,7 +24,7 @@ First, lets look at a simple button that we want to open up a browser window whe
 
 What we are doing is binding the `Command` parameter of the button to the `OpenBrowser` handler built into all blocks. Next we are passing the URL to open via the `CommandParameter`. Now, lets say we want to be able to have a textbox on screen for the user to put in a search term and then use that as the search term for Google to use.
 
-```xml
+```markup
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -41,7 +41,7 @@ What we are doing is binding the `Command` parameter of the button to the `OpenB
 
 Okay, that renders a nice text box but our search button is still using the hard coded URL. To fix that we are going to change the button definition so we can create a special object as the `CommandParameter`:
 
-```xml
+```markup
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>

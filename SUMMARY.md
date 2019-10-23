@@ -28,6 +28,7 @@
   * [Border Color](styling/borders/border-color.md)
   * [Border Radius](styling/borders/border-radius.md)
   * [Border Width](styling/borders/border-width.md)
+* [Shell](styling/shell.md)
 * [Custom CSS](styling/custom-css.md)
 
 ## Developers

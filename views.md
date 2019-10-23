@@ -13,11 +13,11 @@ Xamarin Forms provides a rich collection of base views \(controls\). You can fin
 
 ## Rock Mobile Custom Controls
 
- In addition to all the [Xamarin Views](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/views) you have available, there are a number of Rock specific views that you can use to customize your user's experience.
+In addition to all the [Xamarin Views](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/views) you have available, there are a number of Rock specific views that you can use to customize your user's experience.
 
 ### ActivityIndicator
 
- I_nherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
+I_nherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
 
 Sometimes things take a moment to load. You don't want to just display a big white screen for the user to stare at, you want them to know we're working hard for them. That said, usually you are not going to be instantiating this view directly. But just in case you want to, here you go.
 
@@ -309,7 +309,7 @@ Okay let's face it. You aren't going to be using this view on any old page. It's
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| WelcomeMessage | string `Lava` | The welcome message that is displayed when a user is logged in. _Defaults to **Hello {{ CurrentPerson.FirstName }}!**_ |
+| WelcomeMessage | string `Lava` | The welcome message that is displayed when a user is logged in. _Defaults to **Hello !**_ |
 | LoginMessage | string `Lava` | The login message that is displayed if a user is not logged in. _Defaults to **Login**._ |
 | EditProfileLabel | string `Lava` | The edit profile subtext that is displayed if a user is logged in. _Defaults to **Edit Profile**._ |
 | LoginLabel | string `Lava` | The login subtext that is displayed if a user is not logged in. _Defaults to **Tap to Personalize**._ |
@@ -338,9 +338,9 @@ Okay let's face it. You aren't going to be using this view on any old page. It's
 
 _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
 
-The [LoginStatus](#LoginStatus) view is the one you would normally use in the Flyout shell. But what if you want to just present a small icon that indicates to the user if they are logged in or not? The LoginStatusPhoto view does just that. In fact, [LoginStatus](#LoginStatus) uses this view itself to present the user's photo.
+The [LoginStatus](views.md#LoginStatus) view is the one you would normally use in the Flyout shell. But what if you want to just present a small icon that indicates to the user if they are logged in or not? The LoginStatusPhoto view does just that. In fact, [LoginStatus](views.md#LoginStatus) uses this view itself to present the user's photo.
 
-A number of properties allow you to specify how the profile photo will be displayed, and what photos to use if no profile picture is available or if the user is not logged in.  Another set of properties allow you to specify the commands to be executed when the user interacts with the profile picture.
+A number of properties allow you to specify how the profile photo will be displayed, and what photos to use if no profile picture is available or if the user is not logged in. Another set of properties allow you to specify the commands to be executed when the user interacts with the profile picture.
 
 **Properties**
 
@@ -357,7 +357,6 @@ A number of properties allow you to specify how the profile photo will be displa
 | NotLoggedInCommandParameter | object | The parameter to be passed to the `NotLoggedInCommand`. |
 | LoggedInCommand | ICommand | The command to be executed when the user interacts with the photo when they are logged in. |
 | LoggedInCommandParameter | object | The parameter to be passed to the `LoggedInCommand`. |
-
 
 **Example**
 

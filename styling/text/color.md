@@ -26,7 +26,7 @@ Note that the actual colors you select will be substituted for the `?color-value
 
 ## Palette Colors
 
-Each of the palette colors can also be used for text. Use the notation of `.text-color-intensity` to specify the color. 
+Each of the palette colors can also be used for text. Use the notation of `.text-color-intensity` to specify the color.
 
 ```text
 <Label StyleClass="text-gray-400" Text="Lots of trouble. Lots of bubble." />

@@ -10,7 +10,7 @@ The content block also supports what is called `Callbacks`. If you have an ASP.N
 
 In a previous article, we built a simple search page that linked the user out to google to perform the search. Linking out to Google is great an all, but what if we want to use the built-in universal search? Let's look at what that might look like. First let's define the primary content of the block.
 
-```xml
+```markup
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -35,7 +35,7 @@ This still gives us a pretty Search text field for the user to enter a search te
 
 Next, let's define what will happen when the user clicks the `Search` button. This is what we are going to put into our Callback Event in the block's settings.
 
-```xml
+```markup
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -53,7 +53,7 @@ Next, let's define what will happen when the user clicks the `Search` button. Th
             </Rock:Action>
         </Button.CommandParameter>
     </Button>
-    
+
     {% if Command == "Search" %}
         <StackLayout Margin="0,20,0,0">
             {% search query:'{{ Parameters.Term }}' entities:'group' fieldcriteria:'GroupTypeName^Serving Team' %}
@@ -75,11 +75,13 @@ So we implemented an internal Rock search system for our mobile application even
 
 ## Page Events
 
-Let's set the stage because this is going to give some of you heartburn. Lava is designed and meant to be used as a formatting engine. Said another way, it's not meant to generate any content but just format content that already exists. This you probably know. Now, throw that idea out the window. We are going to use Lava in a way it was never meant to be used. You might ask why. In the simplest terms, we needed a scripting engine that you would be familiar with. You are already familiar with doing `{% if %}` checks and other logic with Lava, so we decided to just use what you already know. If this makes you nervous, take an antacid pill because we're diving in!
+Let's set the stage because this is going to give some of you heartburn. Lava is designed and meant to be used as a formatting engine. Said another way, it's not meant to generate any content but just format content that already exists. This you probably know. Now, throw that idea out the window. We are going to use Lava in a way it was never meant to be used. You might ask why. In the simplest terms, we needed a scripting engine that you would be familiar with. You are already familiar with doing \`
+
+\` checks and other logic with Lava, so we decided to just use what you already know. If this makes you nervous, take an antacid pill because we're diving in!
 
 When you edit a mobile page in Rock, there is a section called `Event Handler`. This is Lava that will be executed when certain events happen on the page. You might be thinking, _so what? I can only format data with Lava_. Oh contraire. Well, normally you would be correct, but we have added a few custom bits to Lava in the mobile application. Let's start with a really simple example. First put a Content block on your page and set the content to be:
 
-```xml
+```markup
 <Label Text="{Binding PageValues.Message}" />
 ```
 
@@ -101,7 +103,7 @@ Next, in our Event Handler we are checking the device's orientation. Depending o
 
 Okay great, your probably thinking, so I can make text appear when they rotate their phone. What good is that? Okay, how about a more useful example? Let's take a Content Channel Item List block. Suppose you wanted to display the results with a thumbnail image. This might look good on a phone in portrait orientation, but what about if the phone is rotated or if they are on a tablet? Now you have these massive thumbnails. Using the Lava Events we will adjust the number of thumbnails displayed per row. Let's setup the template \(note: we are leaving out the xmlns declarations as they waste a lot of space\):
 
-```xml
+```markup
 <Rock:ItemsView ItemsSource="{Binding Items}">
     <Rock:ItemsView.ItemTemplate>
         <DataTemplate>
@@ -138,3 +140,4 @@ So how do you know why your Event Handler is being executed? As you saw, there i
 * `Resize`: This event is initiated when the available screen space has changed, such as a rotation.
 
 We just mentioned above "pre-defined" events. You can initiate your own events with the `LavaEvent`command. The name of the event you wish to trigger is specified by the `CommandParameter`. This means you can setup a button on screen that will trigger a custom Lava event and then you can update your PageValues any way you wish.
+

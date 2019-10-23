@@ -15,13 +15,14 @@ CSS styling is a powerful way to style your applications. It's also a simple way
 * CSS plays a side role in providing a familiar approach to styling XAML elements
 * One cannot do everything in CSS that is doable in XAML styling
 
-Topics  
-+ StyleClass  
-+ Pixel Units
+Topics
+
+* StyleClass  
+* Pixel Units
 
 ## Downhill Framework
 
-We've given our mobile CSS framework the name Downhill \(it's much easier to roll a rock downhill you know\). 
+We've given our mobile CSS framework the name Downhill \(it's much easier to roll a rock downhill you know\).
 
 ## Tips
 

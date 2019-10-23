@@ -2,7 +2,7 @@
 
 Applies to: [VisualElement](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.visualelement?view=xamarin-forms)
 
-We've seen the [colors that the Downhill framework provides](colors.md) us for use in our applications. These colors can be used to specify background colors. 
+We've seen the [colors that the Downhill framework provides](colors.md) us for use in our applications. These colors can be used to specify background colors.
 
 ## Application Colors
 
@@ -22,7 +22,7 @@ Note that the actual colors you select will be substituted for the `?color-value
 
 ## Palette Colors
 
-Each of the palette colors can also be used for text. Use the notation of `.bg-color-intensity` to specify the color. 
+Each of the palette colors can also be used for text. Use the notation of `.bg-color-intensity` to specify the color.
 
 ```text
 <Label StyleClass="bg-gray-400" Text="Lots of trouble. Lots of bubble." />

@@ -21,9 +21,7 @@ Outline Buttons
 
 You can create outline buttons with the following markup.
 
-![](../.gitbook/assets/buttons-outline-android%20%281%29.jpg)
-
-
+![](../.gitbook/assets/buttons-outline-android-1.jpg)
 
 ```text
 <Button Text="Primary" StyleClass="btn,btn-outline-primary" />
@@ -33,7 +31,6 @@ You can create outline buttons with the following markup.
 <Button Text="Danger" StyleClass="btn,btn-outline-danger" />
 <Button Text="Dark" StyleClass="btn,btn-outline-dark" />
 <Button Text="Light" StyleClass="btn,btn-outline-light" />
-
 ```
 
 ## Button Sizes

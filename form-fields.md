@@ -26,7 +26,7 @@ Notice that there is no border or anything. It may not look like it, but that is
 </Rock:FormField>
 ```
 
-![](.gitbook/assets/formfield-1%20%281%29.png)
+![](.gitbook/assets/formfield-1-1.png)
 
 The `<Rock:FormField>` view provides a way to show the label. It also handles showing a required indicator. This will be covered in more detail when reading up on that view itself.
 
@@ -346,6 +346,4 @@ Come on. Do we really need to explain what a text box is for? But seriously, as 
 ```
 
 ![](.gitbook/assets/textbox-1.png)
-
-### 
 

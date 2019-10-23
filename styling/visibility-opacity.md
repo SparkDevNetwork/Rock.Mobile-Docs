@@ -8,7 +8,7 @@ description: Utilities for controlling the opacity of an element.
 
 Applies to: [VisualElement](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.visualelement?view=xamarin-forms)
 
-You can apply the following classes to change to opacity of an element. 
+You can apply the following classes to change to opacity of an element.
 
 | Class | Properties |
 | :--- | :--- |
@@ -32,6 +32,6 @@ The following classes can be used to show/hide an element.
 | Class | Property | Notes |
 | :--- | :--- | :--- |
 | .visible | visibility: visible; |  |
-| .invisible | visibility: hidden;  | Do not display the element, but reserve space for the element in layout. |
-| .collapse | visibility: collapse;  | Do not display the element, and do not reserve space for it in layout. |
+| .invisible | visibility: hidden; | Do not display the element, but reserve space for the element in layout. |
+| .collapse | visibility: collapse; | Do not display the element, and do not reserve space for it in layout. |
 

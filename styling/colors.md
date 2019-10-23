@@ -18,47 +18,47 @@ The following colors are available for you to use and customize for your applica
 
 Creating sets of well matched colors can be difficult. We've incorporated the well-balanced colors of the [Tailwind CSS framework](https://tailwindcss.com/docs/customizing-colors) so you'll have easy access to a great set of colors for your application.
 
-When using these colors you'll reference the color name and the saturation value. For example to use the 600 weight of gray for text you'd use `.text-gray-600`. To use the same gray as a background you'd reference `.bg-gray-600`. 
+When using these colors you'll reference the color name and the saturation value. For example to use the 600 weight of gray for text you'd use `.text-gray-600`. To use the same gray as a background you'd reference `.bg-gray-600`.
 
 You can access these colors in your CSS using the notation `?color-colorname-intensity` \(e.g. `?color-gray-400`\).
 
 ### Gray
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image-8.png)
 
 ### Red
 
-![](../.gitbook/assets/image.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 ### Orange
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image-3.png)
 
 ### Yellow
 
-![](../.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image-7.png)
 
 ### Green
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image-1.png)
 
 ### Teal
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image-4.png)
 
 ### Blue
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image-5.png)
 
 ### Indigo
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image-2.png)
 
 ### Purple
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image-9.png)
 
 ### Pink
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image-6.png)
 

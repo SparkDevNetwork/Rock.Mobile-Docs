@@ -24,7 +24,7 @@ The following variables and properties are available in all Lava contexts when e
 The `CurrentPerson` object that is available on the mobile shell is a stripped down version of what you are used to using on the Server side. It does not support all the same properties, but most of the ones you are most likely to use should be available.
 
 | Property | Description |
-|----|----|
+| :--- | :--- |
 | PersonAliasId | The primary person alias identifier associated with this person. |
 | PersonId | The person identifier that matches up with the `Person.Id` you would use on the server. |
 | FirstName | The given name of the person. |
@@ -44,17 +44,17 @@ The `CurrentPerson` object that is available on the mobile shell is a stripped d
 The Device variable gives you access to the type of device in use by the user. At present the following fields are available.
 
 | Property | Description |
-|----|----|
+| :--- | :--- |
 | DeviceType | The type of device the shell is running on: `Phone`, `Tablet`, `Watch`, `Unknown`. |
-| Manufacturer | The manufacturer of the device (e.g. `Apple`). |
-| Model | The model of the device (e.g. `iPhone 7`). |
+| Manufacturer | The manufacturer of the device \(e.g. `Apple`\). |
+| Model | The model of the device \(e.g. `iPhone 7`\). |
 | Name | The name of the device. Note: this is often not a real device name as that is considered confidential information by Apple. |
 | VersionString | The application version number of the Shell. |
 | DevicePlatform | The platform the shell is running on: `iOS`, `Android`, `Unknown`. |
 | Orientation | The current orientation of the device: `Unknown`, `Portrait`, `Landscape`. |
 | Width | The width of screen \(in relation to current orientation\) in pixels. |
 | Height | The height of screen \(in relation to current orientation\) in pixels. |
-| Density | The pixel density of the screen (e.g. on an iPhone 7 this would be `2`). |
+| Density | The pixel density of the screen \(e.g. on an iPhone 7 this would be `2`\). |
 
 ### PageValues
 
@@ -66,7 +66,7 @@ When you are using Lava to customize the experience from the server side, for ex
 
 * PageParameter
 * CurrentPerson
-* [Device](#Device)
+* [Device](lava.md#Device)
 
 In addition, the Content block defines these additional variables when processing a callback event. You can check out the [Advanced: Dynamic Content](advanced-dynamic-content.md) page for more details on their contents.
 
@@ -79,7 +79,7 @@ The mobile application provides a few additional Lava commands that you can use 
 
 #### setpagevalue
 
-This command allows you to set a specific value in the [PageValues](#PageValues) dictionary.
+This command allows you to set a specific value in the [PageValues](lava.md#PageValues) dictionary.
 
 ```text
 {% setpagevalue key, value %}
@@ -102,3 +102,4 @@ You can then access your PageValue by simply accessing it like any other Lava ob
 ```text
 {% assign oldMax = UserValues.MaxLength %}
 ```
+

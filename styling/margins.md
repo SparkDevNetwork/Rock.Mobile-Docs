@@ -4,7 +4,7 @@ Applies to: [View](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.vie
 
 Many elements inherit from [View ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.view?view=xamarin-forms)and therefore can have margin applied to them. Below are the utility classes for adding margins to your views.
 
-The format for specifying margins is `.m{sides}-{size}`. 
+The format for specifying margins is `.m{sides}-{size}`.
 
 Where the sizes is one of the follow:
 
