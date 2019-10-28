@@ -18,6 +18,7 @@ The following variables and properties are available in all Lava contexts when e
 * CurrentPerson
 * Device
 * PageValues
+* AppValues
 
 ### CurrentPerson
 
@@ -60,6 +61,10 @@ The Device variable gives you access to the type of device in use by the user. A
 
 Page values are used along with Page Events to allow you to customize your user experience. The `PageValues` object is just a dictionary of string/object pairs that you can use any way you want. There is no defined structure to them. You can read more about their use in the [Page Events](advanced-dynamic-content.md#Page-Events) section.
 
+### AppValues
+
+Similar to `PageValues`, the `AppValues` is a simple dictionary that you can store custom data into. However, the major difference is that `AppValues` will persist between application restarts. One simple usage might be to store a preference in how a page is displayed. You might present the user with a show/hide option that shows or hides certain elements on the page - all processed on the mobile shell. You can use `AppValues` for this and the value will persist between different visits to the page as well as a full restart of the application.
+
 ## Server Lava Variables
 
 When you are using Lava to customize the experience from the server side, for example in a Content block set to server-side Lava rendering, the following variables are available to you.
@@ -91,9 +96,7 @@ Both `key` and `value` can either be specified as literal values or as variable 
 {% assign name = 'MaxLength' %}
 {% assign max = 100 %}
 {% setpagevalue name, max %}
-```
 
-```text
 {% setpagevalue 'MaxLength', 100 %}
 ```
 
@@ -103,3 +106,41 @@ You can then access your PageValue by simply accessing it like any other Lava ob
 {% assign oldMax = UserValues.MaxLength %}
 ```
 
+You can even access PageValues by way of bindings in your XAML:
+
+```xaml
+<Label Text="{Binding UserValues.MaxLength}" />
+```
+
+#### setappvalue
+
+This command allows you to set a specific value in the [AppValues](lava.md#AppValues) dictionary.
+
+```liquid
+{% setappvalue key, value %}
+```
+
+Both `key` and `value` can either be specified as literal values or as variable references, so both of the following are functionally the same.
+
+```liquid
+{% assign name = 'MaxLength' %}
+{% assign max = 100 %}
+{% setappvalue name, max %}
+
+{% setappvalue 'MaxLength', 100 %}
+```
+
+You can then access your AppValue by simply accessing it like any other Lava object, for example:
+
+```liquid
+{% assign oldMax = AppValues.MaxLength %}
+```
+
+You can even access AppValues by way of bindings in your XAML:
+
+```xaml
+<Label Text="{Binding AppValues.MaxLength}" />
+```
+
+> [!NOTE]
+> Because these application values must be persisted to the local database, you should attempt to keep them limited to simple primitive types, such as numbers, strings, booleans. Any other more complex object or array types may or may not restore back from the database as you expect.
