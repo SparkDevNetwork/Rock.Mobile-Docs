@@ -142,5 +142,6 @@ You can even access AppValues by way of bindings in your XAML:
 <Label Text="{Binding AppValues.MaxLength}" />
 ```
 
-> [!NOTE]
+> NOTE
+>
 > Because these application values must be persisted to the local database, you should attempt to keep them limited to simple primitive types, such as numbers, strings, booleans. Any other more complex object or array types may or may not restore back from the database as you expect.
