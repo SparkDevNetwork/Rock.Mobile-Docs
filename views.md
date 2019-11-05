@@ -454,6 +454,43 @@ If the `Redirect` view is encountered before the page is fully rendered then the
                QueryString="ItemType=Person&amp;ItemId=4823" />
 ```
 
+### StyledView
+
+_Inherits from_ [_PancakeView_](https://github.com/sthewissen/Xamarin.Forms.PancakeView)
+
+Ever wished you could make your layouts do... more? A little more pizzazz, a little more wow factor, a little more... style. This view lets you do just that. Most of it's functionality centers on borders and what you can do with them. However, it's not just about adding a border. Because you can do that now. The power really comes when you start to apply things like corner radius to individual corners, add gradients to your border color, gradient background colors, and much more.
+
+**Properties**
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| BackgroundGradientAngle | int | A value between 0-360 to define the angle of the background gradient. |
+| BackgroundGradientStartColor | [Color](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.color) | The start color of the background gradient. |
+| BackgroundGradientEndColor | [Color](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.color) | The end color of the background gradient. |
+| BackgroundGradientStops | GradientStop\[\] | A list of GradientStop objects that define a multi color background gradient. |
+| BorderColor | [Color](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.color) | The color of the border. |
+| BorderGradientAngle | int | A value between 0-360 to define the angle of the border gradient. |
+| BorderGradientStartColor | [Color](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.color) | The start color of the border gradient. |
+| BorderGradientEndColor | [Color](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.color) | The end color of the border gradient. |
+| BorderGradientStops | GradientStop\[\] | A list of GradientStop objects that define a multi color border gradient. |
+| BorderIsDashed | boolean | Whether or not the border needs to be dashed. |
+| BorderThickness | float | The thickness of the border. |
+| CornerRadius | CornerRadius | The radius of each of the four corners. _Specified as "topLeft,topRight,bottomLeft,bottomRight"._ |
+| HasShadow | bool | Whehter or not to draw a shadow beneath the control. _Note: For this to work we need to clip the view. This means that individual corner radii will be lost. In this case the TopLeft value will be used for all corners._
+| Elevation | int | The Material Design elevation desired. _Note: For this to work we need to clip the view. This means that individual corner radii will be lost. In this case the TopLeft value will be used for all corners._
+| OffsetAngle | double | The rotation of the StyledView when `Sides` is not its default value of 4. |
+| Sides | int | The number of sides to the shape. _Default is 4._ |
+
+**Example**
+
+```xaml
+<Rock:StyledView BackgroundColor="#bc91d7"
+                 CornerRadius="60,0,0,60"
+                 IsClippedToBounds="true"
+                 HorizontalOptions="FillAndExpand"
+                 HeightRequest="150" />
+```
+
 ### VideoPlayer
 
 _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
@@ -469,7 +506,7 @@ If a video is not set to AutoPlay then a thumbnail will be displayed. If you spe
 | Source | string | The URL to be loaded into the video player. Supports MP4 and HLS. |
 | ThumbnailSource | string | The URL to be loaded as the thumbnail. Overrides any automatic thumbnail generation. |
 | PlayButtonSource | string | The URL to be loaded as the play button if AutoPlay is `false`. This image can be any size but we recommend 128x128. It will be displayed inside a 64x64 box, but will maintain aspect ratio. _Defaults to **resource://Rock.Mobile.Resources.PlayButton.png**._ |
-| AutoPlay | bool | If `true` then the video will start playing as soon as it has loaded into the player. \_Defaults to `false`. |
+| AutoPlay | bool | If `true` then the video will start playing as soon as it has loaded into the player. _Defaults to `false`._ |
 | InitalAspectRatio | string | The initial aspect ratio to use until the video has loaded and we know the actual aspect ratio. Can be specified as either a `width:height` ratio \(example `16:9`\) or as a decimal number \(example `1.77777`\). _Defaults to **16:9**._ |
 | ThumbnailPosition | double? | The position into the video to use to generate a thumbnail automatically if no ThumbnailSource is specified. Value is specified in seconds. _Defaults to **2**_ |
 
