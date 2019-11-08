@@ -49,7 +49,7 @@ This defines an animation that references `myLabel` as the target of the changes
 
 These types of animation definitions let you target specific visual elements with a pre-defined animation style.
 
-## Triggering Animations
+## Starting Animations
 
 Okay we were able to define an animation but we need to start it somehow. You have two choices when it comes to triggering an animation.
 
@@ -106,6 +106,41 @@ Another way we could define this is by behavior. Suppose we wanted the text to a
 
 The way behaviors work is that they begin when the element they are attached to are themselves attached to their parent element. Because there might be a delay between when this happens and when the page itself becomes fully visible, there is a hard coded 250 millisecond delay before the referenced animation actually begins.
 
+## Stopping Animations
+
+You can also provide the ability to stop an animation by using a trigger. Technically, the library also supports stopping an animation using a behavior, but in our use case those don't actually make sense. If you are curious though, it is available as `EndAnimationBehavior`. But here is an example of two buttons, one to start and one to stop an animation.
+
+```xaml
+<ScrollView>
+  <StackLayout>
+    <StackLayout.Resources>
+      <Rock:FadeToAnimation x:Key="FadeOut"
+                            Target="{x:Reference myLabel}"
+                            Duration="2000"
+                            Opacity="0" />
+    </StackLayout.Resources>
+    
+    <Label x:Name="myLabel" Text="Hello Rock!" />
+
+    <Button Text="Start Fade">
+      <Button.Triggers>
+        <EventTrigger Event="Clicked">
+          <Rock:BeginAnimation Animation="{StaticResource FadeOut}" />
+        </EventTrigger>
+      </Button.Triggers>
+    </Button>
+
+    <Button Text="Stop Fade">
+      <Button.Triggers>
+        <EventTrigger Event="Clicked">
+          <Rock:EndAnimation Animation="{StaticResource FadeOut}" />
+        </EventTrigger>
+      </Button.Triggers>
+    </Button>
+  </StackLayout>
+</ScrollView>
+```
+
 ## Available Animations
 
 All of the animations in this section support the following property.
@@ -113,7 +148,7 @@ All of the animations in this section support the following property.
 | Property | Type | Description |
 | :-- | :-- | :-- |
 | Target | VisualElement | A reference to the targetted element to be animated. |
-| Duration | string | The duration of the animation, in milliseconds. _Defaults to **1,000**._ |
+| Duration | string | The duration of the animation, in milliseconds. _Defaults to **1000**._ |
 | Easing | EasingType | The easing to use when calculating the animation curve: `BounceIn`, `BounceOut`, `CubicIn`, `CubicInOut`, `CubicOut`, `Linear`, `SinIn`, `SinInOut`, `SinOut`, `SprintIn`, `SpringOut`. _Defaults to **Linear**._ |
 | Delay | int | A delay in milliseconds before the animation will begin. _Defaults to **0**._ |
 | RepeatForever | bool | Repeats the animation until stopped. _Defaults to **false**._ |
@@ -456,14 +491,14 @@ Animates the `RotationY` and `Opacity` properties of the target to give a turnst
                             Duration="2000" />
 ```
 
-### StoryBoard
+### GroupAnimation
 
 This is a special animation that does not conform to the common properties mentioned prevoiusly. This element simply lets you group animations so that they can be triggered at the same time. Animations to be grouped together can be added as child elements.
 
 **Example**
 
 ```xaml
-<Rock:StoryBoard x:Key="FadeOut">
+<Rock:GroupAnimation x:Key="FadeOut">
     <Rock:FadeToAnimation Target="{x:Reference myLabel}"
                           Duration="2000"
                           Opacity="0" />
@@ -473,4 +508,39 @@ This is a special animation that does not conform to the common properties menti
 </Rock:StoryBoard>
 ```
 
+
+## Custom Triggered Animations
+
+It's all well and good that you have some standard animations you can use to make things appear and disappear, but what about doing something more custom? There are some ways you can do that too. First we will look at the Trigger versions of these, that is custom animations that start in response to a user action.
+
+Each of the animations in this section support the following properties. The `From` and `To` property value types depend on the animation type. For example, the `AnimateDouble` will use `double` value types while the `AnimateInt` animation will use `int` value types.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | _varies_ | The starting value for the animation. If not specified then the current value will be used. |
+| To | _varies_ | The ending value for the animation. |
+| Duration | uint | The duration of the animation in milliseconds. _Defaults to **1000**._ |
+| Delay | int | The number of milliseconds to delay before activating the animation. _Defaults to **0**._ |
+| Easing | EasingType | The easing to use when calculating the animation curve: `BounceIn`, `BounceOut`, `CubicIn`, `CubicInOut`, `CubicOut`, `Linear`, `SinIn`, `SinInOut`, `SinOut`, `SprintIn`, `SpringOut`. _Defaults to **Linear**._ |
+| TargetProperty | string | The property to be set. This is not a simple property name but must include the class which defines the property, for example **VisualElement.BackgroundColor**. |
+
+### AnimateColor
+
+Animates a change in a property's color value.
+
+**Example**
+
+```xaml
+<StackLayout>
+  <Button Text="Animate">
+    <Button.Triggers>
+      <EventTrigger Event="Clicked">
+        <Rock:AnimateColor TargetProperty="Button.TextColor"
+                           To="#ee7725" />
+      </EventTrigger>
+    </Button.Triggers>
+  </Button>
+</StackLayout>
+<Rock:
+```
 
