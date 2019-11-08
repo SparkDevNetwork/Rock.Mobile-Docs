@@ -123,9 +123,33 @@ All of the animations in this section support the following property.
 
 Animates the `Scale` and `Opacity` of the target to make it appear.
 
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:BounceInAnimation x:Key="Demo"
+                        Target="{x:Reference myLabel}"
+                        Duration="2000" />
+```
+
 ### BounceOutAnimation
 
 Animates the `Scale` and `Opacity` of the target to make it disappear.
+
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:BounceOutAnimation x:Key="Demo"
+                         Target="{x:Reference myLabel}"
+                         Duration="2000" />
+```
 
 ### ColorAnimation
 
@@ -135,6 +159,19 @@ Animates the `BackgroundColor` of the target from it's current value to a new co
 | :-- | :-- | :-- |
 | ToColor | Color | The target color that the BackgroundColor will be transitioned to. |
 
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:ColorAnimation x:Key="Demo"
+                     Target="{x:Reference myLabel}"
+                     Duration="2000"
+                     ToColor="#ee7725" />
+```
+
 ### FadeInAnimation
 
 Animates the `Opacity` and `Y` position of the element to make it visible. As the element is faded in it will also slide down or up to its final position.
@@ -143,13 +180,36 @@ Animates the `Opacity` and `Y` position of the element to make it visible. As th
 | :-- | :-- | :-- |
 | Direction | string | The vertical movement direction of the element: `Up` or `Down`. _Defaults to **Up**._ |
 
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:FadeInAnimation x:Key="Demo"
+                      Target="{x:Reference myLabel}"
+                      Duration="2000"
+                      Direction="Down" />
+```
+
+
 ### FadeToAnimation
 
 Animates the `Opacity` of the target from it's current value to a new value.
 
 | Property | Type | Description |
 | :-- | :-- | :-- |
-| Opacity | double | The target opacity that the element should have once the animation finished. |
+| Opacity | double | The target opacity that the element should have once the animation finished. This value should be between `0` and `1.0`. |
+
+**Example**
+
+```xaml
+<Rock:FadeToAnimation x:Key="Demo"
+                      Target="{x:Reference myLabel}"
+                      Duration="2000"
+                      Opacity="0.25" />
+```
 
 ### FadeOutAnimation
 
@@ -159,6 +219,19 @@ Animates the `Opacity` and `Y` position of the element to make it invisible. As 
 | :-- | :-- | :-- |
 | Direction | string | The vertical movement direction of the element: `Up` or `Down`. _Defaults to **Up**._ |
 
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:FadeOutAnimation x:Key="Demo"
+                       Target="{x:Reference myLabel}"
+                       Duration="2000"
+                       Direction="Down" />
+```
+
 ### FlipAnimation
 
 Animates the `Opacity` and `RotationY` axis of the element to make it visible. As the element is faded in it will also rotate along it's y-axis (that is, it will grow from a single vertical line to full-width) as if a card were being turned 90 degrees.
@@ -167,14 +240,237 @@ Animates the `Opacity` and `RotationY` axis of the element to make it visible. A
 | :-- | :-- | :-- |
 | Direction | string | The horizontal rotation direction of the element: `Left` or `Right`. _Defaults to **Right**._ |
 
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:FlipAnimation x:Key="Demo"
+                    Target="{x:Reference myLabel}"
+                    Duration="2000"
+                    Direction="Left" />
+```
+
+
 ### HeartAnimation
 
 Animates the `Scale` of the target to simulate a heart beat, growing and shrinking slighly.
 
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:FadeInAnimation x:Key="Demo"
+                      Target="{x:Reference myLabel}"
+                      Duration="2000"
+                      Direction="Down" />
+```
+
 ### JumpAnimation
 
-Animates the `TranslationX` and `TranslationY` to cause it to jump around a bit.
+Animates the `TranslationY` of the target to cause it to jump up and down.
+
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:JumpAnimation x:Key="Demo"
+                    Target="{x:Reference myLabel}"
+                    Duration="2000" />
+```
+
+### RelRotateToAnimation
+
+Animates the `Rotation` of the target to spin the element by the number of degrees. This rotation happens along the Z-axis, meaning it it does not distort the element's perspective at all.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| Rotation | double | The delta angle that the target should be rotated by (positive or negative number). |
+
+**Example**
+
+```xaml
+<Rock:RelRotateToAnimation x:Key="Demo"
+                           Target="{x:Reference myLabel}"
+                           Duration="2000"
+                           Rotation="-45" />
+```
+
+### RelScaleToAnimation
+
+Animates the `Scale` of the target to make the element appear larger or smaller than it normally would.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| Scale | double | The delta amount that the target should be scaled by. |
+
+**Example**
+
+```xaml
+<Rock:RelScaleToAnimation x:Key="Demo"
+                          Target="{x:Reference myLabel}"
+                          Duration="2000"
+                          Scale="0.8" />
+```
 
 ### RotateToAnimation
+
+Animates the `Rotatation` of the target to spin the element to the specified final rotation value. This rotation happens along the Z-axies, meaning it does not distort the element's perspective at all.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| Rotation | double | The absolute angle that the target should be rotated to. |
+
+**Example**
+
+```xaml
+<Rock:RotateToAnimation x:Key="Demo"
+                        Target="{x:Reference myLabel}"
+                        Duration="2000"
+                        Rotation="180" />
+```
+
+### RotateXToAnimation
+
+Animates the `RotationX` of the target to shift the perspective of the element.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| Rotation | double | The absolute angle that the target should be rotated to. |
+
+**Example**
+
+```xaml
+<Rock:RotateXToAnimation x:Key="Demo"
+                         Target="{x:Reference myLabel}"
+                         Duration="2000"
+                         Rotation="90" />
+```
+
+### RotateYToAnimation
+
+Animates the `RotationY` of the target to shift the perspective of the element.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| Rotation | double | The absolute angle that the target should be rotated to. |
+
+**Example**
+
+```xaml
+<Rock:RotateYToAnimation x:Key="Demo"
+                         Target="{x:Reference myLabel}"
+                         Duration="2000"
+                         Rotation="90" />
+```
+
+### ScaleToAnimation
+
+Animates the `Scale` of the target to make the element appear larger or smaller than it normally would.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| Scale | double | The absolute value that the target should be scaled to, a value of `1` means normal scale. |
+
+**Example**
+
+```xaml
+<Rock:ScaleToAnimation x:Key="Demo"
+                       Target="{x:Reference myLabel}"
+                       Duration="2000"
+                       Scale="1.2" />
+```
+
+### ShakeAnimation
+
+Animates the `TranslationX`  target to make it appear as if it were being shaken back and forth.
+
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:ShakeAnimation x:Key="Demo"
+                     Target="{x:Reference myLabel}"
+                     Duration="2000" />
+```
+
+### TranslateAnimation
+
+Animates the `TranslationX` and `TranslationY` properties of the target to shift the element around from it's normal position.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| TranslateX | double | The value that the element should be shifted to on the x-axis. |
+| TranslateY | double | The value that the element should be shifted to on the y-axis. |
+
+**Example**
+
+```xaml
+<Rock:TranslateAnimation x:Key="Demo"
+                         Target="{x:Reference myLabel}"
+                         Duration="2000"
+                         TranslateX="30"
+                         TranslateY="-15" />
+```
+
+### TurnstileInAnimation
+
+Animates the `RotationY` and `Opacity` properties of the target to give a turnstyle effect to the element appearing on screen.
+
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:TurnstileInAnimation x:Key="Demo"
+                           Target="{x:Reference myLabel}"
+                           Duration="2000" />
+```
+
+### TurnstileOutAnimation
+
+Animates the `RotationY` and `Opacity` properties of the target to give a turnstyle effect to the element disappearing from the screen.
+
+> Note
+>
+> This animation ignores the `Easing` property.
+
+**Example**
+
+```xaml
+<Rock:TurnstileOutAnimation x:Key="Demo"
+                            Target="{x:Reference myLabel}"
+                            Duration="2000" />
+```
+
+### StoryBoard
+
+This is a special animation that does not conform to the common properties mentioned prevoiusly. This element simply lets you group animations so that they can be triggered at the same time. Animations to be grouped together can be added as child elements.
+
+**Example**
+
+```xaml
+<Rock:StoryBoard x:Key="FadeOut">
+    <Rock:FadeToAnimation Target="{x:Reference myLabel}"
+                          Duration="2000"
+                          Opacity="0" />
+    <Rock:FadeToAnimation Target="{x:Reference myButton}"
+                          Duration="2000"
+                          Opacity="0" />
+</Rock:StoryBoard>
+```
 
 
