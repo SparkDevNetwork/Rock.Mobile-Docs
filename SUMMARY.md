@@ -7,6 +7,7 @@
 * [Block Commands](block-commands.md)
 * [Lava](lava.md)
 * [Advanced: Dynamic Content](advanced-dynamic-content.md)
+* [Animations](animations.md)
 
 ## Styling
 
