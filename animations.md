@@ -8,12 +8,6 @@ description: >-
 
 Animations in Rock Mobile Shell are provided by the [Xamanimation](https://github.com/jsuarezruiz/Xamanimation) library. That page has some samples and screenshots to give you a few ideas of what you can build. But we'll give you some information on _how_ to build it here.
 
-There are a few terms to be aware of:
-
-* `Animations` - These are things like `FadeToAnimation`, they handle the actual animation you want to perform.
-* `Triggers` - These provide a way to start an animation, usually in response to a user initiated action.
-* `Behaviors` - These are a special type of animation allow you to change a property in response to the progress of another property. For example you might change the color of a button based on a slider the user is interacting with.
-
 ## Defining Animations
 
 Let's talk about simple animations first. Animations are referenced by name and defined in the Resources of an element. In order to access an animation, it must be defined in a ancestor of where you are trying to reference it. Said another way, let's suppose you have the following XAML defined:
