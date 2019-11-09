@@ -18,7 +18,7 @@ There are a few terms to be aware of:
 
 Let's talk about simple animations first. Animations are referenced by name and defined in the Resources of an element. In order to access an animation, it must be defined in a ancestor of where you are trying to reference it. Said another way, let's suppose you have the following XAML defined:
 
-```xaml
+```xml
 <ScrollView>
   <StackLayout>
     <Label x:Name="myLabel" Text="Hello Rock!" />
@@ -30,7 +30,7 @@ If you wanted to apply an animation to the label called `myLabel` then you would
 
 So let's take an example of what this might look like:
 
-```xaml
+```xml
 <ScrollView>
   <StackLayout>
     <StackLayout.Resources>
@@ -58,7 +58,7 @@ Okay we were able to define an animation but we need to start it somehow. You ha
 
 Let's modify our example above but include a trigger style activator based on the user tapping a button:
 
-```xaml
+```xml
 <ScrollView>
   <StackLayout>
     <StackLayout.Resources>
@@ -85,7 +85,7 @@ We've added a button and a BeginAnimation trigger to it that starts the `FadeOut
 
 Another way we could define this is by behavior. Suppose we wanted the text to automatically fade out after the page loads? To do that we would use a BeginAnimationBehavior instead:
 
-```xaml
+```xml
 <ScrollView>
   <StackLayout>
     <StackLayout.Resources>
@@ -110,7 +110,7 @@ The way behaviors work is that they begin when the element they are attached to 
 
 You can also provide the ability to stop an animation by using a trigger. Technically, the library also supports stopping an animation using a behavior, but in our use case those don't actually make sense. If you are curious though, it is available as `EndAnimationBehavior`. But here is an example of two buttons, one to start and one to stop an animation.
 
-```xaml
+```xml
 <ScrollView>
   <StackLayout>
     <StackLayout.Resources>
@@ -141,9 +141,11 @@ You can also provide the ability to stop an animation by using a trigger. Techni
 </ScrollView>
 ```
 
-## Available Animations
+## Triggered Animations
 
-All of the animations in this section support the following property.
+Triggered animations are ones that are, well, triggered by some user interaction. Until the user activates that trigger event, such as tapping a button, the animation remains idle.
+
+All of the animations in this section support the following properties.
 
 | Property | Type | Description |
 | :-- | :-- | :-- |
@@ -164,7 +166,7 @@ Animates the `Scale` and `Opacity` of the target to make it appear.
 
 **Example**
 
-```xaml
+```xml
 <Rock:BounceInAnimation x:Key="Demo"
                         Target="{x:Reference myLabel}"
                         Duration="2000" />
@@ -180,13 +182,13 @@ Animates the `Scale` and `Opacity` of the target to make it disappear.
 
 **Example**
 
-```xaml
+```xml
 <Rock:BounceOutAnimation x:Key="Demo"
                          Target="{x:Reference myLabel}"
                          Duration="2000" />
 ```
 
-### ColorAnimation
+### BackgroundColorAnimation
 
 Animates the `BackgroundColor` of the target from it's current value to a new color.
 
@@ -200,12 +202,72 @@ Animates the `BackgroundColor` of the target from it's current value to a new co
 
 **Example**
 
-```xaml
+```xml
 <Rock:ColorAnimation x:Key="Demo"
                      Target="{x:Reference myLabel}"
                      Duration="2000"
                      ToColor="#ee7725" />
 ```
+
+### ColorAnimation
+
+Animates the specified property of the target, which must be of type Color, between two values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | Color | The value that the property will be transitioned from. If not set then the current property value is used. |
+| Property | string | The name of the property to be animated. |
+| To | Color | The value that the property will be transitioned to.
+
+**Example**
+
+```xml
+<Rock:ColorAnimation x:Key="Demo"
+                     Target="{x:Reference myLabel}"
+                     Property="TextColor"
+                     Duration="2000"
+                     To="#ee7725" />
+```                             
+
+### CornerRadiusAnimation
+
+Animates the specified property of the target, which must be of type CornerRadius, between two values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | CornerRadius | The value that the property will be transitioned from. If not set then the current property value is used. |
+| Property | string | The name of the property to be animated. |
+| To | CornerRadius | The value that the property will be transitioned to.
+
+**Example**
+
+```xml
+<Rock:CornerRadiusAnimation x:Key="Demo"
+                            Target="{x:Reference myBox}"
+                            Property="CornerRadius"
+                            Duration="2000"
+                            To="15,15,5,5" />
+```                             
+
+### DoubleAnimation
+
+Animates the specified property, which must be of type double, of the target between two values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | double | The value that the property will be transitioned from. If not set then the current property value is used. |
+| Property | string | The name of the property to be animated. |
+| To | double | The value that the property will be transitioned to.
+
+**Example**
+
+```xml
+<Rock:DoubleAnimation x:Key="Demo"
+                      Target="{x:Reference myLabel}"
+                      Property="Opacity"
+                      Duration="2000"
+                      To="0.5" />
+```                             
 
 ### FadeInAnimation
 
@@ -221,7 +283,7 @@ Animates the `Opacity` and `Y` position of the element to make it visible. As th
 
 **Example**
 
-```xaml
+```xml
 <Rock:FadeInAnimation x:Key="Demo"
                       Target="{x:Reference myLabel}"
                       Duration="2000"
@@ -239,7 +301,7 @@ Animates the `Opacity` of the target from it's current value to a new value.
 
 **Example**
 
-```xaml
+```xml
 <Rock:FadeToAnimation x:Key="Demo"
                       Target="{x:Reference myLabel}"
                       Duration="2000"
@@ -260,7 +322,7 @@ Animates the `Opacity` and `Y` position of the element to make it invisible. As 
 
 **Example**
 
-```xaml
+```xml
 <Rock:FadeOutAnimation x:Key="Demo"
                        Target="{x:Reference myLabel}"
                        Duration="2000"
@@ -281,7 +343,7 @@ Animates the `Opacity` and `RotationY` axis of the element to make it visible. A
 
 **Example**
 
-```xaml
+```xml
 <Rock:FlipAnimation x:Key="Demo"
                     Target="{x:Reference myLabel}"
                     Duration="2000"
@@ -299,12 +361,32 @@ Animates the `Scale` of the target to simulate a heart beat, growing and shrinki
 
 **Example**
 
-```xaml
+```xml
 <Rock:FadeInAnimation x:Key="Demo"
                       Target="{x:Reference myLabel}"
                       Duration="2000"
                       Direction="Down" />
 ```
+
+### IntAnimation
+
+Animates the specified property of the target, which must be of type int, between two values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | int | The value that the property will be transitioned from. If not set then the current property value is used. |
+| Property | string | The name of the property to be animated. |
+| To | int | The value that the property will be transitioned to.
+
+**Example**
+
+```xml
+<Rock:IntAnimation x:Key="Demo"
+                   Target="{x:Reference myLabel}"
+                   Property="TabIndex"
+                   Duration="2000"
+                   To="12" />
+```                             
 
 ### JumpAnimation
 
@@ -316,7 +398,7 @@ Animates the `TranslationY` of the target to cause it to jump up and down.
 
 **Example**
 
-```xaml
+```xml
 <Rock:JumpAnimation x:Key="Demo"
                     Target="{x:Reference myLabel}"
                     Duration="2000" />
@@ -332,7 +414,7 @@ Animates the `Rotation` of the target to spin the element by the number of degre
 
 **Example**
 
-```xaml
+```xml
 <Rock:RelRotateToAnimation x:Key="Demo"
                            Target="{x:Reference myLabel}"
                            Duration="2000"
@@ -349,7 +431,7 @@ Animates the `Scale` of the target to make the element appear larger or smaller 
 
 **Example**
 
-```xaml
+```xml
 <Rock:RelScaleToAnimation x:Key="Demo"
                           Target="{x:Reference myLabel}"
                           Duration="2000"
@@ -366,7 +448,7 @@ Animates the `Rotatation` of the target to spin the element to the specified fin
 
 **Example**
 
-```xaml
+```xml
 <Rock:RotateToAnimation x:Key="Demo"
                         Target="{x:Reference myLabel}"
                         Duration="2000"
@@ -383,7 +465,7 @@ Animates the `RotationX` of the target to shift the perspective of the element.
 
 **Example**
 
-```xaml
+```xml
 <Rock:RotateXToAnimation x:Key="Demo"
                          Target="{x:Reference myLabel}"
                          Duration="2000"
@@ -400,7 +482,7 @@ Animates the `RotationY` of the target to shift the perspective of the element.
 
 **Example**
 
-```xaml
+```xml
 <Rock:RotateYToAnimation x:Key="Demo"
                          Target="{x:Reference myLabel}"
                          Duration="2000"
@@ -417,7 +499,7 @@ Animates the `Scale` of the target to make the element appear larger or smaller 
 
 **Example**
 
-```xaml
+```xml
 <Rock:ScaleToAnimation x:Key="Demo"
                        Target="{x:Reference myLabel}"
                        Duration="2000"
@@ -434,11 +516,31 @@ Animates the `TranslationX`  target to make it appear as if it were being shaken
 
 **Example**
 
-```xaml
+```xml
 <Rock:ShakeAnimation x:Key="Demo"
                      Target="{x:Reference myLabel}"
                      Duration="2000" />
 ```
+
+### ThicknessAnimation
+
+Animates the specified property of the target, which must be of type Thickness, between two values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | Thickness | The value that the property will be transitioned from. If not set then the current property value is used. |
+| Property | string | The name of the property to be animated. |
+| To | Thickness | The value that the property will be transitioned to.
+
+**Example**
+
+```xml
+<Rock:ThicknessAnimation x:Key="Demo"
+                         Target="{x:Reference myLabel}"
+                         Property="Margin"
+                         Duration="2000"
+                         To="15" />
+```                             
 
 ### TranslateAnimation
 
@@ -451,7 +553,7 @@ Animates the `TranslationX` and `TranslationY` properties of the target to shift
 
 **Example**
 
-```xaml
+```xml
 <Rock:TranslateAnimation x:Key="Demo"
                          Target="{x:Reference myLabel}"
                          Duration="2000"
@@ -469,7 +571,7 @@ Animates the `RotationY` and `Opacity` properties of the target to give a turnst
 
 **Example**
 
-```xaml
+```xml
 <Rock:TurnstileInAnimation x:Key="Demo"
                            Target="{x:Reference myLabel}"
                            Duration="2000" />
@@ -485,7 +587,7 @@ Animates the `RotationY` and `Opacity` properties of the target to give a turnst
 
 **Example**
 
-```xaml
+```xml
 <Rock:TurnstileOutAnimation x:Key="Demo"
                             Target="{x:Reference myLabel}"
                             Duration="2000" />
@@ -497,50 +599,158 @@ This is a special animation that does not conform to the common properties menti
 
 **Example**
 
-```xaml
+```xml
 <Rock:GroupAnimation x:Key="FadeOut">
-    <Rock:FadeToAnimation Target="{x:Reference myLabel}"
-                          Duration="2000"
-                          Opacity="0" />
-    <Rock:FadeToAnimation Target="{x:Reference myButton}"
-                          Duration="2000"
-                          Opacity="0" />
+  <Rock:FadeToAnimation Target="{x:Reference myLabel}"
+                        Duration="2000"
+                        Opacity="0" />
+  <Rock:FadeToAnimation Target="{x:Reference myButton}"
+                        Duration="2000"
+                        Opacity="0" />
 </Rock:StoryBoard>
 ```
 
 
-## Custom Triggered Animations
+## Passive Animations
 
-It's all well and good that you have some standard animations you can use to make things appear and disappear, but what about doing something more custom? There are some ways you can do that too. First we will look at the Trigger versions of these, that is custom animations that start in response to a user action.
+A passive animation is one that is always active and updates continuesly whenever the property it uses to track progress changes. One example usage of this might be a slider that is used to specify the color of something. As the slider moves from one side to the other, the color slowly changes from one color to the other.
 
-Each of the animations in this section support the following properties. The `From` and `To` property value types depend on the animation type. For example, the `AnimateDouble` will use `double` value types while the `AnimateInt` animation will use `int` value types.
+All of the animations in this section support the following properties.
 
 | Property | Type | Description |
 | :-- | :-- | :-- |
-| From | _varies_ | The starting value for the animation. If not specified then the current value will be used. |
-| To | _varies_ | The ending value for the animation. |
-| Duration | uint | The duration of the animation in milliseconds. _Defaults to **1000**._ |
-| Delay | int | The number of milliseconds to delay before activating the animation. _Defaults to **0**._ |
+| Property | string | The name of the property to be animated. |
+| Progress | double | The current value being tracked. |
+| Minimum | double | The minimum value to clamp `Progress` to. _Defaults to **0**._ |
+| Maximum | double | The maximum value to clamp `Progress` to. _Defaults to **100**._ |
 | Easing | EasingType | The easing to use when calculating the animation curve: `BounceIn`, `BounceOut`, `CubicIn`, `CubicInOut`, `CubicOut`, `Linear`, `SinIn`, `SinInOut`, `SinOut`, `SprintIn`, `SpringOut`. _Defaults to **Linear**._ |
-| TargetProperty | string | The property to be set. This is not a simple property name but must include the class which defines the property, for example **VisualElement.BackgroundColor**. |
 
-### AnimateColor
+### AnimateProgressColor
 
-Animates a change in a property's color value.
+Animates the Color-type property between the `From` and `To` values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | Color | The value to use when `Progress` is less than or equal to `Minimum`.
+| To | Color | The value to use when `Progress` is greater than or equal to `Maximum`.
 
 **Example**
 
-```xaml
+```xml
 <StackLayout>
-  <Button Text="Animate">
-    <Button.Triggers>
-      <EventTrigger Event="Clicked">
-        <Rock:AnimateColor TargetProperty="Button.TextColor"
-                           To="#ee7725" />
-      </EventTrigger>
-    </Button.Triggers>
-  </Button>
+  <Slider x:Name="mySlider" Minimum="0" Maximum="100" />
+  
+  <BoxView Color="Blue" HeightRequest="100">
+    <BoxView.Behaviors>
+      <Rock:AnimateProgressColor Property="Color"
+                                 From="Red"
+                                 To="Green"
+                                 Progress="{Binding Path=Value, Source={x:Reference mySlider}}" />
+    </BoxView.Behaviors>
+  </BoxView>
 </StackLayout>
-<Rock:
 ```
 
+### AnimateProgressCornerRadius
+
+Animates the CornerRadius-type property between the `From` and `To` values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | CornerRadius | The value to use when `Progress` is less than or equal to `Minimum`.
+| To | CornerRadius | The value to use when `Progress` is greater than or equal to `Maximum`.
+
+**Example**
+
+```xml
+<StackLayout>
+  <Slider x:Name="mySlider" Minimum="0" Maximum="100" />
+  
+  <BoxView Color="Blue" HeightRequest="100">
+    <BoxView.Behaviors>
+      <Rock:AnimateProgressCornerRadius Property="CornerRadius"
+                                        From="15,15,5,5"
+                                        To="5,5,15,15"
+                                        Progress="{Binding Path=Value, Source={x:Reference mySlider}}" />
+    </BoxView.Behaviors>
+  </BoxView>
+</StackLayout>
+```
+
+### AnimateProgressDouble
+
+Animates the double-type property between the `From` and `To` values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | double | The value to use when `Progress` is less than or equal to `Minimum`.
+| To | double | The value to use when `Progress` is greater than or equal to `Maximum`.
+
+**Example**
+
+```xml
+<StackLayout>
+  <Slider x:Name="mySlider" Minimum="0" Maximum="100" />
+  
+  <BoxView Color="Blue" HeightRequest="100">
+    <BoxView.Behaviors>
+      <Rock:AnimateProgressDouble Property="HeightRequest"
+                                  From="25"
+                                  To="200"
+                                  Progress="{Binding Path=Value, Source={x:Reference mySlider}}" />
+    </BoxView.Behaviors>
+  </BoxView>
+</StackLayout>
+```
+
+### AnimateProgressInt
+
+Animates the int-type property between the `From` and `To` values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | int | The value to use when `Progress` is less than or equal to `Minimum`.
+| To | int | The value to use when `Progress` is greater than or equal to `Maximum`.
+
+**Example**
+
+```xml
+<StackLayout>
+  <Slider x:Name="mySlider" Minimum="0" Maximum="100" />
+  
+  <BoxView Color="Blue" HeightRequest="100">
+    <BoxView.Behaviors>
+      <Rock:AnimateProgressInt Property="TabIndex"
+                               From="0"
+                               To="15"
+                               Progress="{Binding Path=Value, Source={x:Reference mySlider}}" />
+    </BoxView.Behaviors>
+  </BoxView>
+</StackLayout>
+```
+
+### AnimateProgressThickness
+
+Animates the Thickness-type property between the `From` and `To` values.
+
+| Property | Type | Description |
+| :-- | :-- | :-- |
+| From | Thickness | The value to use when `Progress` is less than or equal to `Minimum`.
+| To | Thickness | The value to use when `Progress` is greater than or equal to `Maximum`.
+
+**Example**
+
+```xml
+<StackLayout>
+  <Slider x:Name="mySlider" Minimum="0" Maximum="100" />
+  
+  <BoxView Color="Blue" HeightRequest="100">
+    <BoxView.Behaviors>
+      <Rock:AnimateProgressThickness Property="Margin"
+                                     From="0"
+                                     To="20,20,10,10"
+                                     Progress="{Binding Path=Value, Source={x:Reference mySlider}}" />
+    </BoxView.Behaviors>
+  </BoxView>
+</StackLayout>
+```
