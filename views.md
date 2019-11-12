@@ -476,14 +476,14 @@ Ever wished you could make your layouts do... more? A little more pizzazz, a lit
 | BorderIsDashed | boolean | Whether or not the border needs to be dashed. |
 | BorderThickness | float | The thickness of the border. |
 | CornerRadius | CornerRadius | The radius of each of the four corners. _Specified as "topLeft,topRight,bottomLeft,bottomRight"._ |
-| HasShadow | bool | Whehter or not to draw a shadow beneath the control. _Note: For this to work we need to clip the view. This means that individual corner radii will be lost. In this case the TopLeft value will be used for all corners._
-| Elevation | int | The Material Design elevation desired. _Note: For this to work we need to clip the view. This means that individual corner radii will be lost. In this case the TopLeft value will be used for all corners._
+| HasShadow | bool | Whehter or not to draw a shadow beneath the control. _Note: For this to work we need to clip the view. This means that individual corner radii will be lost. In this case the TopLeft value will be used for all corners._ |
+| Elevation | int | The Material Design elevation desired. _Note: For this to work we need to clip the view. This means that individual corner radii will be lost. In this case the TopLeft value will be used for all corners._ |
 | OffsetAngle | double | The rotation of the StyledView when `Sides` is not its default value of 4. |
 | Sides | int | The number of sides to the shape. _Default is 4._ |
 
 **Example**
 
-```xaml
+```text
 <Rock:StyledView BackgroundColor="#bc91d7"
                  CornerRadius="60,0,0,60"
                  IsClippedToBounds="true"

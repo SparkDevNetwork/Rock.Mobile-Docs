@@ -12,7 +12,7 @@ Before we go through the various fields available, let's take a look at how they
 
 The first way to display one of these fields is just by itself without a container view.
 
-```text
+```markup
 <Rock:TextBox Label="Name" Placeholder="Your Name" />
 ```
 
@@ -20,7 +20,7 @@ The first way to display one of these fields is just by itself without a contain
 
 Notice that there is no border or anything. It may not look like it, but that is a text box the user can tap on to bring up the keyboard. All the fields will behave this way, meaning not show any border or their own label. This is handled by the container views.
 
-```text
+```markup
 <Rock:FormField>
     <Rock:TextBox Label="Name" Placeholder="Your Name" />
 </Rock:FormField>
@@ -30,7 +30,7 @@ Notice that there is no border or anything. It may not look like it, but that is
 
 The `<Rock:FormField>` view provides a way to show the label. It also handles showing a required indicator. This will be covered in more detail when reading up on that view itself.
 
-```text
+```markup
 <Rock:FormGroup Title="Name">
     <Rock:FormField>
         <Rock:TextBox Placeholder="Your Name" />
@@ -64,7 +64,7 @@ This view provides a field that allows the user to enter an address, or display 
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Address">
     <Rock:Address IsRequired="false" />
 </Rock:FormGroup>
@@ -74,7 +74,7 @@ This view provides a field that allows the user to enter an address, or display 
 
 If you need to provide a default address to be displayed when the view is rendered, you can do so as follows:
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Address">
     <Rock:Address IsRequired="false">
         <Rock:Address.SelectedAddress>
@@ -100,7 +100,7 @@ _See_ [_Picker_](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-R
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Campus Picker">
     <Rock:FormField>
         <Rock:CampusPicker IsRequired="false"
@@ -123,7 +123,7 @@ _See_ [_NumberBox_](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Develope
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Currency Box">
     <Rock:FormField>
         <Rock:CurrencyBox IsRequired="false" Text="23.98" />
@@ -150,7 +150,7 @@ Presents a field that displays the selected date \(or placeholder text\) and all
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Date Picker">
     <Rock:FormField>
         <Rock:DatePicker IsRequired="false" SelectedDate="7/4/2019" />
@@ -174,7 +174,7 @@ _See_ [_TextBox_](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Email Box">
     <Rock:FormField>
         <Rock:EmailBox IsRequired="false" Text="ted@rocksolidchurchdemo.com" />
@@ -207,7 +207,7 @@ The multi picker will allow the user to make multiple selections from a list of 
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Multi Picker">
     <Rock:FormField>
         <Rock:MultiPicker IsRequired="false"
@@ -240,7 +240,7 @@ _See_ [_TextBox_](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Currency Box">
     <Rock:FormField>
         <Rock:NumberBox IsRequired="false" Text="-1325" />
@@ -269,7 +269,7 @@ If the entered country code and phone number match one of the formatting express
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Phone Number Box">
     <Rock:FormField>
         <Rock:PhoneNumberBox IsRequired="false" CountryCode="1" PhoneNumber="(800) 555-1234" />
@@ -301,7 +301,7 @@ The picker will allow the user to select from a list of available items. If the 
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Picker">
     <Rock:FormField>
         <Rock:Picker IsRequired="false" SelectedValue="2">
@@ -337,7 +337,7 @@ Come on. Do we really need to explain what a text box is for? But seriously, as 
 
 **Example**
 
-```text
+```markup
 <Rock:FormGroup Title="Rock Text Box">
     <Rock:FormField>
         <Rock:TextBox IsRequired="false" Text="Rock Lobster!" />

@@ -108,7 +108,7 @@ You can then access your PageValue by simply accessing it like any other Lava ob
 
 You can even access PageValues by way of bindings in your XAML:
 
-```xaml
+```text
 <Label Text="{Binding UserValues.MaxLength}" />
 ```
 
@@ -116,13 +116,13 @@ You can even access PageValues by way of bindings in your XAML:
 
 This command allows you to set a specific value in the [AppValues](lava.md#AppValues) dictionary.
 
-```liquid
+```text
 {% setappvalue key, value %}
 ```
 
 Both `key` and `value` can either be specified as literal values or as variable references, so both of the following are functionally the same.
 
-```liquid
+```text
 {% assign name = 'MaxLength' %}
 {% assign max = 100 %}
 {% setappvalue name, max %}
@@ -132,16 +132,17 @@ Both `key` and `value` can either be specified as literal values or as variable 
 
 You can then access your AppValue by simply accessing it like any other Lava object, for example:
 
-```liquid
+```text
 {% assign oldMax = AppValues.MaxLength %}
 ```
 
 You can even access AppValues by way of bindings in your XAML:
 
-```xaml
+```text
 <Label Text="{Binding AppValues.MaxLength}" />
 ```
 
 > NOTE
 >
 > Because these application values must be persisted to the local database, you should attempt to keep them limited to simple primitive types, such as numbers, strings, booleans. Any other more complex object or array types may or may not restore back from the database as you expect.
+
