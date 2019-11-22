@@ -10,7 +10,7 @@ The content block also supports what is called `Callbacks`. If you have an ASP.N
 
 In a previous article, we built a simple search page that linked the user out to google to perform the search. Linking out to Google is great an all, but what if we want to use the built-in universal search? Let's look at what that might look like. First let's define the primary content of the block.
 
-```markup
+```xml
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -22,9 +22,9 @@ In a previous article, we built a simple search page that linked the user out to
             StyleClass="btn, btn-primary"
             Command="{Binding Callback}">
         <Button.CommandParameter>
-            <Rock:Action Command="Search">
-                <Rock:ActionParameter Name="Term"
-                                      Value="{Binding Source={x:Reference SearchTerm}, Path=Text}" />
+            <Rock:CallbackParameters Name="Search">
+                <Rock:Parameter Name="Term"
+                                Value="{Binding Source={x:Reference SearchTerm}, Path=Text}" />
             </Rock:Action>
         </Button.CommandParameter>
     </Button>
@@ -35,7 +35,7 @@ This still gives us a pretty Search text field for the user to enter a search te
 
 Next, let's define what will happen when the user clicks the `Search` button. This is what we are going to put into our Callback Event in the block's settings.
 
-```markup
+```xml
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -47,9 +47,9 @@ Next, let's define what will happen when the user clicks the `Search` button. Th
             StyleClass="btn, btn-primary"
             Command="{Binding Callback}">
         <Button.CommandParameter>
-            <Rock:Action Command="Search">
-                <Rock:ActionParameter Name="Term"
-                                      Value="{Binding Source={x:Reference SearchTerm}, Path=Text}" />
+            <Rock:CallbackParameters Name="Search">
+                <Rock:Parameter Name="Term"
+                                Value="{Binding Source={x:Reference SearchTerm}, Path=Text}" />
             </Rock:Action>
         </Button.CommandParameter>
     </Button>
