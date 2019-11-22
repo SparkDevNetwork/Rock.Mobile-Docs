@@ -275,17 +275,69 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 ```
 
 
+## PlayVideo
 
-* `PlayVideo` allows you to begin playing a video in full screen. Parameter is the URL pointing to the video file.
-* `PlayAudio` allows you to begin playing an audio file in full screen. Parameter is the URL pointing to the audio file.
-* `ScrollToVisible` lets you cause a specific view to become visible inside it's ScrollView.
-* `ShowActionPanel` gives you the ability to display an action panel (action sheet on iOS), this is a short text message with buttons the user can tap on to initiate actions.
-* `ReloadApplication` will cause the application to essentially restart. Primarily useful as an administrative task for development purposes.
+This command initiates the playing of a video in full-screen. Usually it is better to use the `VideoPlayer` view instead, but there are times you just want to play a video when the user taps a button.
+
+The `CommandParameter` consists of a string which contains the URL of the video to be played.
+
+**Example**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding PlayVideo}"
+        CommandParameter="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+```
+
+
+## PlayAudio
+
+Like the [PlayVideo](#PlayVideo) command, this initiates a full-screen playback of an audio file. Given that it's audio, there won't be much to see.
+
+The `CommandParameter` consists of a string which contains the URL of the audio file to be played.
+
+**Example**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding PlayVideo}"
+        CommandParameter="http://www.noiseaddicts.com/samples_1w72b820/2541.mp3" />
+```
+
+
+## ReloadApplication
+
+Don't use this. No seriously, you can use it but it has a very special purpose. Basically, this instructs the application to reload as if you had just force quit and started it again. This is a development tool that saves us a few seconds when we are debugging stuff, though you may find it useful when debugging your own blocks.
+
+The `CommandParameter` is not used and will be ignored.
+
+**Examples**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ReloadApplication}" />
+```
 
 
 ## ScrollToVisible
 
-There are two ways to initiate this command, we'll show them below. But the basic syntax is you specify the Anchor element that should be scrolled until it becomes visible. Thing of this like the HTML Anchor href, or a "jump to" button.
+There are two ways to initiate this command, we'll show them below. But the basic syntax is you specify the Anchor element that should be scrolled until it becomes visible. Think of this like the HTML Anchor href, or a "jump to" button.
+
+You can either pass the view to be made visible directly by reference in the `CommandParameter` or you can pass an instance of the `ScrollToVisibleParameters` object.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Anchor | VisualElement | The view which resides inside a ScrollView that should be made visible. |
+| Position | ScrollToPosition | The position to put the view at after scrolling (see below). _Defaults to **MakeVisible**._ |
+
+The options you have with the `Position` parameter are as follows.
+
+* MakeVisible - Just make sure the anchor is visible on screen.
+* Start - Attempt to scroll until the anchor is at the start (top or left) of the screen.
+* Center - Attempt to scroll until the anchor is at the center of the screen.
+* End - Attempt to scroll until the anchor is at the end (bottom or right) of the screen.
+
+**Examples**
 
 ```xml
 <StackLayout>
@@ -319,13 +371,6 @@ To accomodate those situations, you are able to specify a parameters object like
 
 This still indicates the same Label we want to use as the Anchor, but it also specifies the position we want it to end up at. Now, this is not a forced position. If there were nothing below the label, it wouldn't be possible for it to end up at the top. But since we have a lot of content below as well, there is enough room to scroll.
 
-The options you have with the `Position` parameter are as follows.
-
-* MakeVisible - Just make sure the anchor is visible on screen.
-* Start - Attempt to scroll until the anchor is at the start (top or left) of the screen.
-* Center - Attempt to scroll until the anchor is at the center of the screen.
-* End - Attempt to scroll until the anchor is at the end (bottom or right) of the screen.
-
 Finally, due to the way XAML works, there is a shorthand to the XAML we wrote above.
 
 ```xml
@@ -334,31 +379,14 @@ Finally, due to the way XAML works, there is a shorthand to the XAML we wrote ab
         CommandParameter="{Rock:ScrollToVisibleParameters Anchor={x:Reference myLabel}, Position=Start}" />
 ```
 
+
 ## ShowActionPanel
 
-```xml
-<Button Text="Action" Command="{Binding ShowActionPanel}">
-    <Button.CommandParameter>
-        <Rock:ActionPanelParameters Title="My Action Sheet"
-                                    CancelTitle="Do Nothing">
-            <Rock:ActionPanalParameters.DestructiveButton>
-                <Rock:ActionPanelButton Title="Delete"
-                                        Command="{Binding PushPage}"
-                                        CommandParameter="c258265c-9645-46f1-a69b-0e0f149e5e83" />
-            </Rock:ActionPanelParameters.DestructiveButton>
-            
-            <Rock:ActionPanelButton Title="First Button"
-                                    Command="{Binding OpenBrowser}"
-                                    CommandParameter="https://www.google.com" />
-            <Rock:ActionPanelButton Title="Second Button"
-                                    Command="..."
-                                    CommandParameter="..." />
-        </Rock:ActionPanelParameters>
-    </Button.CommandParameter>
-</Button>
-```
+This action will show an action panel (think action sheet in iOS terms). This is basically a popup that contains a short message and a number of buttons the user can choose from. A common example of this would be a "reply" button in a mail application. When tapping the button it might then popup an action sheet which contains a few buttons to help you decide what you intend to do: Reply, Reply All, Forward.
 
-The above is a bit verbose, but let's dissect it a bit. On the Button, we are setting the `CommandParameter` to a custom object, of type `ActionPanelParameters`.
+These popups usually have a Cancel button (though it's not strictly required. Additionally, you can specify a single "destructive" button that stands out to the user. Often this would be a Delete type action and is usually styled red.
+
+The `CommandParameter` must specify an instance of the `ShowActionPanelParameters` object.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
@@ -367,22 +395,44 @@ The above is a bit verbose, but let's dissect it a bit. On the Button, we are se
 | DestructiveButton | ActionPanelButton | Defines the button that implies a destructive operation, for example on iOS this button becomes red (optiona). _Defaults to **null**._ |
 | Buttons | ICollection\<ActionPanelButton\> | A collection of buttons to be shown, this is the default content property meaning you would just add ActionPanelButton nodes as child elements. |
 
-So in our above example, we gave our action panel a cancel button called `Do Nothing`. It also has a destructive button called `Delete` that will cause the user to be sent to another page. Next we have our list of additional buttons we want. The first one we defined to open a browser web page. The second button we only partially defined just to give you an idea of what multiple buttons looks like.
-
-Thanks to XAML, we can simplify the definition of the destructive button a bit if we want, it's up to you.
+**Examples**
 
 ```xml
-<Rock:ActionPanelParameters Title="My Action Sheet"
-                            CancelTitle="Do Nothing"
-                            DestructiveButton="{Rock:ActionPanelButton Title=Delete, Command={Binding PushPage}, CommandParameter=c258265c-9645-46f1-a69b-0e0f149e5e83}">
-    
-    <Rock:ActionPanelButton Title="First Button"
-                            Command="{Binding OpenBrowser}"
-                            CommandParameter="https://www.google.com" />
-    <Rock:ActionPanelButton Title="Second Button"
-                            Command="..."
-                            CommandParameter="..." />
-</Rock:ActionPanelParameters>
+<Button Text="Action" Command="{Binding ShowActionPanel}">
+    <Button.CommandParameter>
+        <Rock:ShowActionPanelParameters Title="My Action Sheet"
+                                        CancelTitle="Do Nothing">
+            <Rock:ShowActionPanalParameters.DestructiveButton>
+                <Rock:ActionPanelButton Title="Delete"
+                                        Command="{Binding PushPage}"
+                                        CommandParameter="c258265c-9645-46f1-a69b-0e0f149e5e83" />
+            </Rock:ShowActionPanelParameters.DestructiveButton>
+            <Rock:ActionPanelButton Title="First Button"
+                                    Command="{Binding OpenBrowser}"
+                                    CommandParameter="https://www.google.com" />
+            <Rock:ActionPanelButton Title="Second Button"
+                                    Command="{Binding OpenExternalBrowser}"
+                                    CommandParameter="https://www.google.com/" />
+        </Rock:ShowActionPanelParameters>
+    </Button.CommandParameter>
+</Button>
 ```
 
-This simplified form only works with simple actions. For example, if your destructive button CommandParameter needed to contain an object to pass multiple query string parameters, you would probably need to revert to the more verbose definition.
+Thanks to the magic of XAML, we can simplify the definition of the destructive button a bit if we want, it's up to you.
+
+```xml
+<Button Text="Action" Command="{Binding ShowActionPanel}">
+    <Button.CommandParameter>
+        <Rock:ShowActionPanelParameters Title="My Action Sheet"
+                                        CancelTitle="Do Nothing"
+                                        DestructiveButton="{Rock:ActionPanelButton Title=Delete, Command={Binding PushPage}, CommandParameter=c258265c-9645-46f1-a69b-0e0f149e5e83}">
+            <Rock:ActionPanelButton Title="First Button"
+                                    Command="{Binding OpenBrowser}"
+                                    CommandParameter="https://www.google.com" />
+            <Rock:ActionPanelButton Title="Second Button"
+                                    Command="{Binding OpenExternalBrowser}"
+                                    CommandParameter="https://www.google.com/" />
+        </Rock:ShowActionPanelParameters>
+    </Button.CommandParameter>
+</Button>
+```
