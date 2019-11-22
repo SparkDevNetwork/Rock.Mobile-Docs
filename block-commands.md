@@ -1,21 +1,12 @@
 # Block Commands
 
-Each block implements a number of standard commands to help you navigate around to various sections of the application:
+Xamarin, and the Rock Mobile application shell, use a concept called Commands to handle most actions and events. When you tap a button, it executes a Command. These are usually available through a `Command` property, though sometimes a view might support multiple different commands in which case the names will vary. Additionally, each Command can take a single parameter to provide additional details about how it should perform it's task.
 
-* `OpenBrowser` allows you to open a web address using the built-in browser. If you include an `rckipid` parameter with no value then an impersonation token will be generated. This token is good for 30 mins.
-* `OpenExternalBrowser` allows you to open a web address using the system default web browser \(for example Chrome\). If you include an `rckipid` parameter with no value then an impersonation token will be generated. This token is good for 30 mins.
-* `PushPage` will push a new page onto the navigation stack, which allows the user to use the back button to return to the current page.
-* `ReplacePage` will replace the current page with the new page. If the current page has a back button then the new page will also have a back button that will still go to the previous page.
-* `ShowPage` will replace the entire navigation stack and show only the specified page.
-* `PlayVideo` allows you to begin playing a video in full screen. Parameter is the URL pointing to the video file.
-* `PlayAudio` allows you to begin playing an audio file in full screen. Parameter is the URL pointing to the audio file.
-* `ScrollToVisible` lets you cause a specific view to become visible inside it's ScrollView.
-* `ShowActionPanel` gives you the ability to display an action panel (action sheet on iOS), this is a short text message with buttons the user can tap on to initiate actions.
-* `ReloadApplication` will cause the application to essentially restart. Primarily useful as an administrative task for development purposes.
+Since all these Commands implement the same structure, this means you can use any command anywhere. So just like you can setup a button to open a browser window, you can also use that same command and tie it to a swipe gesture so if the user swipes on the screen it also opens a browser window.
 
-First, lets look at a simple button that we want to open up a browser window when the user taps on it.
+Further down you will find descriptions about the various commands available, but before that you probably want to see a quick example of how to actually use commands. First, lets look at a simple button that we want to open up a browser window when the user taps on it.
 
-```markup
+```xml
 <StackLayout>
     <Button Text="Search"
             StyleClass="btn, btn-primary"
@@ -26,7 +17,7 @@ First, lets look at a simple button that we want to open up a browser window whe
 
 What we are doing is binding the `Command` parameter of the button to the `OpenBrowser` handler built into all blocks. Next we are passing the URL to open via the `CommandParameter`. Now, lets say we want to be able to have a textbox on screen for the user to put in a search term and then use that as the search term for Google to use.
 
-```markup
+```xml
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -43,7 +34,7 @@ What we are doing is binding the `Command` parameter of the button to the `OpenB
 
 Okay, that renders a nice text box but our search button is still using the hard coded URL. To fix that we are going to change the button definition so we can create a special object as the `CommandParameter`:
 
-```markup
+```xml
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -55,20 +46,118 @@ Okay, that renders a nice text box but our search button is still using the hard
             StyleClass="btn, btn-primary"
             Command="{Binding OpenBrowser}">
         <Button.CommandParameter>
-            <Rock:Action Url="https://www.google.com/search">
-                <Rock:ActionParameter Name="q"
-                                      Value="{Binding Path=Text, Source={x:Reference SearchTerm}}" />
+            <Rock:OpenBrowserParameters Url="https://www.google.com/search">
+                <Rock:Parameter Name="q"
+                                Value="{Binding Path=Text, Source={x:Reference SearchTerm}}" />
             </Rock:Action>
         </Button.CommandParameter>
     </Button>
 </StackLayout>
 ```
 
-So what we did above is create an inline object in XAML and place it inside the Button's `CommandParameter` property. This object is the `<Rock:Action>...</RockAction>` object. It specifies what we are going to do in the action, specifically, the `Url` in this case is the base URL to go to. Contained inside is a number of action parameters that will be passed as query string parameters.
+So what we did above is create an inline object in XAML and place it inside the Button's `CommandParameter` property. This object is the `<Rock:OpenBrowserParameters>...</Rock:OpenBrowserParameters>` object. It specifies what we are going to do in the command, specifically, the `Url` in this case is the base URL to go to. Contained inside is a number of parameter values that will be passed as query string parameters.
 
 We have defined a parameter called `q` which is what Google uses for the search term. For the value, you can enter a static value if you wish, but we wanted a dynamic one. So we used XAML binding to reference the text box's value. `{Binding Source={x:Reference SearchTerm}, Path=Text}` means: Take the value from the object whose name is `SearchTerm` and use the property found at the path `Text`. Note: The reason it's called `Path` is because you can specify a property path \(e.x. `Text.Length`\) that will process a tree of properties.
 
 So, what we have finally achieved is a Search button that uses a textbox on screen to collect the user input and then go to a search results page - and we did it without a single line of code!
+
+It's worth being aware that most commands support a short form of their CommandParameter. You saw this above with the `OpenBrowser` command. If you don't need to pass any custom parameters and just need to specify a static URL, you can just pass the URL string into the `CommandParameter` itself. Each command will note what forms the `CommandParameter` can take.
+
+## Parameter
+
+While not a command itself, we will mention this here as it is used by nearly all the below commands. Sometimes you need to pass an additional parameter value to a command. This value might be static, or it could be dynamic based on another view on screen. To do this you use the `Parameter` object.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Name | string | The name of the parameter to be passed to the command. |
+| Value | object | The value to be passed for this parameter. Supports data binding. |
+
+**Example**
+
+```xml
+<Rock:Parameter Name="GroupId" Value="18" />
+<Rock:Parameter Name="GroupId" Value="{Binding Text, Source={x:Reference tbGroup}}" />
+```
+
+
+## OpenBrowser
+
+This command allows you to open a web address using the built-in browser inside the application.
+
+If you are opening a url to your own Rock server and wish to ensure the user is logged in, you can pass an empty `rckipid` parameter and an impersonation token will be automatically generated.
+
+The `CommandParameter` can either be a string, which contains the URL and query string parameters, or it can be a reference to an `OpenBrowserParameters` object which contains the following properties.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Url | string | The URL to be opened. May contain query string parameters. |
+| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be included with the URL. |
+
+**Example**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding OpenBrowser}"
+        CommandParameter="https://www.google.com/" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding OpenBrowser}">
+    <Button.CommandParameter>
+        <Rock:OpenBrowserParameters>
+            <Rock:Parameter Name="q" Value="rockrms" />
+        </Rock:OpenBrowserParameters>
+    </Button.CommandParameter>
+</Button>
+```
+
+
+## OpenExternalBrowser
+
+Similar to the [OpenBrowser](#OpenBrowser) command, this one opens a URL in a browser window. The difference between the two is that this command uses the devices native web browser and opens the URL in that application. This means your user leaves your mobile app and gets sent over to Safari or Chrome.
+
+If you are opening a url to your own Rock server and wish to ensure the user is logged in, you can pass an empty `rckipid` parameter and an impersonation token will be automatically generated.
+
+The `CommandParameter` can either be a string, which contains the URL and query string parameters, or it can be a reference to an `OpenExternalBrowserParameters` object which contains the following properties.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Url | string | The URL to be opened. May contain query string parameters. |
+| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be included with the URL. |
+
+**Example**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding OpenBrowser}"
+        CommandParameter="https://www.google.com/" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding OpenBrowser}">
+    <Button.CommandParameter>
+        <Rock:OpenExternalBrowserParameters>
+            <Rock:Parameter Name="q" Value="rockrms" />
+        </Rock:OpenExternalBrowserParameters>
+    </Button.CommandParameter>
+</Button>
+```
+
+
+## PushPage
+
+
+* `PushPage` will push a new page onto the navigation stack, which allows the user to use the back button to return to the current page.
+* `ReplacePage` will replace the current page with the new page. If the current page has a back button then the new page will also have a back button that will still go to the previous page.
+* `ShowPage` will replace the entire navigation stack and show only the specified page.
+* `PlayVideo` allows you to begin playing a video in full screen. Parameter is the URL pointing to the video file.
+* `PlayAudio` allows you to begin playing an audio file in full screen. Parameter is the URL pointing to the audio file.
+* `ScrollToVisible` lets you cause a specific view to become visible inside it's ScrollView.
+* `ShowActionPanel` gives you the ability to display an action panel (action sheet on iOS), this is a short text message with buttons the user can tap on to initiate actions.
+* `ReloadApplication` will cause the application to essentially restart. Primarily useful as an administrative task for development purposes.
+
 
 ## ScrollToVisible
 
