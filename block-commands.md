@@ -72,10 +72,13 @@ While not a command itself, we will mention this here as it is used by nearly al
 | Name | string | The name of the parameter to be passed to the command. |
 | Value | object | The value to be passed for this parameter. Supports data binding. |
 
-**Example**
+**Examples**
 
 ```xml
 <Rock:Parameter Name="GroupId" Value="18" />
+```
+
+```xml
 <Rock:Parameter Name="GroupId" Value="{Binding Text, Source={x:Reference tbGroup}}" />
 ```
 
@@ -93,7 +96,7 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 | Url | string | The URL to be opened. May contain query string parameters. |
 | Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be included with the URL. |
 
-**Example**
+**Examples**
 
 ```xml
 <Button Text="Tap"
@@ -105,7 +108,7 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 <Button Text="Tap"
         Command="{Binding OpenBrowser}">
     <Button.CommandParameter>
-        <Rock:OpenBrowserParameters>
+        <Rock:OpenBrowserParameters Url="https://www.google.com/">
             <Rock:Parameter Name="q" Value="rockrms" />
         </Rock:OpenBrowserParameters>
     </Button.CommandParameter>
@@ -126,7 +129,7 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 | Url | string | The URL to be opened. May contain query string parameters. |
 | Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be included with the URL. |
 
-**Example**
+**Examples**
 
 ```xml
 <Button Text="Tap"
@@ -138,7 +141,7 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 <Button Text="Tap"
         Command="{Binding OpenBrowser}">
     <Button.CommandParameter>
-        <Rock:OpenExternalBrowserParameters>
+        <Rock:OpenExternalBrowserParameters Url="https://www.google.com/">
             <Rock:Parameter Name="q" Value="rockrms" />
         </Rock:OpenExternalBrowserParameters>
     </Button.CommandParameter>
@@ -148,10 +151,131 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 
 ## PushPage
 
+This command pushes a new page onto the navigation stack. This type of navigation allows the user to use the back button to return to the page that pushed the new page.
 
-* `PushPage` will push a new page onto the navigation stack, which allows the user to use the back button to return to the current page.
-* `ReplacePage` will replace the current page with the new page. If the current page has a back button then the new page will also have a back button that will still go to the previous page.
-* `ShowPage` will replace the entire navigation stack and show only the specified page.
+If the `CommandParameter` is a string, then it is expected to contain a page's Guid value and, optionally, a set of query string parameters. The first parameter is separated by a `?` and any additional parameters are separated by `&`. Since these query string parameters are inside an XML document, you must escape them (for example, your `&` must become `&amp;`).
+
+If you are using data binding you can also bind the `CommandParameter` to a true Guid value, in which case it must be the Guid of a valid page.
+
+Finally, if you need advanced parameter usage you can use a `PushPageParameters` object.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| PageGuid | Guid | The Guid identifier of the page to be pushed onto the navigation stack. |
+| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be passed to the page. |
+
+**Examples**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding PushPage}"
+        CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding PushPage}"
+        CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8?GroupId=18&amp;Mode=Edit" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding PushPage}">
+    <Button.CommandParameter>
+        <Rock:PushPageParameters PageGuid="e4d80e57-da60-4822-bc22-c071f02958e8">
+            <Rock:Parameter Name="GroupId" Value="18" />
+            <Rock:Parameter Name="Mode" Value="Edit" />
+        </Rock:PushPageParameters />
+    </Button.CommandParameter>
+</Button>
+```
+
+
+## ReplacePage
+
+This command replaces the current page with a new page. This differs from the [PushPage](#PushPage) command. Using the ReplacePage command, if the user then taps the back button then they will be taken back to the page they were on _before_ the page that called the ReplacePage command.
+
+If the `CommandParameter` is a string, then it is expected to contain a page's Guid value and, optionally, a set of query string parameters. The first parameter is separated by a `?` and any additional parameters are separated by `&`. Since these query string parameters are inside an XML document, you must escape them (for example, your `&` must become `&amp;`).
+
+If you are using data binding you can also bind the `CommandParameter` to a true Guid value, in which case it must be the Guid of a valid page.
+
+Finally, if you need advanced parameter usage you can use a `PushPageParameters` object.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| PageGuid | Guid | The Guid identifier of the page to be used to replace the current page. |
+| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be passed to the page. |
+
+**Examples**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ReplacePage}"
+        CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ReplacePage}"
+        CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8?GroupId=18&amp;Mode=Edit" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ReplacePage}">
+    <Button.CommandParameter>
+        <Rock:ReplacePageParameters PageGuid="e4d80e57-da60-4822-bc22-c071f02958e8">
+            <Rock:Parameter Name="GroupId" Value="18" />
+            <Rock:Parameter Name="Mode" Value="Edit" />
+        </Rock:ReplacePageParameters />
+    </Button.CommandParameter>
+</Button>
+```
+
+
+## ShowPage
+
+This command replaces the entire navigation stack with a new page. This means there will be no back button to return to any previous page.
+
+If the `CommandParameter` is a string, then it is expected to contain a page's Guid value and, optionally, a set of query string parameters. The first parameter is separated by a `?` and any additional parameters are separated by `&`. Since these query string parameters are inside an XML document, you must escape them (for example, your `&` must become `&amp;`).
+
+If you are using data binding you can also bind the `CommandParameter` to a true Guid value, in which case it must be the Guid of a valid page.
+
+Finally, if you need advanced parameter usage you can use a `PushPageParameters` object.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| PageGuid | Guid | The Guid identifier of the page to be used as the new page. |
+| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be passed to the page. |
+
+**Examples**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ShowPage}"
+        CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding Showage}"
+        CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8?GroupId=18&amp;Mode=Edit" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ShowPage}">
+    <Button.CommandParameter>
+        <Rock:ShowPageParameters PageGuid="e4d80e57-da60-4822-bc22-c071f02958e8">
+            <Rock:Parameter Name="GroupId" Value="18" />
+            <Rock:Parameter Name="Mode" Value="Edit" />
+        </Rock:ShowPageParameters />
+    </Button.CommandParameter>
+</Button>
+```
+
+
+
 * `PlayVideo` allows you to begin playing a video in full screen. Parameter is the URL pointing to the video file.
 * `PlayAudio` allows you to begin playing an audio file in full screen. Parameter is the URL pointing to the audio file.
 * `ScrollToVisible` lets you cause a specific view to become visible inside it's ScrollView.
