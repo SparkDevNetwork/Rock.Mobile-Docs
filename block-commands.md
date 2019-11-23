@@ -413,7 +413,7 @@ The `CommandParameter` must specify an instance of the `ShowActionPanelParameter
 | Title | string | The title of the action panel, keep it short! |
 | CancelTitle | string | The text to display in the cancel button (optional). _Defaults to empty string._ |
 | DestructiveButton | ActionPanelButton | Defines the button that implies a destructive operation, for example on iOS this button becomes red (optiona). _Defaults to **null**._ |
-| Buttons | ICollection<ActionPanelButton> | A collection of buttons to be shown, this is the default content property meaning you would just add ActionPanelButton nodes as child elements. |
+| Buttons | ICollection&lt;ActionPanelButton&gt; | A collection of buttons to be shown, this is the default content property meaning you would just add ActionPanelButton nodes as child elements. |
 
 **Examples**
 
