@@ -57,7 +57,7 @@ Okay, that renders a nice text box but our search button is still using the hard
 
 So what we did above is create an inline object in XAML and place it inside the Button's `CommandParameter` property. This object is the `<Rock:OpenBrowserParameters>...</Rock:OpenBrowserParameters>` object. It specifies what we are going to do in the command, specifically, the `Url` in this case is the base URL to go to. Contained inside is a number of parameter values that will be passed as query string parameters.
 
-We have defined a parameter called `q` which is what Google uses for the search term. For the value, you can enter a static value if you wish, but we wanted a dynamic one. So we used XAML binding to reference the text box's value. `{Binding Source={x:Reference SearchTerm}, Path=Text}` means: Take the value from the object whose name is `SearchTerm` and use the property found at the path `Text`. Note: The reason it's called `Path` is because you can specify a property path \(e.x. `Text.Length`\) that will process a tree of properties.
+We have defined a parameter called `q` which is what Google uses for the search term. For the value, you can enter a static value if you wish, but we wanted a dynamic one. So we used XAML binding to reference the text box's value. `{Binding Source={x:Reference SearchTerm}, Path=Text}` means: Take the value from the object whose name is `SearchTerm` and use the property found at the path `Text`. Note: The reason it's called `Path` is because you can specify a property path (e.x. `Text.Length`\) that will process a tree of properties.
 
 So, what we have finally achieved is a Search button that uses a textbox on screen to collect the user input and then go to a search results page - and we did it without a single line of code!
 
@@ -94,7 +94,7 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Url | string | The URL to be opened. May contain query string parameters. |
-| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be included with the URL. |
+| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be included with the URL. |
 
 **Examples**
 
@@ -127,7 +127,7 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Url | string | The URL to be opened. May contain query string parameters. |
-| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be included with the URL. |
+| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be included with the URL. |
 
 **Examples**
 
@@ -162,7 +162,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be pushed onto the navigation stack. |
-| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be passed to the page. |
+| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be passed to the page. |
 
 **Examples**
 
@@ -204,7 +204,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be used to replace the current page. |
-| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be passed to the page. |
+| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be passed to the page. |
 
 **Examples**
 
@@ -246,7 +246,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be used as the new page. |
-| Parameters | List\<[Parameter](#Parameter)\> | Any additional query string parameters to be passed to the page. |
+| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be passed to the page. |
 
 **Examples**
 
@@ -413,7 +413,7 @@ The `CommandParameter` must specify an instance of the `ShowActionPanelParameter
 | Title | string | The title of the action panel, keep it short! |
 | CancelTitle | string | The text to display in the cancel button (optional). _Defaults to empty string._ |
 | DestructiveButton | ActionPanelButton | Defines the button that implies a destructive operation, for example on iOS this button becomes red (optiona). _Defaults to **null**._ |
-| Buttons | ICollection\<ActionPanelButton\> | A collection of buttons to be shown, this is the default content property meaning you would just add ActionPanelButton nodes as child elements. |
+| Buttons | ICollection<ActionPanelButton> | A collection of buttons to be shown, this is the default content property meaning you would just add ActionPanelButton nodes as child elements. |
 
 **Examples**
 
@@ -467,7 +467,7 @@ The `CommandParameter` can either be a plain string that indicates the event nam
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Event | string | The name of the event to be triggered. |
-| Parameters | List\<[Parameter](#Parameter)\> | Any parameters that will be passed to the Lava engine, these manifest as lava variables. |
+| Parameters | List<[Parameter](#Parameter)> | Any parameters that will be passed to the Lava engine, these manifest as lava variables. |
 
 **Examples**
 
