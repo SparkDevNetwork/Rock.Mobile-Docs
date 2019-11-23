@@ -498,7 +498,7 @@ If the `CommandParameter` is a plain string, then it is used as the name of the 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Name | string | The name of the callback to be called on the server. |
-| Parameters | List\<[Parameter](#Parameter)\> | Any parameters that will be passed to the callback function. |
+| Parameters | List<[Parameter](#Parameter)> | Any parameters that will be passed to the callback function. |
 
 **Examples**
 
