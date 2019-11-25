@@ -91,8 +91,8 @@ Because of this slightly different syntax there are some things to know. If your
 
 ```xml
 <Button Text="Send"
-        Command="{Binding SendMessage}"
-        CommandParameter="{SendMessageParameters Message='Hello, Dave.' Recipients=1558881234}" />
+        Command="{Binding SendSms}"
+        CommandParameter="{SendMSmsParameters Message='Hello, Dave.' Recipients=1558881234}" />
 ```
 
 
@@ -559,11 +559,11 @@ If the `CommandParameter` is a plain string, then it is used as the name of the 
 ```
 
 
-### SendMessage
+### SendSms
 
 Don't you wish you could add a button with an icon of a chat bubble to your application that would allow your user to send a text message? Yea, we did too. With this command you can _request_ to create a new message to be sent to a number of people. Notice that we said "request". This does not immediately send the message but simply uses the OS standard messaging application. In most cases the user is sent over to the message application and can then later return to your application.
 
-If the `CommandParameter` is a plain string, then it is used as a comma delimited list of phone numbers that the message should be sent to. Alternatively you can specify a `SendMessageParameters` object and supply the initial text to use as the message body as well as the list of recipients. This object is described below. Finally, you can also omit the `CommandParameter` entirely and it will simply open up a new blank message for the user to send.
+If the `CommandParameter` is a plain string, then it is used as a comma delimited list of phone numbers that the message should be sent to. Alternatively you can specify a `SendSmsParameters` object and supply the initial text to use as the message body as well as the list of recipients. This object is described below. Finally, you can also omit the `CommandParameter` entirely and it will simply open up a new blank message for the user to send.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
@@ -574,15 +574,15 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 
 ```xml
 <Button Text="Tap"
-        Command="{Binding SendMessage}"
+        Command="{Binding SendSms}"
         CommandParameter="15551239876" />
 ```
 
 ```xml
 <Button Text="Tap"
-        Command="{Binding SendMessage}">
+        Command="{Binding SendSms}">
     <Button.CommandParameter>
-        <Rock:SendMessageParameters Message="Welcome to Rock!"
+        <Rock:SendSmsParameters Message="Welcome to Rock!"
                                     Recipients="15551239876,15552224444" />
     </Button.CommandParameter>
 </Button>
@@ -590,19 +590,19 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 
 ```xml
 <Button Text="Tap"
-        Command="{Binding SendMessage}">
+        Command="{Binding SendSms}">
     <Button.CommandParameter>
-        <Rock:SendMessageParameters Message="Welcome to Rock!">
+        <Rock:SendSmsParameters Message="Welcome to Rock!">
             <x:String>15551239876</x:String>
             <x:String>15552224444</x:String>
-        </Rock:SendMessageParameters>
+        </Rock:SendSmsParameters>
     </Button.CommandParameter>
 </Button>
 ```
 
 ```xml
 <Button Text="Tap"
-        Command="{Binding SendMessage}"
-        CommandParameter="{SendMessageParameters Message=Welcome to Rock!, Recipients='15551239876,15552224444'}" />
+        Command="{Binding SendSms}"
+        CommandParameter="{SendSmsParameters Message=Welcome to Rock!, Recipients='15551239876,15552224444'}" />
 ```
 
