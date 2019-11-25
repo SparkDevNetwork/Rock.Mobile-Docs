@@ -561,7 +561,7 @@ If the `CommandParameter` is a plain string, then it is used as the name of the 
 
 ### SendSms
 
-Don't you wish you could add a button with an icon of a chat bubble to your application that would allow your user to send a text message? Yea, we did too. With this command you can _request_ to create a new message to be sent to a number of people. Notice that we said "request". This does not immediately send the message but simply uses the OS standard messaging application. In most cases the user is sent over to the message application and can then later return to your application.
+Don't you wish you could add a button with an icon of a chat bubble to your application that would allow your user to send a text message? Yea, we did too. With this command you can _request_ to create a new text message to be sent to a number of people. Notice that we said "request". This does not immediately send the text message but simply uses the OS standard messaging application. In most cases the user is sent over to the message application and can then later return to your application.
 
 If the `CommandParameter` is a plain string, then it is used as a comma delimited list of phone numbers that the message should be sent to. Alternatively you can specify a `SendSmsParameters` object and supply the initial text to use as the message body as well as the list of recipients. This object is described below. Finally, you can also omit the `CommandParameter` entirely and it will simply open up a new blank message for the user to send.
 
@@ -604,5 +604,43 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 <Button Text="Tap"
         Command="{Binding SendSms}"
         CommandParameter="{SendSmsParameters Message=Welcome to Rock!, Recipients='15551239876,15552224444'}" />
+```
+
+
+### SendEmail
+
+With this command you can _request_ to create a new e-mail to be sent to a number of people. Notice that we said "request". This does not immediately send the e-mail but simply uses the OS standard e-mail application. In most cases the user is sent over to the e-mail application and can then later return to your application.
+
+If the `CommandParameter` is a plain string, then it is used as a comma delimited list of e-mail addresses that the e-mail should be sent to. Alternatively you can specify a `SendEmailParameters` object and supply the subject, the initial text to use as the e-mail body as well as the list of recipients. This object is described below. Finally, you can also omit the `CommandParameter` entirely and it will simply open up a new blank e-mail for the user to send.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Subject | string | The subject of the e-mail to be sent, this is optional and the user will be able to edit before it is sent.
+| Message | string | The body of the e-mail to be sent, this is optional and the user will be able to edit the content before it is sent. |
+| Recipients | List\<string\> | The e-mail addresses that will receive the e-mail. While this is a list of strings, it also accepts a comma delimited string to specify multiple e-mail addresses at once. |
+
+**Examples**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding SendEmail}"
+        CommandParameter="ted@rocksolidchurchdemo.com" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding SendEmail}">
+    <Button.CommandParameter>
+        <Rock:SendEmailParameters Subject="Welcome to Rock!"
+                                  Message="Thanks for saying you are coming to church tonight!"
+                                  Recipients="ted@rocksolidchurchdemo.com, cindy@fakeinbox.com" />
+    </Button.CommandParameter>
+</Button>
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding SendEmail}"
+        CommandParameter="{SendEmailParameters Subject=Welcome to Rock!, Recipients=ted@rocksolidchurchdemo.com}" />
 ```
 
