@@ -68,7 +68,7 @@ It's worth being aware that most commands support a short form of their CommandP
 All of the command parameter objects discussed in this section support being used as a XAML extension. Said another way, there is a shorthand to creating them. This shorthand does not work if you need to pass an array of items into the parameters (such as a bunch of query string parameters), but it does work for other use cases. Let's compare a "standard" usage as follows.
 
 ```xml
-<Button Text="Scroll">
+<Button Text="Scroll"
         Command="{Binding ScrollToVisible}">
     <Button.CommandParameter>
         <Rock:ScrollToVisibleParameters Anchor="{x:Reference myLabel}"
@@ -80,7 +80,7 @@ All of the command parameter objects discussed in this section support being use
 This is a rather verbose way to do it, but it allows us to pass in a whole POCO class of `ScrollToVisibleParameters` that then specifies the anchor element to be made visible and where to place it after scrolling. This can be shortened using XAML extensions to the following.
 
 ```xml
-<Button Text="Scroll">
+<Button Text="Scroll"
         Command="{Binding ScrollToVisible}"
         CommandParameter="{Rock:ScrollToVisibleParameters Anchor={x:Reference myLabel}, Position=Start}" />
 ```
@@ -100,11 +100,13 @@ While not a command itself, we will mention this here as it is used by nearly al
 **Examples**
 
 ```xml
-<Rock:Parameter Name="GroupId" Value="18" />
+<Rock:Parameter Name="GroupId"
+                Value="18" />
 ```
 
 ```xml
-<Rock:Parameter Name="GroupId" Value="{Binding Text, Source={x:Reference tbGroup}}" />
+<Rock:Parameter Name="GroupId"
+                Value="{Binding Text, Source={x:Reference tbGroup}}" />
 ```
 
 
@@ -409,7 +411,7 @@ The above will scroll the first ScrollView in the view tree above the Label we s
 To accomodate those situations, you are able to specify a parameters object like so.
 
 ```xml
-<Button Text="Scroll">
+<Button Text="Scroll"
         Command="{Binding ScrollToVisible}">
     <Button.CommandParameter>
         <Rock:ScrollToVisibleParameters Anchor="{x:Reference myLabel}"
