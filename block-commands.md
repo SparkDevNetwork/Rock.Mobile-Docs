@@ -644,3 +644,17 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
         CommandParameter="{SendEmailParameters Subject=Welcome to Rock!, Recipients=ted@rocksolidchurchdemo.com}" />
 ```
 
+
+### CallPhoneNumber
+
+We're sure you can think of other uses, but wouldn't it be nice if your application had your churches phone number displayed somewhere and the user could just tap on it to call your church office? Yep. That would be nice. If only the user was on a phone or something like that.
+
+The `CommandParameter` specifies the phone number to be dialed, if it's blank then nothing will happen.
+
+**Examples**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding CallPhoneNumber}"
+        CommandParameter="15552138874" />
+```
