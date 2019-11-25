@@ -63,6 +63,31 @@ So, what we have finally achieved is a Search button that uses a textbox on scre
 
 It's worth being aware that most commands support a short form of their CommandParameter. You saw this above with the `OpenBrowser` command. If you don't need to pass any custom parameters and just need to specify a static URL, you can just pass the URL string into the `CommandParameter` itself. Each command will note what forms the `CommandParameter` can take.
 
+## Shorthand
+
+All of the command parameter objects discussed in this section support being used as a XAML extension. Said another way, there is a shorthand to creating them. This shorthand does not work if you need to pass an array of items into the parameters (such as a bunch of query string parameters), but it does work for other use cases. Let's compare a "standard" usage as follows.
+
+```xml
+<Button Text="Scroll">
+        Command="{Binding ScrollToVisible}">
+    <Button.CommandParameter>
+        <Rock:ScrollToVisibleParameters Anchor="{x:Reference myLabel}"
+                                        Position="Start" />
+    </Button.CommandParameter>
+</Button>
+```
+
+This is a rather verbose way to do it, but it allows us to pass in a whole POCO class of `ScrollToVisibleParameters` that then specifies the anchor element to be made visible and where to place it after scrolling. This can be shortened using XAML extensions to the following.
+
+```xml
+<Button Text="Scroll">
+        Command="{Binding ScrollToVisible}"
+        CommandParameter="{Rock:ScrollToVisibleParameters Anchor={x:Reference myLabel}, Position=Start}" />
+```
+
+As you can see, this is much more succinct. Though again, it does not work when you need to supply an array of elements as a property. Do notice that the syntax changes ever so slightly for setting properties inside the shorthand syntax. First, the properties are separated by a comma. Second, the property values are not enclosed in quotation marks (since we are already inside a quotation for the outer property). This does mean if you are trying to set a string value inside this shorthand that you cannot have the string contain a comma since it will be interpreted as a property separator.
+
+
 ## Parameter
 
 While not a command itself, we will mention this here as it is used by nearly all the below commands. Sometimes you need to pass an additional parameter value to a command. This value might be static, or it could be dynamic based on another view on screen. To do this you use the `Parameter` object.
@@ -83,7 +108,11 @@ While not a command itself, we will mention this here as it is used by nearly al
 ```
 
 
-## OpenBrowser
+## Commands
+
+Most of the command below will work in the context of a block's content (the one exception is the [Callback](#callback) command, that only works inside a block that derives from the Content block). Many of them will work outside the context of a block as well. For example, in the flyout menu. However, some do require knowing what page you are on and thus will not work in that context. One example of this is the [ShowActionPanel](#showactionpanel) command. It needs to know what page to display the action panel over and if used from the flyout menu that context is not available to it.
+
+### OpenBrowser
 
 This command allows you to open a web address using the built-in browser inside the application.
 
@@ -116,7 +145,7 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 ```
 
 
-## OpenExternalBrowser
+### OpenExternalBrowser
 
 Similar to the [OpenBrowser](#OpenBrowser) command, this one opens a URL in a browser window. The difference between the two is that this command uses the devices native web browser and opens the URL in that application. This means your user leaves your mobile app and gets sent over to Safari or Chrome.
 
@@ -149,7 +178,7 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 ```
 
 
-## PushPage
+### PushPage
 
 This command pushes a new page onto the navigation stack. This type of navigation allows the user to use the back button to return to the page that pushed the new page.
 
@@ -191,7 +220,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 ```
 
 
-## ReplacePage
+### ReplacePage
 
 This command replaces the current page with a new page. This differs from the [PushPage](#PushPage) command. Using the ReplacePage command, if the user then taps the back button then they will be taken back to the page they were on _before_ the page that called the ReplacePage command.
 
@@ -233,7 +262,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 ```
 
 
-## ShowPage
+### ShowPage
 
 This command replaces the entire navigation stack with a new page. This means there will be no back button to return to any previous page.
 
@@ -275,7 +304,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 ```
 
 
-## PopPage
+### PopPage
 
 This command performs the reverse action of the [PushPage](#PushPage) command. In simple terms, this behaves just like the user tapped the back button in the navigation toolbar at the top. The current page is popped and removed from the stack and the previous page becomes visible. Think in terms of pushing a page that asks the user for confirmation on something and you want to have a Cancel button that goes back to the previous page.
 
@@ -295,7 +324,7 @@ One additional feature is that you can request that the previous page in the sta
 ```
 
 
-## PlayVideo
+### PlayVideo
 
 This command initiates the playing of a video in full-screen. Usually it is better to use the `VideoPlayer` view instead, but there are times you just want to play a video when the user taps a button.
 
@@ -310,7 +339,7 @@ The `CommandParameter` consists of a string which contains the URL of the video 
 ```
 
 
-## PlayAudio
+### PlayAudio
 
 Like the [PlayVideo](#PlayVideo) command, this initiates a full-screen playback of an audio file. Given that it's audio, there won't be much to see.
 
@@ -325,7 +354,7 @@ The `CommandParameter` consists of a string which contains the URL of the audio 
 ```
 
 
-## ReloadApplication
+### ReloadApplication
 
 Don't use this. No seriously, you can use it but it has a very special purpose. Basically, this instructs the application to reload as if you had just force quit and started it again. This is a development tool that saves us a few seconds when we are debugging stuff, though you may find it useful when debugging your own blocks.
 
@@ -339,7 +368,7 @@ The `CommandParameter` is not used and will be ignored.
 ```
 
 
-## ScrollToVisible
+### ScrollToVisible
 
 There are two ways to initiate this command, we'll show them below. But the basic syntax is you specify the Anchor element that should be scrolled until it becomes visible. Think of this like the HTML Anchor href, or a "jump to" button.
 
@@ -400,7 +429,7 @@ Finally, due to the way XAML works, there is a shorthand to the XAML we wrote ab
 ```
 
 
-## ShowActionPanel
+### ShowActionPanel
 
 This action will show an action panel (think action sheet in iOS terms). This is basically a popup that contains a short message and a number of buttons the user can choose from. A common example of this would be a "reply" button in a mail application. When tapping the button it might then popup an action sheet which contains a few buttons to help you decide what you intend to do: Reply, Reply All, Forward.
 
@@ -458,7 +487,7 @@ Thanks to the magic of XAML, we can simplify the definition of the destructive b
 ```
 
 
-## PageEvent
+### PageEvent
 
 You learned, or will learn, elsewhere that you can use Lava on the mobile shell to handle certain page events and respond to them. Normally these page events are just ones generated by the system for you. However, you can trigger your own custom page events using this command.
 
@@ -489,7 +518,7 @@ The `CommandParameter` can either be a plain string that indicates the event nam
 ```
 
 
-## Callback
+### Callback
 
 Some blocks, currently just the `Content` block, support what is called Callbacks. You can learn more about these in the `Advanced: Dynamic Content` and the `Developer` chapters. But, for our purposes here, you can think of these as an API call back to the server's logic for the block.
 
