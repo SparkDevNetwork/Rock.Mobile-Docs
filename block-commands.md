@@ -568,7 +568,7 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Message | string | The body of the message to be sent, this is optional and the user will be able to edit the content before it is sent. |
-| Recipients | List<string> | The phone numbers of the people who will receive the message. While this is a list of strings, it also accepts a comma delimited string to specify multiple numbers at once. |
+| Recipients | List\<string\> | The phone numbers of the people who will receive the message. While this is a list of strings, it also accepts a comma delimited string to specify multiple numbers at once. |
 
 **Examples**
 
