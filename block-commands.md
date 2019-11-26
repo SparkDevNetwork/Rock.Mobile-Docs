@@ -658,3 +658,35 @@ The `CommandParameter` specifies the phone number to be dialed, if it's blank th
         Command="{Binding CallPhoneNumber}"
         CommandParameter="15552138874" />
 ```
+
+
+### ShareContent
+
+Using the ShareContent command you can open up the standard OS share dialog that lets the user share a piece of text or a URL to other apps and services.
+
+If the `CommandParameter` is a plain string then it will simply share the text string. Alternatively you can specify a `ShareContentParameters` object and supply additional options as seen below.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Title | string | The title of the share window (not used on iOS). |
+| Text | string | A text string to be shared. |
+| Uri | string | A URL string to be shared. |
+
+**Examples**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding Sharecontent}"
+        CommandParameter="Rock ChMS has an app!" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding Sharecontent}">
+    <Button.CommandParameter>
+        <Rock:ShareContentParameters Title="Endorse Rock!"
+                                     Text="Rock ChMS has an app!"
+                                     Uri="https://www.rockrms.com/" />
+    </Button.CommandParameter>
+</Button>
+```
