@@ -36,4 +36,5 @@
 
 * [Fundamentals](developers/fundamentals.md)
 * [Custom Blocks](developers/custom-blocks.md)
+* [Codex](developers/codex.md)
 
