@@ -6,7 +6,7 @@ Since all these Commands implement the same structure, this means you can use an
 
 Further down you will find descriptions about the various commands available, but before that you probably want to see a quick example of how to actually use commands. First, lets look at a simple button that we want to open up a browser window when the user taps on it.
 
-```xml
+```markup
 <StackLayout>
     <Button Text="Search"
             StyleClass="btn, btn-primary"
@@ -17,7 +17,7 @@ Further down you will find descriptions about the various commands available, bu
 
 What we are doing is binding the `Command` parameter of the button to the `OpenBrowser` handler built into all blocks. Next we are passing the URL to open via the `CommandParameter`. Now, lets say we want to be able to have a textbox on screen for the user to put in a search term and then use that as the search term for Google to use.
 
-```xml
+```markup
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -34,7 +34,7 @@ What we are doing is binding the `Command` parameter of the button to the `OpenB
 
 Okay, that renders a nice text box but our search button is still using the hard coded URL. To fix that we are going to change the button definition so we can create a special object as the `CommandParameter`:
 
-```xml
+```markup
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -57,7 +57,7 @@ Okay, that renders a nice text box but our search button is still using the hard
 
 So what we did above is create an inline object in XAML and place it inside the Button's `CommandParameter` property. This object is the `<Rock:OpenBrowserParameters>...</Rock:OpenBrowserParameters>` object. It specifies what we are going to do in the command, specifically, the `Url` in this case is the base URL to go to. Contained inside is a number of parameter values that will be passed as query string parameters.
 
-We have defined a parameter called `q` which is what Google uses for the search term. For the value, you can enter a static value if you wish, but we wanted a dynamic one. So we used XAML binding to reference the text box's value. `{Binding Source={x:Reference SearchTerm}, Path=Text}` means: Take the value from the object whose name is `SearchTerm` and use the property found at the path `Text`. Note: The reason it's called `Path` is because you can specify a property path (e.x. `Text.Length`\) that will process a tree of properties.
+We have defined a parameter called `q` which is what Google uses for the search term. For the value, you can enter a static value if you wish, but we wanted a dynamic one. So we used XAML binding to reference the text box's value. `{Binding Source={x:Reference SearchTerm}, Path=Text}` means: Take the value from the object whose name is `SearchTerm` and use the property found at the path `Text`. Note: The reason it's called `Path` is because you can specify a property path \(e.x. `Text.Length`\) that will process a tree of properties.
 
 So, what we have finally achieved is a Search button that uses a textbox on screen to collect the user input and then go to a search results page - and we did it without a single line of code!
 
@@ -65,9 +65,9 @@ It's worth being aware that most commands support a short form of their CommandP
 
 ## Shorthand
 
-All of the command parameter objects discussed in this section support being used as a XAML extension. Said another way, there is a shorthand to creating them. This shorthand does not work if you need to pass an array of items into the parameters (such as a bunch of query string parameters), but it does work for other use cases. Let's compare a "standard" usage as follows.
+All of the command parameter objects discussed in this section support being used as a XAML extension. Said another way, there is a shorthand to creating them. This shorthand does not work if you need to pass an array of items into the parameters \(such as a bunch of query string parameters\), but it does work for other use cases. Let's compare a "standard" usage as follows.
 
-```xml
+```markup
 <Button Text="Scroll"
         Command="{Binding ScrollToVisible}">
     <Button.CommandParameter>
@@ -79,22 +79,21 @@ All of the command parameter objects discussed in this section support being use
 
 This is a rather verbose way to do it, but it allows us to pass in a whole POCO class of `ScrollToVisibleParameters` that then specifies the anchor element to be made visible and where to place it after scrolling. This can be shortened using XAML extensions to the following.
 
-```xml
+```markup
 <Button Text="Scroll"
         Command="{Binding ScrollToVisible}"
         CommandParameter="{Rock:ScrollToVisibleParameters Anchor={x:Reference myLabel}, Position=Start}" />
 ```
 
-As you can see, this is much more succinct. Though again, it does not work when you need to supply an array of elements as a property. Do notice that the syntax changes ever so slightly for setting properties inside the shorthand syntax. First, the properties are separated by a comma. Second, the property values are not enclosed in quotation marks (since we are already inside a quotation for the outer property).
+As you can see, this is much more succinct. Though again, it does not work when you need to supply an array of elements as a property. Do notice that the syntax changes ever so slightly for setting properties inside the shorthand syntax. First, the properties are separated by a comma. Second, the property values are not enclosed in quotation marks \(since we are already inside a quotation for the outer property\).
 
 Because of this slightly different syntax there are some things to know. If your value is going to contain a comma, then you need to enclose it in single quotes, inside the double quotes of the outer property as shown below.
 
-```xml
+```markup
 <Button Text="Send"
         Command="{Binding SendSms}"
         CommandParameter="{SendMSmsParameters Message='Hello, Dave.' Recipients=1558881234}" />
 ```
-
 
 ## Parameter
 
@@ -107,20 +106,19 @@ While not a command itself, we will mention this here as it is used by nearly al
 
 **Examples**
 
-```xml
+```markup
 <Rock:Parameter Name="GroupId"
                 Value="18" />
 ```
 
-```xml
+```markup
 <Rock:Parameter Name="GroupId"
                 Value="{Binding Text, Source={x:Reference tbGroup}}" />
 ```
 
-
 ## Commands
 
-Most of the command below will work in the context of a block's content (the one exception is the [Callback](#callback) command, that only works inside a block that derives from the Content block). Many of them will work outside the context of a block as well. For example, in the flyout menu. However, some do require knowing what page you are on and thus will not work in that context. One example of this is the [ShowActionPanel](#showactionpanel) command. It needs to know what page to display the action panel over and if used from the flyout menu that context is not available to it.
+Most of the command below will work in the context of a block's content \(the one exception is the [Callback](block-commands.md#callback) command, that only works inside a block that derives from the Content block\). Many of them will work outside the context of a block as well. For example, in the flyout menu. However, some do require knowing what page you are on and thus will not work in that context. One example of this is the [ShowActionPanel](block-commands.md#showactionpanel) command. It needs to know what page to display the action panel over and if used from the flyout menu that context is not available to it.
 
 ### OpenBrowser
 
@@ -133,17 +131,17 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Url | string | The URL to be opened. May contain query string parameters. |
-| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be included with the URL. |
+| Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be included with the URL. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding OpenBrowser}"
         CommandParameter="https://www.google.com/" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding OpenBrowser}">
     <Button.CommandParameter>
@@ -154,10 +152,9 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 </Button>
 ```
 
-
 ### OpenExternalBrowser
 
-Similar to the [OpenBrowser](#OpenBrowser) command, this one opens a URL in a browser window. The difference between the two is that this command uses the devices native web browser and opens the URL in that application. This means your user leaves your mobile app and gets sent over to Safari or Chrome.
+Similar to the [OpenBrowser](block-commands.md#OpenBrowser) command, this one opens a URL in a browser window. The difference between the two is that this command uses the devices native web browser and opens the URL in that application. This means your user leaves your mobile app and gets sent over to Safari or Chrome.
 
 If you are opening a url to your own Rock server and wish to ensure the user is logged in, you can pass an empty `rckipid` parameter and an impersonation token will be automatically generated.
 
@@ -166,17 +163,17 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Url | string | The URL to be opened. May contain query string parameters. |
-| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be included with the URL. |
+| Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be included with the URL. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding OpenBrowser}"
         CommandParameter="https://www.google.com/" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding OpenBrowser}">
     <Button.CommandParameter>
@@ -187,12 +184,11 @@ The `CommandParameter` can either be a string, which contains the URL and query 
 </Button>
 ```
 
-
 ### PushPage
 
 This command pushes a new page onto the navigation stack. This type of navigation allows the user to use the back button to return to the page that pushed the new page.
 
-If the `CommandParameter` is a string, then it is expected to contain a page's Guid value and, optionally, a set of query string parameters. The first parameter is separated by a `?` and any additional parameters are separated by `&`. Since these query string parameters are inside an XML document, you must escape them (for example, your `&` must become `&amp;`).
+If the `CommandParameter` is a string, then it is expected to contain a page's Guid value and, optionally, a set of query string parameters. The first parameter is separated by a `?` and any additional parameters are separated by `&`. Since these query string parameters are inside an XML document, you must escape them \(for example, your `&` must become `&amp;`\).
 
 If you are using data binding you can also bind the `CommandParameter` to a true Guid value, in which case it must be the Guid of a valid page.
 
@@ -201,23 +197,23 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be pushed onto the navigation stack. |
-| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be passed to the page. |
+| Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be passed to the page. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding PushPage}"
         CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding PushPage}"
         CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8?GroupId=18&amp;Mode=Edit" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding PushPage}">
     <Button.CommandParameter>
@@ -229,12 +225,11 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 </Button>
 ```
 
-
 ### ReplacePage
 
-This command replaces the current page with a new page. This differs from the [PushPage](#PushPage) command. Using the ReplacePage command, if the user then taps the back button then they will be taken back to the page they were on _before_ the page that called the ReplacePage command.
+This command replaces the current page with a new page. This differs from the [PushPage](block-commands.md#PushPage) command. Using the ReplacePage command, if the user then taps the back button then they will be taken back to the page they were on _before_ the page that called the ReplacePage command.
 
-If the `CommandParameter` is a string, then it is expected to contain a page's Guid value and, optionally, a set of query string parameters. The first parameter is separated by a `?` and any additional parameters are separated by `&`. Since these query string parameters are inside an XML document, you must escape them (for example, your `&` must become `&amp;`).
+If the `CommandParameter` is a string, then it is expected to contain a page's Guid value and, optionally, a set of query string parameters. The first parameter is separated by a `?` and any additional parameters are separated by `&`. Since these query string parameters are inside an XML document, you must escape them \(for example, your `&` must become `&amp;`\).
 
 If you are using data binding you can also bind the `CommandParameter` to a true Guid value, in which case it must be the Guid of a valid page.
 
@@ -243,23 +238,23 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be used to replace the current page. |
-| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be passed to the page. |
+| Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be passed to the page. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ReplacePage}"
         CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ReplacePage}"
         CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8?GroupId=18&amp;Mode=Edit" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ReplacePage}">
     <Button.CommandParameter>
@@ -271,12 +266,11 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 </Button>
 ```
 
-
 ### ShowPage
 
 This command replaces the entire navigation stack with a new page. This means there will be no back button to return to any previous page.
 
-If the `CommandParameter` is a string, then it is expected to contain a page's Guid value and, optionally, a set of query string parameters. The first parameter is separated by a `?` and any additional parameters are separated by `&`. Since these query string parameters are inside an XML document, you must escape them (for example, your `&` must become `&amp;`).
+If the `CommandParameter` is a string, then it is expected to contain a page's Guid value and, optionally, a set of query string parameters. The first parameter is separated by a `?` and any additional parameters are separated by `&`. Since these query string parameters are inside an XML document, you must escape them \(for example, your `&` must become `&amp;`\).
 
 If you are using data binding you can also bind the `CommandParameter` to a true Guid value, in which case it must be the Guid of a valid page.
 
@@ -285,23 +279,23 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be used as the new page. |
-| Parameters | List<[Parameter](#Parameter)> | Any additional query string parameters to be passed to the page. |
+| Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be passed to the page. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ShowPage}"
         CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding Showage}"
         CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8?GroupId=18&amp;Mode=Edit" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ShowPage}">
     <Button.CommandParameter>
@@ -313,26 +307,24 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 </Button>
 ```
 
-
 ### PopPage
 
-This command performs the reverse action of the [PushPage](#PushPage) command. In simple terms, this behaves just like the user tapped the back button in the navigation toolbar at the top. The current page is popped and removed from the stack and the previous page becomes visible. Think in terms of pushing a page that asks the user for confirmation on something and you want to have a Cancel button that goes back to the previous page.
+This command performs the reverse action of the [PushPage](block-commands.md#PushPage) command. In simple terms, this behaves just like the user tapped the back button in the navigation toolbar at the top. The current page is popped and removed from the stack and the previous page becomes visible. Think in terms of pushing a page that asks the user for confirmation on something and you want to have a Cancel button that goes back to the previous page.
 
 One additional feature is that you can request that the previous page in the stack should be reloaded before it's displayed. This is accomplished by passing `true` to the `CommandParameter`.
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding PopPage}" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding PopPage}"
         CommandParameter="true" />
 ```
-
 
 ### PlayVideo
 
@@ -342,27 +334,25 @@ The `CommandParameter` consists of a string which contains the URL of the video 
 
 **Example**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding PlayVideo}"
         CommandParameter="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
 ```
 
-
 ### PlayAudio
 
-Like the [PlayVideo](#PlayVideo) command, this initiates a full-screen playback of an audio file. Given that it's audio, there won't be much to see.
+Like the [PlayVideo](block-commands.md#PlayVideo) command, this initiates a full-screen playback of an audio file. Given that it's audio, there won't be much to see.
 
 The `CommandParameter` consists of a string which contains the URL of the audio file to be played.
 
 **Example**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding PlayVideo}"
         CommandParameter="http://www.noiseaddicts.com/samples_1w72b820/2541.mp3" />
 ```
-
 
 ### ReloadApplication
 
@@ -372,11 +362,10 @@ The `CommandParameter` is not used and will be ignored.
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ReloadApplication}" />
 ```
-
 
 ### ScrollToVisible
 
@@ -387,29 +376,29 @@ You can either pass the view to be made visible directly by reference in the `Co
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Anchor | VisualElement | The view which resides inside a ScrollView that should be made visible. |
-| Position | ScrollToPosition | The position to put the view at after scrolling (see below). _Defaults to **MakeVisible**._ |
+| Position | ScrollToPosition | The position to put the view at after scrolling \(see below\). _Defaults to **MakeVisible**._ |
 
 The options you have with the `Position` parameter are as follows.
 
 * MakeVisible - Just make sure the anchor is visible on screen.
-* Start - Attempt to scroll until the anchor is at the start (top or left) of the screen.
+* Start - Attempt to scroll until the anchor is at the start \(top or left\) of the screen.
 * Center - Attempt to scroll until the anchor is at the center of the screen.
-* End - Attempt to scroll until the anchor is at the end (bottom or right) of the screen.
+* End - Attempt to scroll until the anchor is at the end \(bottom or right\) of the screen.
 
 **Examples**
 
-```xml
+```markup
 <StackLayout>
     <Button Text="Scroll"
             Command="{Binding ScrollToVisible}"
             CommandParameter="{x:Reference myLabel}" />
-    
+
     <BoxView Color="Red"
              HeightRequest="1200" />
-    
+
     <Label Text="My Label"
            x:Name="myLabel" />
-    
+
     <BoxView Color="Blue"
              HeightRequest="1200" />
 ```
@@ -418,7 +407,7 @@ The above will scroll the first ScrollView in the view tree above the Label we s
 
 To accomodate those situations, you are able to specify a parameters object like so.
 
-```xml
+```markup
 <Button Text="Scroll"
         Command="{Binding ScrollToVisible}">
     <Button.CommandParameter>
@@ -432,36 +421,35 @@ This still indicates the same Label we want to use as the Anchor, but it also sp
 
 Finally, due to the way XAML works, there is a shorthand to the XAML we wrote above.
 
-```xml
+```markup
 <Button Text="Scroll"
         Command="{Binding ScrollToVisible}"
         CommandParameter="{Rock:ScrollToVisibleParameters Anchor={x:Reference myLabel}, Position=Start}" />
 ```
 
-
 ### ShowActionPanel
 
-This action will show an action panel (think action sheet in iOS terms). This is basically a popup that contains a short message and a number of buttons the user can choose from. A common example of this would be a "reply" button in a mail application. When tapping the button it might then popup an action sheet which contains a few buttons to help you decide what you intend to do: Reply, Reply All, Forward.
+This action will show an action panel \(think action sheet in iOS terms\). This is basically a popup that contains a short message and a number of buttons the user can choose from. A common example of this would be a "reply" button in a mail application. When tapping the button it might then popup an action sheet which contains a few buttons to help you decide what you intend to do: Reply, Reply All, Forward.
 
-These popups usually have a Cancel button (though it's not strictly required. Additionally, you can specify a single "destructive" button that stands out to the user. Often this would be a Delete type action and is usually styled red.
+These popups usually have a Cancel button \(though it's not strictly required. Additionally, you can specify a single "destructive" button that stands out to the user. Often this would be a Delete type action and is usually styled red.
 
 The `CommandParameter` must specify an instance of the `ShowActionPanelParameters` object.
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Title | string | The title of the action panel, keep it short! |
-| CancelTitle | string | The text to display in the cancel button (optional). _Defaults to empty string._ |
-| DestructiveButton | ActionPanelButton | Defines the button that implies a destructive operation, for example on iOS this button becomes red (optiona). _Defaults to **null**._ |
+| CancelTitle | string | The text to display in the cancel button \(optional\). _Defaults to empty string._ |
+| DestructiveButton | ActionPanelButton | Defines the button that implies a destructive operation, for example on iOS this button becomes red \(optiona\). _Defaults to **null**._ |
 | Buttons | ICollection&lt;ActionPanelButton&gt; | A collection of buttons to be shown, this is the default content property meaning you would just add ActionPanelButton nodes as child elements. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Action" Command="{Binding ShowActionPanel}">
     <Button.CommandParameter>
         <Rock:ShowActionPanelParameters Title="My Action Sheet"
                                         CancelTitle="Do Nothing">
-            <Rock:ShowActionPanalParameters.DestructiveButton>
+            <Rock:ShowActionPanelParameters.DestructiveButton>
                 <Rock:ActionPanelButton Title="Delete"
                                         Command="{Binding PushPage}"
                                         CommandParameter="c258265c-9645-46f1-a69b-0e0f149e5e83" />
@@ -479,7 +467,7 @@ The `CommandParameter` must specify an instance of the `ShowActionPanelParameter
 
 Thanks to the magic of XAML, we can simplify the definition of the destructive button a bit if we want, it's up to you.
 
-```xml
+```markup
 <Button Text="Action" Command="{Binding ShowActionPanel}">
     <Button.CommandParameter>
         <Rock:ShowActionPanelParameters Title="My Action Sheet"
@@ -496,7 +484,6 @@ Thanks to the magic of XAML, we can simplify the definition of the destructive b
 </Button>
 ```
 
-
 ### PageEvent
 
 You learned, or will learn, elsewhere that you can use Lava on the mobile shell to handle certain page events and respond to them. Normally these page events are just ones generated by the system for you. However, you can trigger your own custom page events using this command.
@@ -506,17 +493,17 @@ The `CommandParameter` can either be a plain string that indicates the event nam
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Event | string | The name of the event to be triggered. |
-| Parameters | List<[Parameter](#Parameter)> | Any parameters that will be passed to the Lava engine, these manifest as lava variables. |
+| Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any parameters that will be passed to the Lava engine, these manifest as lava variables. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding PageEvent}"
         CommandParameter="UserTap" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding PageEvent}">
     <Button.CommandParameter>
@@ -527,7 +514,6 @@ The `CommandParameter` can either be a plain string that indicates the event nam
 </Button>
 ```
 
-
 ### Callback
 
 Some blocks, currently just the `Content` block, support what is called Callbacks. You can learn more about these in the `Advanced: Dynamic Content` and the `Developer` chapters. But, for our purposes here, you can think of these as an API call back to the server's logic for the block.
@@ -537,17 +523,17 @@ If the `CommandParameter` is a plain string, then it is used as the name of the 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Name | string | The name of the callback to be called on the server. |
-| Parameters | List<[Parameter](#Parameter)> | Any parameters that will be passed to the callback function. |
+| Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any parameters that will be passed to the callback function. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding Callback}"
         CommandParameter="UserTap" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding Callback}">
     <Button.CommandParameter>
@@ -558,7 +544,6 @@ If the `CommandParameter` is a plain string, then it is used as the name of the 
 </Button>
 ```
 
-
 ### SendSms
 
 Don't you wish you could add a button with an icon of a chat bubble to your application that would allow your user to send a text message? Yea, we did too. With this command you can _request_ to create a new text message to be sent to a number of people. Notice that we said "request". This does not immediately send the text message but simply uses the OS standard messaging application. In most cases the user is sent over to the message application and can then later return to your application.
@@ -568,17 +553,17 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Message | string | The body of the message to be sent, this is optional and the user will be able to edit the content before it is sent. |
-| Recipients | List\<string\> | The phone numbers of the people who will receive the message. While this is a list of strings, it also accepts a comma delimited string to specify multiple numbers at once. |
+| Recipients | List\ | The phone numbers of the people who will receive the message. While this is a list of strings, it also accepts a comma delimited string to specify multiple numbers at once. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding SendSms}"
         CommandParameter="15551239876" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding SendSms}">
     <Button.CommandParameter>
@@ -588,7 +573,7 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 </Button>
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding SendSms}">
     <Button.CommandParameter>
@@ -600,12 +585,11 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 </Button>
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding SendSms}"
         CommandParameter="{SendSmsParameters Message=Welcome to Rock!, Recipients='15551239876,15552224444'}" />
 ```
-
 
 ### SendEmail
 
@@ -615,19 +599,19 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Subject | string | The subject of the e-mail to be sent, this is optional and the user will be able to edit before it is sent.
+| Subject | string | The subject of the e-mail to be sent, this is optional and the user will be able to edit before it is sent. |
 | Message | string | The body of the e-mail to be sent, this is optional and the user will be able to edit the content before it is sent. |
-| Recipients | List\<string\> | The e-mail addresses that will receive the e-mail. While this is a list of strings, it also accepts a comma delimited string to specify multiple e-mail addresses at once. |
+| Recipients | List\ | The e-mail addresses that will receive the e-mail. While this is a list of strings, it also accepts a comma delimited string to specify multiple e-mail addresses at once. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding SendEmail}"
         CommandParameter="ted@rocksolidchurchdemo.com" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding SendEmail}">
     <Button.CommandParameter>
@@ -638,12 +622,11 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 </Button>
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding SendEmail}"
         CommandParameter="{SendEmailParameters Subject=Welcome to Rock!, Recipients=ted@rocksolidchurchdemo.com}" />
 ```
-
 
 ### CallPhoneNumber
 
@@ -653,12 +636,11 @@ The `CommandParameter` specifies the phone number to be dialed, if it's blank th
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding CallPhoneNumber}"
         CommandParameter="15552138874" />
 ```
-
 
 ### ShareContent
 
@@ -668,19 +650,19 @@ If the `CommandParameter` is a plain string then it will simply share the text s
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Title | string | The title of the share window (not used on iOS). |
+| Title | string | The title of the share window \(not used on iOS\). |
 | Text | string | A text string to be shared. |
 | Uri | string | A URL string to be shared. |
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding Sharecontent}"
         CommandParameter="Rock ChMS has an app!" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding Sharecontent}">
     <Button.CommandParameter>
@@ -690,3 +672,4 @@ If the `CommandParameter` is a plain string then it will simply share the text s
     </Button.CommandParameter>
 </Button>
 ```
+

@@ -26,7 +26,7 @@ public class MyCustomBlock : RockMobileBlockType
             Content = content
         }
     }
-    
+
     #endregion
 }
 ```
@@ -133,7 +133,6 @@ public object ShowGroup( int groupId )
 
 This is a simple handler that just displays a notification on the screen stating it hasn't been implemented yet. Obviously you will want to have to actually do something. For example, you might have it display some information about the group and then display two buttons: `Cancel` and `Join`.
 
-
 ## Dynamic Initial Content
 
 What we described above will leave you with a block whose initial content is static, that is it never changes unless the admin deploys a new application bundle. That might work for you, but you probably want to change that content based on query string parameters and such. Let's modify our block so that it instructs the mobile application to be dynamic.
@@ -159,9 +158,9 @@ public class MyCustomBlock : RockMobileBlockType
             DynamicContent = true
         }
     }
-    
+
     #endregion
-    
+
     [BlockAction]
     public object GetInitialContent()
     {
@@ -172,3 +171,4 @@ public class MyCustomBlock : RockMobileBlockType
     }
 }
 ```
+

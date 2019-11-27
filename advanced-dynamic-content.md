@@ -10,7 +10,7 @@ The content block also supports what is called `Callbacks`. If you have an ASP.N
 
 In a previous article, we built a simple search page that linked the user out to google to perform the search. Linking out to Google is great an all, but what if we want to use the built-in universal search? Let's look at what that might look like. First let's define the primary content of the block.
 
-```xml
+```markup
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
@@ -35,7 +35,7 @@ This still gives us a pretty Search text field for the user to enter a search te
 
 Next, let's define what will happen when the user clicks the `Search` button. This is what we are going to put into our Callback Event in the block's settings.
 
-```xml
+```markup
 <StackLayout>
     <Rock:FormGroup Title="Search">
         <Rock:FormField>
