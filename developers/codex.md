@@ -9,3 +9,5 @@ Once you have your screenshots, drag the iOS screenshot into the bottom left dev
 To export, click on the `Devices` word just above the top two devices, you should see a blue outline around both of the top devices. Finaly click the "Export Devices" button. Save the file to disk.
 
 Once you have saved the image you probably want to cleanup your template. Select the two images (bubbles 1 and 3) and delete them.
+
+![](../.gitbook/assets/codex-figma-screenshots.jpg)
