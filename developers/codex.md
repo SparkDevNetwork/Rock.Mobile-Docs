@@ -6,6 +6,6 @@ All screenshots should be generated on both iOS and Android so that users can se
 
 Once you have your screenshots, drag the iOS screenshot into the bottom left device. Once it is in place, select the screenshot in the left-panel (bubble 1 below). Next center it horizontally and vertically using the center align buttons (bubble 2 below). Next drag your Android screenshot into the bottom right device. Again select it in the left-panel (bubble 3 below) and center it using the same buttons you used for the iOS screenshot.
 
-To export, click on the Devices word (bubble 4 below) and you should see a blue outline around both of the top devices. Finaly click the "Export Devices" (bubble 5 below) button. Save the file to disk.
+To export, click on the `Devices` word just above the top two devices, you should see a blue outline around both of the top devices. Finaly click the "Export Devices" button. Save the file to disk.
 
 Once you have saved the image you probably want to cleanup your template. Select the two images (bubbles 1 and 3) and delete them.
