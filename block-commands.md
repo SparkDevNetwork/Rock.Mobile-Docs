@@ -553,7 +553,7 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Message | string | The body of the message to be sent, this is optional and the user will be able to edit the content before it is sent. |
-| Recipients | List\ | The phone numbers of the people who will receive the message. While this is a list of strings, it also accepts a comma delimited string to specify multiple numbers at once. |
+| Recipients | List\<string\> | The phone numbers of the people who will receive the message. While this is a list of strings, it also accepts a comma delimited string to specify multiple numbers at once. |
 
 **Examples**
 
@@ -601,7 +601,7 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 | :--- | :--- | :--- |
 | Subject | string | The subject of the e-mail to be sent, this is optional and the user will be able to edit before it is sent. |
 | Message | string | The body of the e-mail to be sent, this is optional and the user will be able to edit the content before it is sent. |
-| Recipients | List\ | The e-mail addresses that will receive the e-mail. While this is a list of strings, it also accepts a comma delimited string to specify multiple e-mail addresses at once. |
+| Recipients | List\<string\> | The e-mail addresses that will receive the e-mail. While this is a list of strings, it also accepts a comma delimited string to specify multiple e-mail addresses at once. |
 
 **Examples**
 
@@ -658,13 +658,13 @@ If the `CommandParameter` is a plain string then it will simply share the text s
 
 ```markup
 <Button Text="Tap"
-        Command="{Binding Sharecontent}"
+        Command="{Binding ShareContent}"
         CommandParameter="Rock ChMS has an app!" />
 ```
 
 ```markup
 <Button Text="Tap"
-        Command="{Binding Sharecontent}">
+        Command="{Binding ShareContent}">
     <Button.CommandParameter>
         <Rock:ShareContentParameters Title="Endorse Rock!"
                                      Text="Rock ChMS has an app!"
@@ -673,3 +673,73 @@ If the `CommandParameter` is a plain string then it will simply share the text s
 </Button>
 ```
 
+
+### ShowPopup
+
+Rock Mobile Shell supports the idea of small popup pages. These don't support navigation, but can be useful for a simple display of additional content without leaving the current page.
+
+If the `CommandParameter` is a string then it will be interpreted as a page guid with optional query string parametres. This will display a full Rock page inside the popup view.
+
+Alternatively, you can specify a view to use as the content for the popup. This is ideal for showing additional details of items or perhaps a list filter.
+
+Finally, you can specify a `ShowPopupParameters` object and supply additional options as seen below.
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Anchor | ShowPopupAnchor | Where to anchor the popup, possible values are `Center`, `Top`, and `Bottom`. _Defaults to **Center**._ |
+| Content | View | The view to display inside the popup, if set this will override the PageGuid property. |
+| PageGuid | Guid | The Rock page to be displayed inside the popup. |
+| Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | A collection of query string parameters that will be passed to the Rock page. |
+| Title | string | The title of the popup. |
+
+**Examples**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ShowPopup}"
+        CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8?GroupId=18&amp;Mode=Edit" />
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ShowPopup}">
+    <Button.CommandParameter>
+        <Rock:ShowPopupParameters Title="Select Group"
+                                  PageGuid="e4d80e57-da60-4822-bc22-c071f02958e8">
+            <Rock:Parameter Name="ParentGroupId" Value="8293" />
+        </Rock:ShowPopupParameters>
+    </Button.CommandParameter>
+</Button>
+```
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ShowPopup}">
+    <Button.CommandParameter>
+        <Rock:ShowPopupParameters Title="Select Group"
+                                  Anchor="Top">
+            <Rock:ShowPopupParameters.Content>
+                <StackLayout>
+                    <Label Text="Hello Rock" />
+                    <Button Text="Close"
+                            Command="{Binding ClosePopup}" />
+                </StackLayout>
+            </Rock:ShowPopupParameters.Content>
+        </Rock:ShowPopupParameters>
+    </Button.CommandParameter>
+</Button>
+```
+
+
+### ClosePopup
+
+This command is the opposite of the [ShowPopup](#ShowPopup) command. If there is an open popup then it will be closed.
+
+This command takes no parameters.
+
+**Examples**
+
+```xml
+<Button Text="Tap"
+        Command="{Binding ClosePopup}" />
+```
