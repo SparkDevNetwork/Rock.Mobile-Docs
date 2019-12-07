@@ -139,3 +139,30 @@ So how do you know why your Event Handler is being executed? As you saw, there i
 
 We just mentioned above "pre-defined" events. You can initiate your own events with the `LavaEvent`command. The name of the event you wish to trigger is specified by the `CommandParameter`. This means you can setup a button on screen that will trigger a custom Lava event and then you can update your PageValues any way you wish.
 
+
+## Markup Extensions
+
+NOTE: This should go somewhere else eventually!
+
+Markup extensions allow you to do some pretty cool things inside the XAML. You have probably already been using then in fact. For example, `x:Name` is a markup extension. On this page you will find some markup extensions that we have provided to give you a bit more power.
+
+### FromJson
+
+As the name implies, this markup extension converts a JSON string into a usable object. One use case might be stuffing a JSON encoded object into a Resource node so that you can reference it from another view.
+
+Because your JSON likely begins with a `{` character, you will need to prefix the entire value with `{}` to that the XAML engine knows to not treat the inside content as another extension.
+
+**Example**
+
+```xml
+<StackLayout>
+    <StackLayout.Resources>
+        <Rock:FromJson x:Key="Person">
+            {}{{ CurrentPerson | ToJSON | XamlWrap }}
+        </Rock:FromJson>
+    </StackLayout.Resources>
+    
+    <Label Text="{Binding PhoneNumbers[0].Number, Source={StaticResource Person}}" />
+</StackLayout>
+```
+
