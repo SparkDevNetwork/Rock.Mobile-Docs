@@ -8,6 +8,7 @@
 * [Lava](lava.md)
 * [Advanced: Dynamic Content](advanced-dynamic-content.md)
 * [Animations](animations.md)
+* [Performance](performance.md)
 
 ## Styling
 

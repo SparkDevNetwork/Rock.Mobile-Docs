@@ -6,6 +6,10 @@ You can add your own custom CSS to your application in the `Styles` tab of the a
 
 Here you can add custom classes, target specific views, etc. There are several custom variables you can use in your CSS to represent colors and settings. These variables are listed below.
 
+### Styling Blocks
+
+Each Rock mobile block has a CSS class assigned to it. This allows you to target the visual elements within a specific block. The pattern to use is `block-[block type name lowercase]`. For example, the calendar block would be `block-calendarview`.
+
 ### Application Colors
 
 | Variable | Value |
