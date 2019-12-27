@@ -198,6 +198,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be pushed onto the navigation stack. |
 | Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be passed to the page. |
+| WaitForReady | bool | Waits until the page is loaded before displaying it. (_Defaults to **false**._) |
 
 **Examples**
 
@@ -239,6 +240,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be used to replace the current page. |
 | Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be passed to the page. |
+| WaitForReady | bool | Waits until the page is loaded before displaying it. (_Defaults to **false**._) |
 
 **Examples**
 
@@ -280,6 +282,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be used as the new page. |
 | Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be passed to the page. |
+| WaitForReady | bool | Waits until the page is loaded before displaying it. (_Defaults to **false**._) |
 
 **Examples**
 
