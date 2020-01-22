@@ -2,8 +2,6 @@
 
 As you get comfortable with XAML you'll start to see the power of what you can achieve. With this power comes the responsibility to understand the performance implications of your actions. Each view \(Grids, StackLayouts, Labels, etc.\) adds overhead to the page as it is rendered. You'll want to make sure you limit how many views you add.
 
-
-
 ## Layout performance optimization <a id="dd06"></a>
 
 The most important aspect of layout-level optimization is knowing when you should be using which layout. As a XAML developer you should be aware of how each of these layouts work and what the drawbacks are of using each of them.
