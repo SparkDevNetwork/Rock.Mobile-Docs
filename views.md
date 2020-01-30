@@ -35,7 +35,7 @@ The ActivityIndicator will begin "working" when it becomes visible on screen. In
 <Rock:ActivityIndicator />
 ```
 
-![](.gitbook/assets/activityindicator-1.png)
+![](.gitbook/assets/activityindicator-1.jpg)
 
 ### FollowingIcon
 
@@ -78,9 +78,9 @@ The example below demonstrates how to display a group's name and a following ico
 </StackLayout>
 ```
 
-![](.gitbook/assets/followingicon-1.png)
+![](.gitbook/assets/followingicon-1.jpg)
 
-![](.gitbook/assets/followingicon-2.png)
+![](.gitbook/assets/followingicon-2.jpg)
 
 ### FormFieldStack
 
@@ -520,4 +520,3 @@ If a video is not set to AutoPlay then a thumbnail will be displayed. If you spe
 ```
 
 ![](.gitbook/assets/videoplayer-1.png)
-
