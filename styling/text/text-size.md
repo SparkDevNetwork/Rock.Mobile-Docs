@@ -28,7 +28,7 @@ If you'd prefer to have additional options to size your text, we've provided the
 | Class | Size |
 | :--- | :--- |
 | .text-xs | 10.5 |
-| .text-sm | 22.25 |
+| .text-sm | 12.25 |
 | .text-base | 14 |
 | .text-lg | 15.75 |
 | .text-xl | 17.5 |
