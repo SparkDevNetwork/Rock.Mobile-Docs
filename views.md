@@ -134,7 +134,7 @@ A limited subset of HTML tags is supported. Any non-supported tags will be rende
 * `UL`
 * `LI`
 
-In addition, in-line styles are supported, but again only for a few styles are supported:
+In addition, in-line styles are supported, but again only a few styles are supported:
 
 * `color`
 * `background-color`
@@ -170,7 +170,7 @@ _Inherits from_ [_Xamarin.Forms.Label_](https://docs.microsoft.com/en-us/dotnet/
 
 We are all accustomed to displaying nice icons on our pages. Your mobile application should be no different. This view allows you to display an icon from the FontAwesome library on your page.
 
-Unlike on the web, you must specific the icon family that you wish to display from. So for example, you cannot just set `IconClass="car"` and have it work, because the Car icon is not availabe in the Regular font \(which is the default icon font family\). So you would need to display with `IconClass="car" IconFamily="Solid"`.
+Unlike on the web, you must specify the icon family that you wish to display from. So for example, you cannot just set `IconClass="car"` and have it work, because the Car icon is not availabe in the Regular font \(which is the default icon font family\). So you would need to display with `IconClass="car" IconFamily="Solid"`.
 
 **Properties**
 
@@ -370,13 +370,13 @@ A number of properties allow you to specify how the profile photo will be displa
 
 _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
 
-Another way that information is often styled in Rock is with something called [Markdown](https://www.markdownguide.org/cheat-sheet). This syntax allows the user to _indicate_ that they want things formatted in a certain fashion, but it does not give them the ability to specify exactly how that formatted is done. For example, they can specify that they want a heading, but they don't get to pick exactly how that heading is formatted.
+Another way that information is often styled in Rock is with something called [Markdown](https://www.markdownguide.org/cheat-sheet). This syntax allows the user to _indicate_ that they want things formatted in a certain fashion, but it does not give them the ability to specify exactly how that formatting is done. For example, they can specify that they want a heading, but they don't get to pick exactly how that heading is formatted.
 
 Not everything in the Markdown syntax is supported, for example tables and footnotes are not supported. But most of your basic syntax will be supported. As with the [Html](https://github.com/SparkDevNetwork/Rock.Mobile/wiki/Developer-Reference#Html) view, you will probably want to wrap your content in a `CDATA` tag.
 
 When converting the markdown to XAML the Markdown control will add StyleClasses for you. Headings will get `.heading1-.heading6`, paragraphs will be assigned the `.text` class and links will be assigned the `.link` CSS class.
 
-_Note:_ Links are only clickable at a leaf block level \(Xamarin.Forms formatted strings doesn't support span user interactions\) : if a leaf block contains more than one link, the user is prompted. This is almost a feature since text may be too small to be enough precise! ;\)
+_Note:_ Links are only clickable at a leaf block level \(Xamarin.Forms formatted strings doesn't support span user interactions\) : if a leaf block contains more than one link, the user is prompted. This is almost a feature since text may be too small to be precise enough! ;\)
 
 **Properties**
 
@@ -520,3 +520,4 @@ If a video is not set to AutoPlay then a thumbnail will be displayed. If you spe
 ```
 
 ![](.gitbook/assets/videoplayer-1.png)
+

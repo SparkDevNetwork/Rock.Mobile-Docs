@@ -139,7 +139,6 @@ So how do you know why your Event Handler is being executed? As you saw, there i
 
 We just mentioned above "pre-defined" events. You can initiate your own events with the `LavaEvent`command. The name of the event you wish to trigger is specified by the `CommandParameter`. This means you can setup a button on screen that will trigger a custom Lava event and then you can update your PageValues any way you wish.
 
-
 ## Markup Extensions
 
 NOTE: This should go somewhere else eventually!
@@ -154,14 +153,14 @@ Because your JSON likely begins with a `{` character, you will need to prefix th
 
 **Example**
 
-```xml
+```markup
 <StackLayout>
     <StackLayout.Resources>
         <Rock:FromJson x:Key="Person">
             {}{{ CurrentPerson | ToJSON | XamlWrap }}
         </Rock:FromJson>
     </StackLayout.Resources>
-    
+
     <Label Text="{Binding PhoneNumbers[0].Number, Source={StaticResource Person}}" />
 </StackLayout>
 ```

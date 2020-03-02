@@ -198,7 +198,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be pushed onto the navigation stack. |
 | Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be passed to the page. |
-| WaitForReady | bool | Waits until the page is loaded before displaying it. (_Defaults to **false**._) |
+| WaitForReady | bool | Waits until the page is loaded before displaying it. \(_Defaults to **false**._\) |
 
 **Examples**
 
@@ -240,7 +240,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be used to replace the current page. |
 | Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be passed to the page. |
-| WaitForReady | bool | Waits until the page is loaded before displaying it. (_Defaults to **false**._) |
+| WaitForReady | bool | Waits until the page is loaded before displaying it. \(_Defaults to **false**._\) |
 
 **Examples**
 
@@ -282,7 +282,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
 | :--- | :--- | :--- |
 | PageGuid | Guid | The Guid identifier of the page to be used as the new page. |
 | Parameters | List&lt;[Parameter](block-commands.md#Parameter)&gt; | Any additional query string parameters to be passed to the page. |
-| WaitForReady | bool | Waits until the page is loaded before displaying it. (_Defaults to **false**._) |
+| WaitForReady | bool | Waits until the page is loaded before displaying it. \(_Defaults to **false**._\) |
 
 **Examples**
 
@@ -556,7 +556,7 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Message | string | The body of the message to be sent, this is optional and the user will be able to edit the content before it is sent. |
-| Recipients | List\<string\> | The phone numbers of the people who will receive the message. While this is a list of strings, it also accepts a comma delimited string to specify multiple numbers at once. |
+| Recipients | List\ | The phone numbers of the people who will receive the message. While this is a list of strings, it also accepts a comma delimited string to specify multiple numbers at once. |
 
 **Examples**
 
@@ -604,7 +604,7 @@ If the `CommandParameter` is a plain string, then it is used as a comma delimite
 | :--- | :--- | :--- |
 | Subject | string | The subject of the e-mail to be sent, this is optional and the user will be able to edit before it is sent. |
 | Message | string | The body of the e-mail to be sent, this is optional and the user will be able to edit the content before it is sent. |
-| Recipients | List\<string\> | The e-mail addresses that will receive the e-mail. While this is a list of strings, it also accepts a comma delimited string to specify multiple e-mail addresses at once. |
+| Recipients | List\ | The e-mail addresses that will receive the e-mail. While this is a list of strings, it also accepts a comma delimited string to specify multiple e-mail addresses at once. |
 
 **Examples**
 
@@ -676,7 +676,6 @@ If the `CommandParameter` is a plain string then it will simply share the text s
 </Button>
 ```
 
-
 ### ShowPopup
 
 Rock Mobile Shell supports the idea of small popup pages. These don't support navigation, but can be useful for a simple display of additional content without leaving the current page.
@@ -697,13 +696,13 @@ Finally, you can specify a `ShowPopupParameters` object and supply additional op
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ShowPopup}"
         CommandParameter="e4d80e57-da60-4822-bc22-c071f02958e8?GroupId=18&amp;Mode=Edit" />
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ShowPopup}">
     <Button.CommandParameter>
@@ -715,7 +714,7 @@ Finally, you can specify a `ShowPopupParameters` object and supply additional op
 </Button>
 ```
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ShowPopup}">
     <Button.CommandParameter>
@@ -733,16 +732,16 @@ Finally, you can specify a `ShowPopupParameters` object and supply additional op
 </Button>
 ```
 
-
 ### ClosePopup
 
-This command is the opposite of the [ShowPopup](#ShowPopup) command. If there is an open popup then it will be closed.
+This command is the opposite of the [ShowPopup](block-commands.md#ShowPopup) command. If there is an open popup then it will be closed.
 
 This command takes no parameters.
 
 **Examples**
 
-```xml
+```markup
 <Button Text="Tap"
         Command="{Binding ClosePopup}" />
 ```
+
