@@ -6,9 +6,63 @@ You can add your own custom CSS to your application in the `Styles` tab of the a
 
 Here you can add custom classes, target specific views, etc. There are several custom variables you can use in your CSS to represent colors and settings. These variables are listed below.
 
+## Custom Utility Classes
+
+Rock Mobile provides a set of utility class selectors to help target your styling to specific platforms, device types,  pages and blocks. Each is discussed below.
+
+### Targeting Platforms
+
+If you need to target styling to a specific platform \(iOS or Android\) you can use the parent classes `.ios` or `.android`.
+
+```text
+.ios .heading1 {
+    font-size: 33; 
+}
+```
+
+### Targeting Device Types
+
+Similar to platforms you can also target device types with `.phone` or `.tablet`.
+
+```text
+.phone .heading1 {
+    font-size: 33;
+}
+```
+
+### Combining Platform and and Device Types
+
+Need to get real specific? You can combine the two class as shown below. In general you should try to make your design work without too many of these specific styles.
+
+```text
+.ios.phone .heading1 {
+    color: red;
+}
+```
+
+### Styling Pages
+
+When configuring a page you can provide a CSS class you would like to add to the page. This will allow you to scope the styling of elements on that page.
+
+```text
+.page-aboutus .heading1 {
+    font-size: 33;
+}
+```
+
 ### Styling Blocks
 
 Each Rock mobile block has a CSS class assigned to it. This allows you to target the visual elements within a specific block. The pattern to use is `.block-[block type name lowercase]`. For example, the calendar block would be `.block-calendarview`.
+
+```text
+.block-calendarview .heading1 {
+    font-size: 33;
+}
+```
+
+## Color Variables
+
+Downhill includes several color variables that you can use in your CSS to reference colors defined in the administrative settings as well as a curated palette of colors that will bring consistency to your application.
 
 ### Application Colors
 
