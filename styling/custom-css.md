@@ -60,6 +60,16 @@ Each Rock mobile block has a CSS class assigned to it. This allows you to target
 }
 ```
 
+### Combining it All
+
+The example below is not a best practice, but shows you how you can use all of the utility classes together if needed. If you find yourself writing these types of CSS rules your trying to swim up-stream should consider a better styling strategy.
+
+```text
+.ios.phone.page-aboutus .block-content .heading1 {
+    font-size: 33;
+}
+```
+
 ## Color Variables
 
 Downhill includes several color variables that you can use in your CSS to reference colors defined in the administrative settings as well as a curated palette of colors that will bring consistency to your application.
