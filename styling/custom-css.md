@@ -8,7 +8,7 @@ Here you can add custom classes, target specific views, etc. There are several c
 
 ### Styling Blocks
 
-Each Rock mobile block has a CSS class assigned to it. This allows you to target the visual elements within a specific block. The pattern to use is `block-[block type name lowercase]`. For example, the calendar block would be `block-calendarview`.
+Each Rock mobile block has a CSS class assigned to it. This allows you to target the visual elements within a specific block. The pattern to use is `.block-[block type name lowercase]`. For example, the calendar block would be `.block-calendarview`.
 
 ### Application Colors
 
