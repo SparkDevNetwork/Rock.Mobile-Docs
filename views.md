@@ -493,6 +493,26 @@ Ever wished you could make your layouts do... more? A little more pizzazz, a lit
                  HeightRequest="150" />
 ```
 
+### Tag
+
+Tags are essentially labels which help to mark and categorize content. They usually consist of relevant keywords which make it easier to find and browse the corresponding piece of content. These are not a direct correlation with Rock Tags, but often Rock Tags will be presented as mobile tags.
+
+#### Properties
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Text | string | The text to display on the tag. |
+| Type | string | The type \(color\) of the tag \(Primary, Secondary, Success, Info, Warning Danger\) |
+| Size | string | The size of tag to display \(Default, Large, Small\) |
+| TextPaletteColor | string | Instead of using the type for the text color you can provide a palette color to use for the text \(e.g. orange-300\). |
+| BackgroundPaletteColor | string | Instead of using the type for the background color you can provide a palette color to use for the text \(e.g. orange-700\). |
+
+```text
+<Rock:Tag Text="Articles" Type="Primary />
+```
+
+![](.gitbook/assets/image%20%282%29.png)
+
 ### VideoPlayer
 
 _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
