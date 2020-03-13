@@ -506,6 +506,7 @@ Tags are essentially labels which help to mark and categorize content. They usua
 | Size | string | The size of tag to display \(Default, Large, Small\) |
 | TextPaletteColor | string | Instead of using the type for the text color you can provide a palette color to use for the text \(e.g. orange-300\). |
 | BackgroundPaletteColor | string | Instead of using the type for the background color you can provide a palette color to use for the text \(e.g. orange-700\). |
+| CornerRadius | float | The size of the corner radius to use for the tag. This can also be customized via CSS with the `border-radius` property. |
 
 ```text
 <Rock:Tag Text="Articles" Type="Primary />
