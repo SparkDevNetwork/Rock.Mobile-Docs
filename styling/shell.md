@@ -8,7 +8,7 @@ description: Below is tips for styling the mobile shell.
 
 The Navigation Bar is the top of header of your application. It typically holds the header image and any content you want on the right side.
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 You can style this bar with the following CSS.
 

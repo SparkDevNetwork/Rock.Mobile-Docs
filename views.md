@@ -512,7 +512,7 @@ Tags are essentially labels which help to mark and categorize content. They usua
 <Rock:Tag Text="Articles" Type="Primary />
 ```
 
-![](.gitbook/assets/image%20%282%29.png)
+![](.gitbook/assets/image%20%281%29.png)
 
 ### VideoPlayer
 
