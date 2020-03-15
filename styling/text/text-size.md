@@ -6,7 +6,7 @@ Several utility classes have been created to help you size your text. Apple and 
 
 ## Named Sizes
 
-The following classes allow you to size your text the way that Apple and Google intended.
+The following classes allow you to size your text the way that Apple and Google intended. Using these classes will also allow your app to respect an individuals settings to make the fonts larger on their device. 
 
 | Class | iOS | Android |
 | :--- | :--- | :--- |
@@ -21,9 +21,20 @@ The following classes allow you to size your text the way that Apple and Google 
 | .text-subtitle | 22 | 16 |
 | .text-caption | 12 | 12 |
 
+## Body Text
+
+The classes below should be used with labels that represent paragraphs. They have a proper line height as well as a margin at the bottom to separate paragraphs. These classes will respect an individuals request to make the text larger.
+
+| Class | iOS | Android |
+| :--- | :--- | :--- |
+| .body | 16 | 14 |
+| .body-micro | 11 | 10 |
+| .body-small | 13 | 14 |
+| .body-large | 20 | 22 |
+
 ## Utility Sizes
 
-If you'd prefer to have additional options to size your text, we've provided the following classes to help.
+If you'd prefer to have additional options to size your text, we've provided the following classes to help. Using the classes will not respect an individuals request to make the fonts larger, so use them with care.
 
 | Class | Size |
 | :--- | :--- |
