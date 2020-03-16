@@ -9,6 +9,7 @@
 * [Advanced: Dynamic Content](advanced-dynamic-content.md)
 * [Animations](animations.md)
 * [Performance](performance.md)
+* [Tips and Tricks](tips-and-tricks.md)
 
 ## Styling
 
