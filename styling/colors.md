@@ -28,7 +28,7 @@ You can access these colors in your CSS using the notation `?color-colorname-int
 
 ### Red
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
 ### Orange
 
