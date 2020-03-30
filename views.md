@@ -509,7 +509,7 @@ Tags are essentially labels which help to mark and categorize content. They usua
 | CornerRadius | float | The size of the corner radius to use for the tag. This can also be customized via CSS with the `border-radius` property. |
 
 ```text
-<Rock:Tag Text="Articles" Type="Primary />
+<Rock:Tag Text="Articles" Type="Primary" />
 ```
 
 ![](.gitbook/assets/image%20%282%29.png)
