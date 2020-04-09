@@ -22,6 +22,14 @@ When using these colors you'll reference the color name and the saturation value
 
 You can access these colors in your CSS using the notation `?color-colorname-intensity` \(e.g. `?color-gray-400`\).
 
+Palette colors can be used with XAML properties of type `Color` using the following syntax.
+
+```text
+<Rock:Tag Text="Custom Pallette Color" 
+        BackgroundColor="{Rock:PaletteColor pink-800}"
+        TextColor="{Rock:PaletteColor pink-200}" />
+```
+
 ### Gray
 
 ![](../.gitbook/assets/image-8.png)
