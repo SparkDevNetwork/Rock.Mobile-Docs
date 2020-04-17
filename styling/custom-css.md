@@ -70,6 +70,28 @@ The example below is not a best practice, but shows you how you can use all of t
 }
 ```
 
+## Custom CSS Properties
+
+Rock Mobile has a couple of custom CSS properties for use in mobile. These include:
+
+### Text Shadow
+
+This property allows you to add a shadow to Labels. The syntax looks like:
+
+`-rock-text-shadow: [distanceX] [distanceY] [blurRadius] [color]`
+
+Example:
+
+```text
+.hero .hero-title {
+    font-size: 24;
+    color: white;
+    -rock-text-shadow: 2 2 4 black;
+}
+```
+
+
+
 ## Color Variables
 
 Downhill includes several color variables that you can use in your CSS to reference colors defined in the administrative settings as well as a curated palette of colors that will bring consistency to your application.
