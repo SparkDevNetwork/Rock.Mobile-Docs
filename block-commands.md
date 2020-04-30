@@ -221,7 +221,7 @@ Finally, if you need advanced parameter usage you can use a `PushPageParameters`
         <Rock:PushPageParameters PageGuid="e4d80e57-da60-4822-bc22-c071f02958e8">
             <Rock:Parameter Name="GroupId" Value="18" />
             <Rock:Parameter Name="Mode" Value="Edit" />
-        </Rock:PushPageParameters />
+        </Rock:PushPageParameters>
     </Button.CommandParameter>
 </Button>
 ```
