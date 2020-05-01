@@ -31,6 +31,7 @@
   * [Border Radius](styling/borders/border-radius.md)
   * [Border Width](styling/borders/border-width.md)
 * [Shell](styling/shell.md)
+* [Helper Classes](styling/helper-classes.md)
 * [Custom CSS](styling/custom-css.md)
 
 ## Developers
