@@ -360,49 +360,66 @@ Flips the image either horizontally, vertically or both.
 | :--- | :--- | :--- |
 | Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
 
-**Grayscale**
+**Gray Scale**
 
-Flips the image either horizontally, vertically or both.
+Converts the image to gray scale.
 
 ```text
 <Rock:Image Source="https://server.com/photo.jpg" >
-    <Rock:FlipTransformation Direction="Both" />
+    <Rock:GrayscaleTransformation Saturation="0" />
 </Rock:Image>
 ```
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
+| Saturation | double | Determines this level of color saturation. A value of `1.0` will not change the original image. Using `0.0` will make the image fully grayscale. You can also provide `-1.0` to invert the image. |
 
 **Reflection**
 
-Flips the image either horizontally, vertically or both.
+Draws a reflection of the image as if the image were sitting on a glass surface.
 
 ```text
 <Rock:Image Source="https://server.com/photo.jpg" >
-    <Rock:FlipTransformation Direction="Both" />
+    <Rock:ReflectionTransformation Size="32" />
 </Rock:Image>
 ```
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
+| Size | double | The size of the reflection. |
 
-Rounded
+**Rounded**
 
-Flips the image either horizontally, vertically or both.
+Rounds the corners of the image and optionally adds a border.
 
 ```text
 <Rock:Image Source="https://server.com/photo.jpg" >
-    <Rock:FlipTransformation Direction="Both" />
+    <Rock:RoundedTransformation 
+        CornerRadius="8, 20, 0, 2" 
+        BorderSize="4" 
+        BorderColor="rgba(255, 255, 255, 0.58)" />
 </Rock:Image>
 ```
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
+| CorderRadius | CornerRadius | You can provide a specific radius for each corner, or provide one value to be used for all of them. |
+| BorderSize | float | The size of the border to optionally apply. |
+| BorderColor | Color | The color of the border to apply. |
 
-Tint
+**Tint**
+
+Tints the image using the provided color.
+
+```text
+<Rock:Image Source="https://server.com/photo.jpg" >
+    <Rock:TintTransformation Color="#41BFD0" />
+</Rock:Image>
+```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Color | Color | The color to use to tint the mid-tones of the image. |
 
 
 
