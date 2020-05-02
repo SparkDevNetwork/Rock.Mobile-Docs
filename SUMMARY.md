@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome 👋](README.md)
-* [Views](views.md)
+* [Controls](controls.md)
 * [Form Fields](form-fields.md)
 * [Field Types](field-types.md)
 * [Block Commands](block-commands.md)

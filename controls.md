@@ -5,7 +5,7 @@ description: >-
   environments.
 ---
 
-# Views
+# Controls
 
 ## Xamarin Forms Base Views
 
@@ -626,7 +626,7 @@ Okay let's face it. You aren't going to be using this view on any old page. It's
 
 _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
 
-The [LoginStatus](views.md#LoginStatus) view is the one you would normally use in the Flyout shell. But what if you want to just present a small icon that indicates to the user if they are logged in or not? The LoginStatusPhoto view does just that. In fact, [LoginStatus](views.md#LoginStatus) uses this view itself to present the user's photo.
+The [LoginStatus](controls.md#LoginStatus) view is the one you would normally use in the Flyout shell. But what if you want to just present a small icon that indicates to the user if they are logged in or not? The LoginStatusPhoto view does just that. In fact, [LoginStatus](controls.md#LoginStatus) uses this view itself to present the user's photo.
 
 A number of properties allow you to specify how the profile photo will be displayed, and what photos to use if no profile picture is available or if the user is not logged in. Another set of properties allow you to specify the commands to be executed when the user interacts with the profile picture.
 
@@ -819,7 +819,7 @@ Ever wished you could make your layouts do... more? A little more pizzazz, a lit
 
 ### Tag
 
-_Inherits from_ [_RockMobile.StyledView_](views.md#styledview)\_\_
+_Inherits from_ [_RockMobile.StyledView_](controls.md#styledview)\_\_
 
 Tags are essentially labels which help to mark and categorize content. They usually consist of relevant keywords which make it easier to find and browse the corresponding piece of content. These are not a direct correlation with Rock Tags, but often Rock Tags will be presented as mobile tags.
 
