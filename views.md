@@ -475,7 +475,7 @@ This produces the image below.
 
 ![Results of Layering Images](.gitbook/assets/image%20%2811%29.png)
 
-To make this we just stack the original mountain under a mask. Note how the mask is just a PNG with an alpha channel. See how the mask is black? Applying a fill transformation allows us to match the tint we added to the mountain photo producing a nice vignette effect.
+To make this we just stack the original mountain under a mask. Note how the mask is just a PNG with an alpha channel. Notice how the mask is black. Applying a fill transformation allows us to match the tint we added to the mountain photo producing a nice color vignette effect.
 
  
 
