@@ -207,6 +207,8 @@ One of the most common controls you'll want to use is the image control. Because
 
 Is that it? No, we're just getting started. Below are all of the properties you can add to images.
 
+![Basic Image](.gitbook/assets/image%20%2811%29.png)
+
 <table>
   <thead>
     <tr>
@@ -280,6 +282,8 @@ You can easily add a blur to your image with this simple transformation.
 | :--- | :--- | :--- |
 | Radius | Float | The amount of blur to add. |
 
+![Blur Transform](.gitbook/assets/image%20%282%29.png)
+
 **Circle**
 
 The circle transformation masks your images into a circle shape. The syntax for this is below.
@@ -303,6 +307,8 @@ The circle transformation masks your images into a circle shape. The syntax for 
 | :--- | :--- | :--- |
 | BorderSize | int | The size of the optional border around the image. |
 | BorderColor | Color | The color of the border around the image. |
+
+![Circle Transform](.gitbook/assets/image%20%286%29.png)
 
 **Drop Shadow**
 
@@ -332,6 +338,8 @@ The filter adds a customizable drop shadow to your images.
 | Radius | double | Determines the level of blur the drop shadow should use. |
 | Color | Color | The color of the drop shadow. |
 
+`Screenshot Needed`
+
 **Fill Color**
 
 This adds a fill color effect to your image. 
@@ -345,6 +353,8 @@ This adds a fill color effect to your image.
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Color | Color | The color to fill the image with. |
+
+`Screenshot Needed`
 
 **Flip** 
 
@@ -360,7 +370,9 @@ Flips the image either horizontally, vertically or both.
 | :--- | :--- | :--- |
 | Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
 
-**Gray Scale**
+![Flip Transformation](.gitbook/assets/image%20%285%29.png)
+
+**Grayscale**
 
 Converts the image to gray scale.
 
@@ -374,19 +386,23 @@ Converts the image to gray scale.
 | :--- | :--- | :--- |
 | Saturation | double | Determines this level of color saturation. A value of `1.0` will not change the original image. Using `0.0` will make the image fully grayscale. You can also provide `-1.0` to invert the image. |
 
+![Grayscale Transformation](.gitbook/assets/image%20%287%29.png)
+
 **Reflection**
 
 Draws a reflection of the image as if the image were sitting on a glass surface.
 
 ```text
 <Rock:Image Source="https://server.com/photo.jpg" >
-    <Rock:ReflectionTransformation Size="32" />
+    <Rock:ReflectionTransformation Size="96" />
 </Rock:Image>
 ```
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Size | double | The size of the reflection. |
+
+![Reflection Transformation](.gitbook/assets/image%20%2813%29.png)
 
 **Rounded**
 
@@ -395,7 +411,7 @@ Rounds the corners of the image and optionally adds a border.
 ```text
 <Rock:Image Source="https://server.com/photo.jpg" >
     <Rock:RoundedTransformation 
-        CornerRadius="8, 20, 0, 2" 
+        CornerRadius="120, 0, 0, 120" 
         BorderSize="4" 
         BorderColor="rgba(255, 255, 255, 0.58)" />
 </Rock:Image>
@@ -406,6 +422,8 @@ Rounds the corners of the image and optionally adds a border.
 | CorderRadius | CornerRadius | You can provide a specific radius for each corner, or provide one value to be used for all of them. |
 | BorderSize | float | The size of the border to optionally apply. |
 | BorderColor | Color | The color of the border to apply. |
+
+![Rounded Transformation](.gitbook/assets/image%20%289%29.png)
 
 **Tint**
 
@@ -421,7 +439,7 @@ Tints the image using the provided color.
 | :--- | :--- | :--- |
 | Color | Color | The color to use to tint the mid-tones of the image. |
 
-
+![Tint Transformation](.gitbook/assets/image%20%284%29.png)
 
 ### ItemsView
 
@@ -782,7 +800,7 @@ Tags are essentially labels which help to mark and categorize content. They usua
 <Rock:Tag Type="Primary" Text="Articles" />
 ```
 
-![](.gitbook/assets/image%20%282%29.png)
+![](.gitbook/assets/image%20%283%29.png)
 
 #### CSS Tips
 

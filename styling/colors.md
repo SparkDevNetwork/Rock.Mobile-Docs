@@ -36,7 +36,7 @@ Palette colors can be used with XAML properties of type `Color` using the follow
 
 ### Red
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%2812%29.png)
 
 ### Orange
 
