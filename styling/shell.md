@@ -22,7 +22,7 @@ _\(Valid values: light,dark\)_
 
 The Navigation Bar is the top of header of your application. It typically holds the header image and any content you want on the right side.
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%289%29.png)
 
 You can style this bar with the following CSS.
 
