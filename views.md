@@ -195,6 +195,217 @@ Unlike on the web, you must specify the icon family that you wish to display fro
 
 ![](.gitbook/assets/icon-1.png)
 
+### Image
+
+_Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
+
+One of the most common controls you'll want to use is the image control. Because of it's importance effort has been invested into ensuring that it has a all the power you need. Let's start with the basics.
+
+```text
+<Rock:Image Source="https://server.com/photo.jpg" /> 
+```
+
+Is that it? No, we're just getting started. Below are all of the properties you can add to images.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Property</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">BackgroudColor</td>
+      <td style="text-align:left">Color</td>
+      <td style="text-align:left">The color to use for the background. This is useful if you&apos;d like
+        to show a placeholder color while the image downloads.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">HeightRequest</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">The height you&apos;d like your image to be.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">WidthRequest</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">The width you&apos;d like your image to be.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Aspect</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">HorizontalOptions</td>
+      <td style="text-align:left">LayoutOption</td>
+      <td style="text-align:left">
+        <p>This describes how the element is laid out horizontally within the parent
+          , and how this element should consume leftover space on the X axis. Common
+          values would be:</p>
+        <p>Center - centered and does not expand.</p>
+        <p>FillAndExpand - Fills the whole area.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">VerticalOptions</td>
+      <td style="text-align:left">LayoutOption</td>
+      <td style="text-align:left">This describes how the element is laid out vertically within the parent
+        , and how this element should consume leftover space on the Y axis.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Margin</td>
+      <td style="text-align:left">Thickness</td>
+      <td style="text-align:left">Images, like most controls can have margins. This is typically note as <code>Margin=&quot;Left,Top,Right,Bottom&quot;</code>.</td>
+    </tr>
+  </tbody>
+</table>Done now? Nope still have much more to consider.
+
+#### Image Transformations
+
+You can apply several different transformations on your images. Each is discussed below.
+
+**Blur**
+
+You can easily add a blur to your image with this simple transformation.
+
+```text
+<Rock:Image Source="https://server.com/photo.jpg" >
+    <Rock:BlurTransformation Radius="4" />
+</Rock:Image>
+```
+
+| **Property** | Type | Description |
+| :--- | :--- | :--- |
+| Radius | Float | The amount of blur to add. |
+
+**Circle**
+
+The circle transformation masks your images into a circle shape. The syntax for this is below.
+
+```text
+<Rock:Image 
+    Source="https://server.com/photo.jpg" 
+    BackgroundColor="#c4c4c4"
+    HeightRequest="128"
+    WidthRequest="128"
+    Aspect="AspectFill" 
+    HorizontalOptions="Center" 
+    VerticalOptions="Fill">
+        <Rock:CircleTransformation 
+            BorderSize="4" 
+            BorderColor="rgba(255, 255, 255, 0.58)" />
+</Rock:Image>
+```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| BorderSize | int | The size of the optional border around the image. |
+| BorderColor | Color | The color of the border around the image. |
+
+**Drop Shadow**
+
+The filter adds a customizable drop shadow to your images.
+
+```text
+<Rock:Image 
+    Source="https://server.com/photo.jpg" 
+    BackgroundColor="#c4c4c4"
+    HeightRequest="300"
+    WidthRequest="300"
+    Aspect="AspectFill" 
+    HorizontalOptions="Center" 
+    VerticalOptions="Fill">
+        <Rock:DropShadowTransformation 
+            Distance="8"
+            Angle="135"
+            Radius="4"
+            Color="#c4c4c4" />
+</Rock:Image>
+```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Distance | double | Determines how far the drop shadow should extend below the image. |
+| Angle | double | Sets the direction the drop shadow should extend from. |
+| Radius | double | Determines the level of blur the drop shadow should use. |
+| Color | Color | The color of the drop shadow. |
+
+**Fill Color**
+
+This adds a fill color effect to your image. 
+
+```text
+<Rock:Image Source="https://server.com/photo.jpg" >
+    <Rock:FillColorTransformation Color="#41BFD0" />
+</Rock:Image>
+```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Color | Color | The color to fill the image with. |
+
+**Flip** 
+
+Flips the image either horizontally, vertically or both.
+
+```text
+<Rock:Image Source="https://server.com/photo.jpg" >
+    <Rock:FlipTransformation Direction="Both" />
+</Rock:Image>
+```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
+
+**Grayscale**
+
+Flips the image either horizontally, vertically or both.
+
+```text
+<Rock:Image Source="https://server.com/photo.jpg" >
+    <Rock:FlipTransformation Direction="Both" />
+</Rock:Image>
+```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
+
+**Reflection**
+
+Flips the image either horizontally, vertically or both.
+
+```text
+<Rock:Image Source="https://server.com/photo.jpg" >
+    <Rock:FlipTransformation Direction="Both" />
+</Rock:Image>
+```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
+
+Rounded
+
+Flips the image either horizontally, vertically or both.
+
+```text
+<Rock:Image Source="https://server.com/photo.jpg" >
+    <Rock:FlipTransformation Direction="Both" />
+</Rock:Image>
+```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
+
+Tint
+
+
+
 ### ItemsView
 
 _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
