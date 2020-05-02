@@ -327,7 +327,8 @@ The filter adds a customizable drop shadow to your images.
             Distance="8"
             Angle="135"
             Radius="4"
-            Color="#c4c4c4" />
+            Color="#c4c4c4"
+            Opacity="0.5" />
 </Rock:Image>
 ```
 
@@ -337,6 +338,7 @@ The filter adds a customizable drop shadow to your images.
 | Angle | double | Sets the direction the drop shadow should extend from. |
 | Radius | double | Determines the level of blur the drop shadow should use. |
 | Color | Color | The color of the drop shadow. |
+| Opacity | double | The opacity of the shadow. |
 
 `Screenshot Needed`
 
