@@ -340,7 +340,9 @@ The filter adds a customizable drop shadow to your images.
 | Color | Color | The color of the drop shadow. |
 | Opacity | double | The opacity of the shadow. |
 
-`Screenshot Needed`
+![Drop Shadow Transformation](.gitbook/assets/image%20%2816%29.png)
+
+`Note: When using the drop shadow transformation be sure you do not have a background color. Otherwise the background color will cover the drop shadow.`
 
 **Fill Color**
 
@@ -404,7 +406,7 @@ Draws a reflection of the image as if the image were sitting on a glass surface.
 | :--- | :--- | :--- |
 | Size | double | The size of the reflection. |
 
-![Reflection Transformation](.gitbook/assets/image%20%2816%29.png)
+![Reflection Transformation](.gitbook/assets/image%20%2817%29.png)
 
 **Rounded**
 
