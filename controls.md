@@ -63,7 +63,17 @@ This control provides a separator line much like a HTML `<hr` tag.
       </td>
     </tr>
   </tbody>
-</table>### FollowingIcon
+</table>```text
+<Rock:Divider />
+```
+
+Tip: Use this with the margin helper CSS classes `.my-12` to easily adjust the spacing around your divider.
+
+```text
+<Rock:Divider StyleClass="my-24" />
+```
+
+###  FollowingIcon
 
 _Inherits from_ [_Xamarin.Forms.Label_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.label)
 
