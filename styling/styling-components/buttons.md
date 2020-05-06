@@ -4,7 +4,7 @@
 
 The following utility classes have been created for use with buttons. You'll find this works very similar to that of Bootstrap.
 
-![](../.gitbook/assets/buttons-android.jpg)
+![](../../.gitbook/assets/buttons-android.jpg)
 
 ```text
 <Button Text="Primary" StyleClass="btn,btn-primary" />
@@ -21,7 +21,7 @@ Outline Buttons
 
 You can create outline buttons with the following markup.
 
-![](../.gitbook/assets/buttons-outline-android-1.jpg)
+![](../../.gitbook/assets/buttons-outline-android-1.jpg)
 
 ```text
 <Button Text="Primary" StyleClass="btn,btn-outline-primary" />
@@ -37,7 +37,7 @@ You can create outline buttons with the following markup.
 
 You can also control the sizes of your buttons with these classes.
 
-![](../.gitbook/assets/button-sizes-android.jpg)
+![](../../.gitbook/assets/button-sizes-android.jpg)
 
 ```text
 <Button Text="Primary" StyleClass="btn,btn-primary,btn-lg" />
