@@ -37,7 +37,33 @@ The ActivityIndicator will begin "working" when it becomes visible on screen. In
 
 ![](.gitbook/assets/activityindicator-1.jpg)
 
-### FollowingIcon
+### Divider
+
+_Inherits from_ [_Xamarin.Forms.BoxView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.boxview?view=xamarin-forms)\_\_
+
+This control provides a separator line much like a HTML `<hr` tag. 
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Property</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">Thickness</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">
+        <p>The thickness of the line. Valid values are:</p>
+        <p>+ Thick - 2 pxs in height
+          <br />+ Thicker - 4 pxs in height</p>
+        <p>+ Thickest - 8 pxs in height</p>
+      </td>
+    </tr>
+  </tbody>
+</table>### FollowingIcon
 
 _Inherits from_ [_Xamarin.Forms.Label_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.label)
 
