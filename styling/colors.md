@@ -14,6 +14,16 @@ The following colors are available for you to use and customize for your applica
 
 ![](../.gitbook/assets/application-colors.jpg)
 
+
+
+Application colors can be used with XAML properties of type `Color` using the following syntax.
+
+```text
+<Rock:Tag Text="Custom Pallette Color" 
+        BackgroundColor="{Rock:PaletteColor pink-800}"
+        TextColor="{Rock:PaletteColor App-Primary}" />
+```
+
 ## Palette Colors
 
 Creating sets of well matched colors can be difficult. We've incorporated the well-balanced colors of the [Tailwind CSS framework](https://tailwindcss.com/docs/customizing-colors) so you'll have easy access to a great set of colors for your application.
