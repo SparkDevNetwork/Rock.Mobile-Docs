@@ -42,41 +42,41 @@ Palette colors can be used with XAML properties of type `Color` using the follow
 
 ### Gray
 
-![](../.gitbook/assets/image-8.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 ### Red
 
-![](../.gitbook/assets/image%20%2814%29.png)
+![](../.gitbook/assets/image%20%2825%29.png)
 
 ### Orange
 
-![](../.gitbook/assets/image-3.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 ### Yellow
 
-![](../.gitbook/assets/image-7.png)
+![](../.gitbook/assets/image%20%281%29.png)
 
 ### Green
 
-![](../.gitbook/assets/image-1.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
 ### Teal
 
-![](../.gitbook/assets/image-4.png)
+![](../.gitbook/assets/image%20%2820%29.png)
 
 ### Blue
 
-![](../.gitbook/assets/image-5.png)
+![](../.gitbook/assets/image%20%2823%29.png)
 
 ### Indigo
 
-![](../.gitbook/assets/image-2.png)
+![](../.gitbook/assets/image%20%2811%29.png)
 
 ### Purple
 
-![](../.gitbook/assets/image-9.png)
+![](../.gitbook/assets/image%20%2817%29.png)
 
 ### Pink
 
-![](../.gitbook/assets/image-6.png)
+![](../.gitbook/assets/image%20%2815%29.png)
 

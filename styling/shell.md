@@ -22,7 +22,7 @@ _\(Valid values: light,dark\)_
 
 The Navigation Bar is the top of header of your application. It typically holds the header image and any content you want on the right side.
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image%20%2813%29.png)
 
 You can style this bar with the following CSS.
 
@@ -37,7 +37,7 @@ You can style this bar with the following CSS.
 
 The Tab Bar only displays when the shell is set to Tab mode. 
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 You can style this bar with the following CSS.
 
