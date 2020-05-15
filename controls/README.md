@@ -5,7 +5,7 @@ description: >-
   environments.
 ---
 
-# Controls
+# Control Reference
 
 ## Xamarin Forms Base Views
 
@@ -35,7 +35,7 @@ The ActivityIndicator will begin "working" when it becomes visible on screen. In
 <Rock:ActivityIndicator />
 ```
 
-![](.gitbook/assets/activityindicator-1.jpg)
+![](../.gitbook/assets/activityindicator-1.jpg)
 
 ### Divider
 
@@ -114,9 +114,9 @@ The example below demonstrates how to display a group's name and a following ico
 </StackLayout>
 ```
 
-![](.gitbook/assets/followingicon-1.jpg)
+![](../.gitbook/assets/followingicon-1.jpg)
 
-![](.gitbook/assets/followingicon-2.jpg)
+![](../.gitbook/assets/followingicon-2.jpg)
 
 ### FormFieldStack
 
@@ -146,7 +146,7 @@ When displaying a [FormField](https://github.com/SparkDevNetwork/Rock.Mobile/wik
 </Rock:FormFieldStack>
 ```
 
-![](.gitbook/assets/formfieldstack-1.png)
+![](../.gitbook/assets/formfieldstack-1.png)
 
 ### Html
 
@@ -198,7 +198,7 @@ It should be noted that because you are defining your HTML content in an XML fil
 </Rock:Html>
 ```
 
-![](.gitbook/assets/html-1.png)
+![](../.gitbook/assets/html-1.png)
 
 ### Icon
 
@@ -229,7 +229,7 @@ Unlike on the web, you must specify the icon family that you wish to display fro
 </StackLayout>
 ```
 
-![](.gitbook/assets/icon-1.png)
+![](../.gitbook/assets/icon-1.png)
 
 ### Image
 
@@ -243,7 +243,7 @@ One of the most common controls you'll want to use is the image control. Because
 
 Is that it? No, we're just getting started. Below are all of the properties you can add to images.
 
-![Basic Image](.gitbook/assets/image%20%2821%29.png)
+![Basic Image](../.gitbook/assets/image%20%2821%29.png)
 
 <table>
   <thead>
@@ -318,7 +318,7 @@ You can easily add a blur to your image with this simple transformation.
 | :--- | :--- | :--- |
 | Radius | Float | The amount of blur to add. |
 
-![Blur Transform](.gitbook/assets/image%20%284%29.png)
+![Blur Transform](../.gitbook/assets/image%20%284%29.png)
 
 **Circle**
 
@@ -344,7 +344,7 @@ The circle transformation masks your images into a circle shape. The syntax for 
 | BorderSize | int | The size of the optional border around the image. |
 | BorderColor | Color | The color of the border around the image. |
 
-![Circle Transform](.gitbook/assets/image%20%2810%29.png)
+![Circle Transform](../.gitbook/assets/image%20%2810%29.png)
 
 **Drop Shadow**
 
@@ -376,7 +376,7 @@ The filter adds a customizable drop shadow to your images.
 | Color | Color | The color of the drop shadow. |
 | Opacity | double | The opacity of the shadow. |
 
-![Drop Shadow Transformation](.gitbook/assets/image%20%2826%29.png)
+![Drop Shadow Transformation](../.gitbook/assets/image%20%2826%29.png)
 
 `Note: When using the drop shadow transformation be sure you do not have a background color. Otherwise the background color will cover the drop shadow.`
 
@@ -394,7 +394,7 @@ This fills the image with the selected color. Not sure why you'd ever use this? 
 | :--- | :--- | :--- |
 | Color | Color | The color to fill the image with. |
 
-![Fill Transformation](.gitbook/assets/image%20%288%29.png)
+![Fill Transformation](../.gitbook/assets/image%20%288%29.png)
 
 **Flip** 
 
@@ -410,7 +410,7 @@ Flips the image either horizontally, vertically or both.
 | :--- | :--- | :--- |
 | Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
 
-![Flip Transformation](.gitbook/assets/image%20%289%29.png)
+![Flip Transformation](../.gitbook/assets/image%20%289%29.png)
 
 **Grayscale**
 
@@ -426,7 +426,7 @@ Converts the image to gray scale.
 | :--- | :--- | :--- |
 | Saturation | double | Determines this level of color saturation. A value of `1.0` will not change the original image. Using `0.0` will make the image fully grayscale. You can also provide `-1.0` to invert the image. |
 
-![Grayscale Transformation](.gitbook/assets/image%20%2812%29.png)
+![Grayscale Transformation](../.gitbook/assets/image%20%2812%29.png)
 
 **Reflection**
 
@@ -442,7 +442,7 @@ Draws a reflection of the image as if the image were sitting on a glass surface.
 | :--- | :--- | :--- |
 | Size | double | The size of the reflection. |
 
-![Reflection Transformation](.gitbook/assets/image%20%2827%29.png)
+![Reflection Transformation](../.gitbook/assets/image%20%2827%29.png)
 
 **Rounded**
 
@@ -463,7 +463,7 @@ Rounds the corners of the image and optionally adds a border.
 | BorderSize | float | The size of the border to optionally apply. |
 | BorderColor | Color | The color of the border to apply. |
 
-![Rounded Transformation](.gitbook/assets/image%20%2816%29.png)
+![Rounded Transformation](../.gitbook/assets/image%20%2816%29.png)
 
 **Tint**
 
@@ -479,7 +479,7 @@ Tints the image using the provided color.
 | :--- | :--- | :--- |
 | Color | Color | The color to use to tint the mid-tones of the image. |
 
-![Tint Transformation](.gitbook/assets/image%20%287%29.png)
+![Tint Transformation](../.gitbook/assets/image%20%287%29.png)
 
 Keep in mind you can use more than one transformation on a single image.
 
@@ -513,13 +513,13 @@ Want to go to the next level with you're images? Layer them! Look at the sample 
 
 This produces the image below.
 
-![Results of Layering Images](.gitbook/assets/image%20%2818%29.png)
+![Results of Layering Images](../.gitbook/assets/image%20%2818%29.png)
 
 To make this we just stack the original mountain under a mask. Note how the mask is just a PNG with an alpha channel. Notice how the mask is black. Applying a fill transformation allows us to match the tint we added to the mountain photo producing a nice color vignette effect.
 
  
 
-![](.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%2824%29.png)
 
 ### ItemsView
 
@@ -574,7 +574,7 @@ In the following examples we are specifying an array of strings as the `ItemsSou
 </Rock:ItemsView>
 ```
 
-![](.gitbook/assets/itemsview-1.png)
+![](../.gitbook/assets/itemsview-1.png)
 
 **Example**
 
@@ -623,7 +623,7 @@ In the following examples we are specifying an array of strings as the `ItemsSou
 </Rock:ItemsView>
 ```
 
-![](.gitbook/assets/itemsview-2.png)
+![](../.gitbook/assets/itemsview-2.png)
 
 If we had enough items to fill the screen in this second example, you would see that initially only the **Fixed Header**, **Header**, a number of items and the **Fixed Footer** would be visible. The **Footer** would be off-screen because it would be inside the scroll view. If you were to scroll that long list of items up you would push the **Header** off screen and eventually the **Footer** would appear. Both the **Fixed Header** and **Fixed Footer** would always stay visible.
 
@@ -660,13 +660,13 @@ Okay let's face it. You aren't going to be using this view on any old page. It's
 <Rock:LoginStatus />
 ```
 
-![](.gitbook/assets/loginstatus-1.png)
+![](../.gitbook/assets/loginstatus-1.png)
 
 ### LoginStatusPhoto
 
 _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
 
-The [LoginStatus](controls.md#LoginStatus) view is the one you would normally use in the Flyout shell. But what if you want to just present a small icon that indicates to the user if they are logged in or not? The LoginStatusPhoto view does just that. In fact, [LoginStatus](controls.md#LoginStatus) uses this view itself to present the user's photo.
+The [LoginStatus](./#LoginStatus) view is the one you would normally use in the Flyout shell. But what if you want to just present a small icon that indicates to the user if they are logged in or not? The LoginStatusPhoto view does just that. In fact, [LoginStatus](./#LoginStatus) uses this view itself to present the user's photo.
 
 A number of properties allow you to specify how the profile photo will be displayed, and what photos to use if no profile picture is available or if the user is not logged in. Another set of properties allow you to specify the commands to be executed when the user interacts with the profile picture.
 
@@ -732,7 +732,7 @@ This is some **bold** text.
 </Rock:Markdown>
 ```
 
-![](.gitbook/assets/markdown-1.png)
+![](../.gitbook/assets/markdown-1.png)
 
 ### NotificationBox
 
@@ -758,7 +758,7 @@ The NotificationBox allows you to display a color-coded notification on the page
                       Text="Please update your information below to keep our records current." />
 ```
 
-![](.gitbook/assets/notificationbox-1.png)
+![](../.gitbook/assets/notificationbox-1.png)
 
 ### ParagraphText
 
@@ -859,7 +859,7 @@ Ever wished you could make your layouts do... more? A little more pizzazz, a lit
 
 ### Tag
 
-_Inherits from_ [_RockMobile.StyledView_](controls.md#styledview)\_\_
+_Inherits from_ [_RockMobile.StyledView_](./#styledview)\_\_
 
 Tags are essentially labels which help to mark and categorize content. They usually consist of relevant keywords which make it easier to find and browse the corresponding piece of content. These are not a direct correlation with Rock Tags, but often Rock Tags will be presented as mobile tags.
 
@@ -880,7 +880,7 @@ Tags are essentially labels which help to mark and categorize content. They usua
 <Rock:Tag Type="Primary" Text="Articles" />
 ```
 
-![](.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%286%29.png)
 
 #### CSS Tips
 
@@ -925,5 +925,5 @@ If a video is not set to AutoPlay then a thumbnail will be displayed. If you spe
                   AutoPlay="false" />
 ```
 
-![](.gitbook/assets/videoplayer-1.png)
+![](../.gitbook/assets/videoplayer-1.png)
 

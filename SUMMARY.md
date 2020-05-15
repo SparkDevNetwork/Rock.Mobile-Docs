@@ -1,9 +1,13 @@
 # Table of contents
 
 * [Welcome 👋](README.md)
-* [Controls](controls.md)
+* [Control Reference](controls/README.md)
+  * [Cards](controls/cards/README.md)
+    * [Block Card](controls/cards/block-card.md)
+  * [Controls](controls/controls.md)
+  * [Developer Controls](controls/developer-controls.md)
 * [Form Fields](form-fields.md)
-* [Field Types](field-types.md)
+* [Rock Field Types](field-types.md)
 * [Block Commands](block-commands.md)
 * [Lava](lava.md)
 * [Advanced: Dynamic Content](advanced-dynamic-content.md)
