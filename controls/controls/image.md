@@ -10,7 +10,7 @@ One of the most common controls you'll want to use is the image control. Because
 
 Is that it? No, we're just getting started. Below are all of the properties you can add to images.
 
-![Basic Image](../../.gitbook/assets/image%20%2825%29.png)
+![Basic Image](../../.gitbook/assets/image%20%2821%29.png)
 
 <table>
   <thead>
@@ -85,7 +85,7 @@ You can easily add a blur to your image with this simple transformation.
 | :--- | :--- | :--- |
 | Radius | Float | The amount of blur to add. |
 
-![Blur Transform](../../.gitbook/assets/image%20%286%29.png)
+![Blur Transform](../../.gitbook/assets/image%20%284%29.png)
 
 **Circle**
 
@@ -111,7 +111,7 @@ The circle transformation masks your images into a circle shape. The syntax for 
 | BorderSize | int | The size of the optional border around the image. |
 | BorderColor | Color | The color of the border around the image. |
 
-![Circle Transform](../../.gitbook/assets/image%20%2813%29.png)
+![Circle Transform](../../.gitbook/assets/image%20%2810%29.png)
 
 **Drop Shadow**
 
@@ -143,7 +143,7 @@ The filter adds a customizable drop shadow to your images.
 | Color | Color | The color of the drop shadow. |
 | Opacity | double | The opacity of the shadow. |
 
-![Drop Shadow Transformation](../../.gitbook/assets/image%20%2830%29.png)
+![Drop Shadow Transformation](../../.gitbook/assets/image%20%2826%29.png)
 
 `Note: When using the drop shadow transformation be sure you do not have a background color. Otherwise the background color will cover the drop shadow.`
 
@@ -161,7 +161,7 @@ This fills the image with the selected color. Not sure why you'd ever use this? 
 | :--- | :--- | :--- |
 | Color | Color | The color to fill the image with. |
 
-![Fill Transformation](../../.gitbook/assets/image%20%2810%29.png)
+![Fill Transformation](../../.gitbook/assets/image%20%288%29.png)
 
 **Flip** 
 
@@ -177,7 +177,7 @@ Flips the image either horizontally, vertically or both.
 | :--- | :--- | :--- |
 | Direction | FlipDirection | Valid values include: Horizontal, Vertical or Both |
 
-![Flip Transformation](../../.gitbook/assets/image%20%2811%29.png)
+![Flip Transformation](../../.gitbook/assets/image%20%289%29.png)
 
 **Grayscale**
 
@@ -193,7 +193,7 @@ Converts the image to gray scale.
 | :--- | :--- | :--- |
 | Saturation | double | Determines this level of color saturation. A value of `1.0` will not change the original image. Using `0.0` will make the image fully grayscale. You can also provide `-1.0` to invert the image. |
 
-![Grayscale Transformation](../../.gitbook/assets/image%20%2816%29.png)
+![Grayscale Transformation](../../.gitbook/assets/image%20%2812%29.png)
 
 **Reflection**
 
@@ -209,7 +209,7 @@ Draws a reflection of the image as if the image were sitting on a glass surface.
 | :--- | :--- | :--- |
 | Size | double | The size of the reflection. |
 
-![Reflection Transformation](../../.gitbook/assets/image%20%2831%29.png)
+![Reflection Transformation](../../.gitbook/assets/image%20%2827%29.png)
 
 **Rounded**
 
@@ -230,7 +230,7 @@ Rounds the corners of the image and optionally adds a border.
 | BorderSize | float | The size of the border to optionally apply. |
 | BorderColor | Color | The color of the border to apply. |
 
-![Rounded Transformation](../../.gitbook/assets/image%20%2820%29.png)
+![Rounded Transformation](../../.gitbook/assets/image%20%2816%29.png)
 
 **Tint**
 
@@ -246,7 +246,7 @@ Tints the image using the provided color.
 | :--- | :--- | :--- |
 | Color | Color | The color to use to tint the mid-tones of the image. |
 
-![Tint Transformation](../../.gitbook/assets/image%20%289%29.png)
+![Tint Transformation](../../.gitbook/assets/image%20%287%29.png)
 
 Keep in mind you can use more than one transformation on a single image.
 
@@ -280,13 +280,13 @@ Want to go to the next level with you're images? Layer them! Look at the sample 
 
 This produces the image below.
 
-![Results of Layering Images](../../.gitbook/assets/image%20%2822%29.png)
+![Results of Layering Images](../../.gitbook/assets/image%20%2818%29.png)
 
 To make this we just stack the original mountain under a mask. Note how the mask is just a PNG with an alpha channel. Notice how the mask is black. Applying a fill transformation allows us to match the tint we added to the mountain photo producing a nice color vignette effect.
 
  
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2824%29.png)
 
 ### 
 

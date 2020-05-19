@@ -28,7 +28,7 @@ As you set out to design with masks keep in mind that the best designs will be a
 
 ```text
 <Rock:InlineCard 
-        CardAspect="4:3"
+        CardRatio="4:3"
         Title="Enjoy the Views"
         HeaderLocation="Center"
         ContentLocation="Bottom"
