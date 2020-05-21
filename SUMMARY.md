@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Welcome 👋](README.md)
+* [Introduction](introduction.md)
 * [Control Reference](controls/README.md)
   * [Content Controls](controls/controls/README.md)
     * [Activity Indicator](controls/controls/activity-indicator.md)
@@ -27,14 +28,15 @@
     * [Video Player](controls/controls/video-player.md)
   * [Developer Controls](controls/developer-controls/README.md)
     * [Field Stack](controls/developer-controls/field-stack.md)
+* [Animations](animations.md)
+* [Lava](lava.md)
+* [Performance](performance.md)
 * [Form Fields](form-fields.md)
 * [Rock Field Types](field-types.md)
 * [Block Commands](block-commands.md)
-* [Lava](lava.md)
 * [Advanced: Dynamic Content](advanced-dynamic-content.md)
-* [Animations](animations.md)
-* [Performance](performance.md)
-* [Tips and Tricks](tips-and-tricks.md)
+* [Tips and Tricks](tips-and-tricks-1.md)
+* [Advanced Topics](tips-and-tricks.md)
 
 ## Styling
 

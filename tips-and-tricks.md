@@ -1,4 +1,4 @@
-# Tips and Tricks
+# Advanced Topics
 
 ## **Static Resources - Dynamic JSON**
 
@@ -92,16 +92,7 @@ Once this has been defined, it can then be consumed as an ItemTemplate by a View
     PeekAreaInsets="20,0,40,0">   
 ```
 
-## **StringFormat Data Binding**
-
-From time to time, you’ll find yourself needing to Bind data as part of a string. You may be tempted to just throw your Binding in the middle of the string as you would in Lava, but you’ll be disappointed as nothing will show up. This is where StringFormat comes into play.
-
-```text
-<Label Text="{Binding Name, StringFormat='Hey there {0}!'}" />
-
-```
-
-In this case the Key we are Binding to is Name and we want it to output “Hey there Ted!”. We use {0} to insert our Binding Value into the string where we want it to show up.  
+  
   
 
 
