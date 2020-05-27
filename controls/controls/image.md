@@ -22,6 +22,18 @@ Is that it? No, we're just getting started. Below are all of the properties you 
   </thead>
   <tbody>
     <tr>
+      <td style="text-align:left">Aspect</td>
+      <td style="text-align:left">Aspect</td>
+      <td style="text-align:left">
+        <p>Determines how the image will fill the space allotted. Valid values are:</p>
+        <p>AspectFill - Fill the space with the image, some parts of the image may
+          be cropped.</p>
+        <p><b>AspectFit </b>- Scale the image to fit the space, some parts of the
+          space may be left empty.</p>
+        <p>Fill - Scale the image to exactly fill the space, this may warp the image.</p>
+      </td>
+    </tr>
+    <tr>
       <td style="text-align:left">BackgroudColor</td>
       <td style="text-align:left">Color</td>
       <td style="text-align:left">The color to use for the background. This is useful if you&apos;d like
@@ -38,11 +50,6 @@ Is that it? No, we're just getting started. Below are all of the properties you 
       <td style="text-align:left">The width you&apos;d like your image to be.</td>
     </tr>
     <tr>
-      <td style="text-align:left">Aspect</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
       <td style="text-align:left">HorizontalOptions</td>
       <td style="text-align:left">LayoutOption</td>
       <td style="text-align:left">
@@ -52,6 +59,12 @@ Is that it? No, we're just getting started. Below are all of the properties you 
         <p>Center - centered and does not expand.</p>
         <p>FillAndExpand - Fills the whole area.</p>
       </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Ratio</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Determines the size of the image based on the width of the parent container.
+        The format is height:width (e.g. &apos;4:2&apos;).</td>
     </tr>
     <tr>
       <td style="text-align:left">VerticalOptions</td>
