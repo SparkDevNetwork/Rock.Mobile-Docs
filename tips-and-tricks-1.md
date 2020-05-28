@@ -1,5 +1,16 @@
 # Tips and Tricks
 
+## **Spacing**
+
+Be aware that many layouts have default spacing parameters. If things don't line up correctly you may have to remove this default spacing. 
+
+For example, StackLayouts have a default Spacing property set to 10. This means each control within the layout will have a 10 unit space between it and it's neighbor.  For a StackLayout the spacing will be relative to it's Orientation property. When set to Horizontal it will be horizontal spacing, Vertical would be vertical spacing. 
+
+Other layout controls also have this same behavior. Below is a list of others \(this is not meant to be an inclusive list\).
+
+* Grids - Have RowSpacing and ColumnSpacing properties
+* ResponsiveLayouts - Have a ColumnSpacing property
+
 ## **Device Type Customization**
 
 As you assign values to properties you may want to have different values for a phone vs a tablet. This is often the case when working with the sizes of images and cards \(via the Ratio properties\). Providing different properties is possible using the syntax below.
