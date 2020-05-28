@@ -6,6 +6,10 @@ description: >-
 
 # Inline Card
 
+_Inherits from_ [_StyledView_ ](../styled-view.md)_&gt;_ [_PancakeView_](https://github.com/sthewissen/Xamarin.Forms.PancakeView)
+
+![Inline Card](../../../.gitbook/assets/image%20%2838%29.png)
+
 Below is a listing of the various properties for the inline card.
 
 | Property | Type | Description |
@@ -14,9 +18,13 @@ Below is a listing of the various properties for the inline card.
 | BackgroundMask | string | The URL or name of the image to use for the mask. |
 | BackgroundMaskColor | double | The color to use to tint the mask. |
 | BackgroundMaskOpacity | double | The opacity to use for the mask. |
+| BorderThickness | float | The thickness of the border. |
+| BorderColor | Color | The color of the border. |
 | CardRatio | string | Determines the size of the image based on the width of the parent container. The format is height:width with a default of 4:3. |
 | Command | ICommand | The command to use when the card is clicked. |
 | CommandParameter | object | The parameters to set to the command when clicked. |
+| Elevation | int | The Material Design elevation desired. |
+| HasShadow | bool | Determines if a shadow should be shown behind the card. |
 | Image | string | The URL of the image. |
 | ImageLocation | VerticalAlignment | Determines where the image should be placed on the card. \(**Top**, Bottom\) |
 | ImageOpactity | double | The opacity of the image. |

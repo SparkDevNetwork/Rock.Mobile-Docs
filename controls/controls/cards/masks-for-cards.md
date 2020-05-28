@@ -16,7 +16,7 @@ For cards of type Block and Contains the mask is places on the image while the m
 
 While you can provide your own masks via a URL, you can save load time and bandwidth by using one of the built in masks. These are highlighted below.
 
-![](../../../.gitbook/assets/card-masks.jpg)
+![](../../../.gitbook/assets/card-masks%20%281%29.jpg)
 
 These five masks give you several different options to start from. Adjusting the mask opacity and color gives you many more ways to design. You can also append `-Flip` to the end of the mask name to flip the mask 180 degrees. So if you wanted a light fade flipped use `Fade-Light-Flip`.
 
