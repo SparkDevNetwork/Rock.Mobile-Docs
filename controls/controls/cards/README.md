@@ -1,11 +1,6 @@
----
-description: >-
-  Cards are an essential piece of UI that serve as an entry point to additional
-  information. As you'll see they are very extensible and allow you to quickly
-  achieve remarkable results.
----
-
 # Cards
+
+Cards are an essential piece of UI that serve as an entry point to additional information. As you'll see they are very extensible and allow you to quickly achieve remarkable results.
 
 ## Card Types
 
