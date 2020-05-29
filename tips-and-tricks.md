@@ -6,7 +6,7 @@ When working with different DataViews you have the ability to create a ItemSourc
 
 ```text
 {% contentchannelitem where:'ContentChannelId == 21 && StartDateTime <= "{{ 'Now' | Date }}"' sort:'StartDateTime desc' securityenabled:'false' %}
- 
+
 {% assign closeCurly = '}' -%}
 {%- capture seriesJSON -%}
     [
@@ -42,13 +42,12 @@ From here you would just simply Bind the Key in the item where you would like th
 <Label
     StyleClass="heading1"   
     VerticalTextAlignment="Center"
-    Text="{Binding Title}" />  
+    Text="{Binding Title}" />
 ```
 
 ## **Static Resources - DataTemplate**
 
-In addition to Dynamic JSON data, it is possible to create a DataTemplate that can be consumed in multiple areas of your layout by defining it as a Static Resource somewhere on the page ABOVE the area where you need to use it.  
-
+In addition to Dynamic JSON data, it is possible to create a DataTemplate that can be consumed in multiple areas of your layout by defining it as a Static Resource somewhere on the page ABOVE the area where you need to use it.
 
 ```text
 <StackLayout.Resources>
@@ -89,10 +88,6 @@ Once this has been defined, it can then be consumed as an ItemTemplate by a View
     ItemsSource="{StaticResource Series}" 
     ItemTemplate="{StaticResource CarouselTemplate}"
     HeightRequest="250"
-    PeekAreaInsets="20,0,40,0">   
+    PeekAreaInsets="20,0,40,0">
 ```
-
-  
-  
-
 

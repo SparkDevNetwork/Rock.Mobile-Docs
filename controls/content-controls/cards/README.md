@@ -4,7 +4,7 @@ Cards are an essential piece of UI that serve as an entry point to additional in
 
 ## Card Types
 
-There are three types of cards for you to choose from. While they share many of the same elements that each have a different design style. 
+There are three types of cards for you to choose from. While they share many of the same elements that each have a different design style.
 
 ### Contained Card
 
@@ -38,7 +38,7 @@ The block card is very similar to the Contained Card but the content is not in a
 
 ### Inline Card
 
-The Inline Card places the image behind the content and provides several options to create striking designs. 
+The Inline Card places the image behind the content and provides several options to create striking designs.
 
 ![Inline Card](../../../.gitbook/assets/image%20%2832%29.png)
 
@@ -52,6 +52,4 @@ The Inline Card places the image behind the content and provides several options
     Bring to the table win-win survival strategies to ensure...
 </Rock:InlineCard>
 ```
-
-
 

@@ -24,5 +24,3 @@ The NotificationBox allows you to display a color-coded notification on the page
 
 ![](../../.gitbook/assets/notificationbox-1.png)
 
-### 
-

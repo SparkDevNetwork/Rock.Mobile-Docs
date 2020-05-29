@@ -6,7 +6,7 @@ Several utility classes have been created to help you size your text. Apple and 
 
 ## Named Sizes
 
-The following classes allow you to size your text the way that Apple and Google intended. Using these classes will also allow your app to respect an individuals settings to make the fonts larger on their device. 
+The following classes allow you to size your text the way that Apple and Google intended. Using these classes will also allow your app to respect an individuals settings to make the fonts larger on their device.
 
 | Class | iOS | Android |
 | :--- | :--- | :--- |

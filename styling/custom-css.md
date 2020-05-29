@@ -8,7 +8,7 @@ Here you can add custom classes, target specific views, etc. There are several c
 
 ## Custom Utility Classes
 
-Rock Mobile provides a set of utility class selectors to help target your styling to specific platforms, device types,  pages and blocks. Each is discussed below.
+Rock Mobile provides a set of utility class selectors to help target your styling to specific platforms, device types, pages and blocks. Each is discussed below.
 
 ### Targeting Platforms
 
@@ -109,8 +109,6 @@ Example:
     -rock-text-shadow: 2 2 4 black;
 }
 ```
-
-
 
 ## Color Variables
 

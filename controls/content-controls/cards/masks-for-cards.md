@@ -2,7 +2,7 @@
 
 The goal of any content strategy should be extensibility. To achieve rich designs you need images that are crafted for each medium and use-case. But, you don't want to spend time having to creating different variations of each image. To assist with that we've designed in a powerful masking system for cards. This helps to reduce the number of images you need to make for your mobile applications.
 
-The concept of masks for cards is very similar to how masks work on images. The difference is much of the heavy lifting is done for you. You just need to remember a few simple properties. These properties vary a bit by card type. 
+The concept of masks for cards is very similar to how masks work on images. The difference is much of the heavy lifting is done for you. You just need to remember a few simple properties. These properties vary a bit by card type.
 
 For cards of type Block and Contains the mask is places on the image while the mask for Inline is placed over the entire card. This makes sense as the image on an Inline card takes up the full background.
 

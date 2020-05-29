@@ -43,5 +43,3 @@ The example below demonstrates how to display a group's name and a following ico
 
 ![](../../.gitbook/assets/followingicon-2.jpg)
 
-### 
-

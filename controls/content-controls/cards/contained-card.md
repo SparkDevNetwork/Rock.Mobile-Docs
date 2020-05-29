@@ -39,5 +39,3 @@ Below is a listing of the various properties for the contained card.
 | TitleMaxLines | int | The maximum number of lines the title can be \(default 2\). |
 | TitleJustification | HorizontalAlignment | The text alignment for the title \(**Left**, Right, Center\) |
 
-
-

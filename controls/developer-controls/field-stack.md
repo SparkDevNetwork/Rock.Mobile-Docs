@@ -28,5 +28,3 @@ When displaying a [FormField](https://github.com/SparkDevNetwork/Rock.Mobile/wik
 
 ![](../../.gitbook/assets/formfieldstack-1.png)
 
-### 
-

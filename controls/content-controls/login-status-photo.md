@@ -1,6 +1,6 @@
 # Login Status Photo
 
-### LoginStatusPhoto
+## LoginStatusPhoto
 
 _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
 
@@ -29,8 +29,4 @@ A number of properties allow you to specify how the profile photo will be displa
 ```text
 <Rock:LoginStatusPhoto />
 ```
-
-### 
-
-
 

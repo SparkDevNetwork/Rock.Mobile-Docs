@@ -35,7 +35,7 @@ You can style this bar with the following CSS.
 
 ## Tab Bar
 
-The Tab Bar only displays when the shell is set to Tab mode. 
+The Tab Bar only displays when the shell is set to Tab mode.
 
 ![](../.gitbook/assets/image%20%283%29.png)
 

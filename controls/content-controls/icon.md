@@ -29,5 +29,3 @@ Unlike on the web, you must specify the icon family that you wish to display fro
 
 ![](../../.gitbook/assets/icon-1.png)
 
-### 
-

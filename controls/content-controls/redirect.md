@@ -20,5 +20,3 @@ If the `Redirect` view is encountered before the page is fully rendered then the
                QueryString="ItemType=Person&amp;ItemId=4823" />
 ```
 
-### 
-

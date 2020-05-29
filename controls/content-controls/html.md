@@ -50,5 +50,3 @@ It should be noted that because you are defining your HTML content in an XML fil
 
 ![](../../.gitbook/assets/html-1.png)
 
-### 
-

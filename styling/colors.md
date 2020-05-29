@@ -22,8 +22,6 @@ The following colors are available for you to use and customize for your applica
 
 ![](../.gitbook/assets/application-colors.jpg)
 
-
-
 Application colors can be used with XAML properties of type `Color` using the following syntax.
 
 ```text

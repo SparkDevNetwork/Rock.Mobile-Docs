@@ -40,5 +40,3 @@ This is some **bold** text.
 
 ![](../../.gitbook/assets/markdown-1.png)
 
-### 
-

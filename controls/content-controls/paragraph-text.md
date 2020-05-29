@@ -2,18 +2,18 @@
 
 _Inherits from_ [_Xamarin.Forms.StackLayout_](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/stack-layout)\_\_
 
-Using a normal Label for text works great, but if you have several paragraphs worth of text it won't have the best typography. Correctly styled text should have a good amount of spacing between paragraphs. This helps individuals to read the content quicker. Using a single Label will give you the the proper line returns, but it won't have the best spacing. 
+Using a normal Label for text works great, but if you have several paragraphs worth of text it won't have the best typography. Correctly styled text should have a good amount of spacing between paragraphs. This helps individuals to read the content quicker. Using a single Label will give you the the proper line returns, but it won't have the best spacing.
 
 The ParagraphText control allows you provide a text string that contains several paragraphs worth of content. It will parse this an ensure each paragraph get's it's own Label. These labels will have a CSS style class of `body` applied to them. It's this class that applies to correct amount of margin below the Label. You can also override this class to provide a different sized text/margin.
 
-#### Properties
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | Text | string | The text to show. This can also be provided via the content of the tag. |
 | LabelCssClass | string | A string of the CSS classes to apply to each Label that represents a paragraph. If no value is applied each paragraph will have a `body` class added to it. |
 
-#### Example
+## Example
 
 ```text
 <Rock:ParagraphText>

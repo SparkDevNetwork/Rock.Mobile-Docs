@@ -1,6 +1,6 @@
 # Divider
 
-This control provides a separator line much like a HTML `<hr` tag. 
+This control provides a separator line much like a HTML `<hr` tag.
 
 <table>
   <thead>

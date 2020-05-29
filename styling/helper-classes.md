@@ -16,7 +16,7 @@ Often you'll want to add separators between elements \(think and `<hr>` tag in H
 <BoxView StyleClass="separator" />
 ```
 
-Not thick enough? There are two additional thicker options available. These are used in conjunction with the above class \(e.g. `.StyleClass="separator, separator-thick"`\). 
+Not thick enough? There are two additional thicker options available. These are used in conjunction with the above class \(e.g. `.StyleClass="separator, separator-thick"`\).
 
 | Selector | Result |
 | :--- | :--- |

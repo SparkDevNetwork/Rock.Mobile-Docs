@@ -35,5 +35,3 @@ Ever wished you could make your layouts do... more? A little more pizzazz, a lit
                  HeightRequest="150" />
 ```
 
-### 
-

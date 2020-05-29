@@ -4,7 +4,7 @@ _Inherits from_ [_RockMobile.StyledView_](../#styledview)\_\_
 
 Tags are essentially labels which help to mark and categorize content. They usually consist of relevant keywords which make it easier to find and browse the corresponding piece of content. These are not a direct correlation with Rock Tags, but often Rock Tags will be presented as mobile tags.
 
-#### Properties
+## Properties
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
@@ -23,9 +23,9 @@ Tags are essentially labels which help to mark and categorize content. They usua
 
 ![](../../.gitbook/assets/image%20%286%29.png)
 
-#### CSS Tips
+## CSS Tips
 
-When styling tags via CSS it's helpful to understand how this control is built. The Tag contains two underlying controls: 
+When styling tags via CSS it's helpful to understand how this control is built. The Tag contains two underlying controls:
 
 1. StyledView - This is the container control.
 2. Label - This is the text for the tag.

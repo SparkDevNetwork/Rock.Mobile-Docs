@@ -1,6 +1,6 @@
 # Items View
 
-### ItemsView
+## ItemsView
 
 _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.contentview)
 

@@ -20,5 +20,3 @@ The ActivityIndicator will begin "working" when it becomes visible on screen. In
 
 ![](../../.gitbook/assets/activityindicator-1.jpg)
 
-### 
-

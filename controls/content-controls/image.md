@@ -5,7 +5,7 @@ _Inherits from_ [_Xamarin.Forms.ContentView_](https://docs.microsoft.com/en-us/d
 One of the most common controls you'll want to use is the image control. Because of it's importance effort has been invested into ensuring that it has a all the power you need. Let's start with the basics.
 
 ```text
-<Rock:Image Source="https://server.com/photo.jpg" /> 
+<Rock:Image Source="https://server.com/photo.jpg" />
 ```
 
 Is that it? No, we're just getting started. Below are all of the properties you can add to images.
@@ -28,7 +28,7 @@ Is that it? No, we're just getting started. Below are all of the properties you 
         <p>Determines how the image will fill the space allotted. Valid values are:</p>
         <p>AspectFill - Fill the space with the image, some parts of the image may
           be cropped.</p>
-        <p><b>AspectFit </b>- Scale the image to fit the space, some parts of the
+        <p><b>AspectFit</b> - Scale the image to fit the space, some parts of the
           space may be left empty.</p>
         <p>Fill - Scale the image to exactly fill the space, this may warp the image.</p>
       </td>
@@ -82,7 +82,7 @@ Is that it? No, we're just getting started. Below are all of the properties you 
 
 Done now? Nope still have much more to consider.
 
-#### Image Transformations
+## Image Transformations
 
 You can apply several different transformations on your images. Each is discussed below.
 
@@ -178,7 +178,7 @@ This fills the image with the selected color. Not sure why you'd ever use this? 
 
 ![Fill Transformation](../../.gitbook/assets/image%20%288%29.png)
 
-**Flip** 
+**Flip**
 
 Flips the image either horizontally, vertically or both.
 
@@ -267,7 +267,7 @@ Keep in mind you can use more than one transformation on a single image.
 
 Now are we done? Not quite, what's the rush?
 
-#### Layering Images
+## Layering Images
 
 Want to go to the next level with you're images? Layer them! Look at the sample below:
 
@@ -299,9 +299,5 @@ This produces the image below.
 
 To make this we just stack the original mountain under a mask. Note how the mask is just a PNG with an alpha channel. Notice how the mask is black. Applying a fill transformation allows us to match the tint we added to the mountain photo producing a nice color vignette effect.
 
- 
-
 ![](../../.gitbook/assets/image%20%2824%29.png)
-
-### 
 
