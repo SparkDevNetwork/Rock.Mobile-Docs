@@ -14,7 +14,7 @@ The ActivityIndicator will begin "working" when it becomes visible on screen. In
 
 **Example**
 
-```text
+```markup
 <Rock:ActivityIndicator />
 ```
 

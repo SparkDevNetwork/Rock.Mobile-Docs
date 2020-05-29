@@ -29,14 +29,3 @@ Unlike on the web, you must specify the icon family that you wish to display fro
 
 ![](../../.gitbook/assets/icon-1.png)
 
-## Supported Font Families
-
-Rock Mobile currently supports the font families listed below.
-
-| Font Family | Description |
-| :--- | :--- |
-| FontAwesomeSolid | The solid set of icons from the FontAwesome free edition version 5.11. For a listing of icons see: [https://fontawesome.com/](https://fontawesome.com/) |
-| FontAwesomeRegular | The regular set of icons from the FontAwesome free edition version 5.11. For a listing of icons see: [https://fontawesome.com/](https://fontawesome.com/) |
-| FontAwesomeBrands | The brand set of icons from the FontAwesome free editionversion 5.11. For a listing of icons see: [https://fontawesome.com/](https://fontawesome.com/) |
-| MaterialDesignIcons | The Material Design icons documented here: [https://materialdesignicons.com/](https://materialdesignicons.com/) |
-
