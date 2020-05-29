@@ -38,5 +38,5 @@ Rock Mobile currently supports the font families listed below.
 | FontAwesomeSolid | The solid set of icons from the FontAwesome free edition version 5.11. For a listing of icons see: [https://fontawesome.com/](https://fontawesome.com/) |
 | FontAwesomeRegular | The regular set of icons from the FontAwesome free edition version 5.11. For a listing of icons see: [https://fontawesome.com/](https://fontawesome.com/) |
 | FontAwesomeBrands | The brand set of icons from the FontAwesome free editionversion 5.11. For a listing of icons see: [https://fontawesome.com/](https://fontawesome.com/) |
-| MaterialDesignIcons | The Material Design icons documented here: [https://material.io/resources/icons/](https://material.io/resources/icons/) |
+| MaterialDesignIcons | The Material Design icons documented here: [https://materialdesignicons.com/](https://materialdesignicons.com/) |
 
