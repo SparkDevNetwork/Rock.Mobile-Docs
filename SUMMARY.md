@@ -69,5 +69,6 @@
 * [Fundamentals](developers/fundamentals.md)
 * [Custom Blocks](developers/custom-blocks.md)
 * [Codex](developers/codex/README.md)
+  * [Style](developers/codex/style.md)
   * [XAML Styling](developers/codex/xaml-styling.md)
 
