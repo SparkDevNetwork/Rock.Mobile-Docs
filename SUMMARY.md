@@ -4,6 +4,7 @@
 * [Introduction](introduction.md)
 * [Control Reference](controls/README.md)
   * [Content Controls](controls/content-controls/README.md)
+    * [Campus Context Picker](controls/content-controls/campus-context-picker.md)
     * [Application Info](controls/content-controls/application-info.md)
     * [Activity Indicator](controls/content-controls/activity-indicator.md)
     * [Cards](controls/content-controls/cards/README.md)
