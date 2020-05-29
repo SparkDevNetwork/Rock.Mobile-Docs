@@ -19,6 +19,8 @@ Below is a listing of the various properties for the contained card.
 | BorderColor | Color | The color of the border. |
 | Command | ICommand | The command to use when the card is clicked. |
 | CommandParameter | object | The parameters to set to the command when clicked. |
+| DescriptionLeft | object | The text or controls to place in the left description. |
+| DescriptionRight | object | The text or controls to place in the right description. |
 | Elevation | int | The Material Design elevation desired. |
 | HasShadow | bool | Determines if a shadow should be shown behind the card. |
 | Image | string | The URL of the image. |
@@ -29,8 +31,6 @@ Below is a listing of the various properties for the contained card.
 | ImageOpactity | double | The opacity of the image. |
 | ImageRatio | string | Determines the size of the image based on the width of the parent container. The format is height:width with a default of 2.1:4. |
 | ImageSaturation | double | The saturation of the image. |
-| LeftDescription | object | The text or controls to place in the left description. |
-| RightDescription | object | The text or controls to place in the right description. |
 | Tag | string | The text for the card's tag. |
 | TagBackgroundColor | Color | The background color of the tag. |
 | TagTextColor | Color | The text color of the tag. |

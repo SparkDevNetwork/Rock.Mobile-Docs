@@ -39,7 +39,9 @@ Tags can be selected in CSS using the `.tag` class. There are several additional
       </td>
     </tr>
   </tbody>
-</table>### Example
+</table>
+
+### Example
 
 ```text
 .tag.tag-sm.tag-info {

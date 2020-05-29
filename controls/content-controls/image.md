@@ -78,7 +78,9 @@ Is that it? No, we're just getting started. Below are all of the properties you 
       <td style="text-align:left">Images, like most controls can have margins. This is typically note as <code>Margin=&quot;Left,Top,Right,Bottom&quot;</code>.</td>
     </tr>
   </tbody>
-</table>Done now? Nope still have much more to consider.
+</table>
+
+Done now? Nope still have much more to consider.
 
 #### Image Transformations
 

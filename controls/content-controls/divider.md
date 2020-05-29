@@ -22,7 +22,9 @@ This control provides a separator line much like a HTML `<hr` tag.
       </td>
     </tr>
   </tbody>
-</table>```text
+</table>
+
+```text
 <Rock:Divider />
 ```
 
