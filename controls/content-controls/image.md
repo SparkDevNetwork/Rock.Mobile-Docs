@@ -274,7 +274,7 @@ Want to go to the next level with you're images? Layer them! Look at the sample 
 ```text
 <RelativeLayout>
     <Rock:Image 
-        Source="https://rockrms.blob.core.windows.net/resources/mobile-demo/image-mountain.jpg" 
+        Source="https://server.com/photo.jpg" 
         Aspect="Fill"
         HeightRequest="360"
         HorizontalOptions="FillAndExpand"
@@ -283,7 +283,7 @@ Want to go to the next level with you're images? Layer them! Look at the sample 
      </Rock:Image>
      <Rock:Image 
          Opacity="1"
-         Source="https://rockrms.blob.core.windows.net/resources/mobile-demo/image-mask.png" 
+         Source="https://server.com/image-mask.png" 
          Aspect="Fill"
          HeightRequest="360"
          HorizontalOptions="FillAndExpand"
