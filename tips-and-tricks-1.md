@@ -4,6 +4,10 @@
 
 Be aware that many layouts have default spacing parameters. If things don't line up correctly you may have to remove this default spacing.
 
+{% hint style="warning" %}
+Be warned that much of the styling of Rock Mobile has been done with the default spacing in mind. If you disable it you may notice that may controls are closer than normal. When you disable spacing you may find yourself swimming upstream.
+{% endhint %}
+
 For example, StackLayouts have a default Spacing property set to 10. This means each control within the layout will have a 10 unit space between it and it's neighbor. For a StackLayout the spacing will be relative to it's Orientation property. When set to Horizontal it will be horizontal spacing, Vertical would be vertical spacing.
 
 Other layout controls also have this same behavior. Below is a list of others \(this is not meant to be an inclusive list\).
