@@ -21,7 +21,7 @@ Tags are essentially labels which help to mark and categorize content. They usua
 <Rock:Tag Type="Primary" Text="Articles" />
 ```
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../../../.gitbook/assets/image%20%286%29.png)
 
 ## CSS Tips
 

@@ -31,5 +31,5 @@ Okay let's face it. You aren't going to be using this view on any old page. It's
 <Rock:LoginStatus />
 ```
 
-![](../../.gitbook/assets/loginstatus-1.png)
+![](../../../.gitbook/assets/loginstatus-1.png)
 

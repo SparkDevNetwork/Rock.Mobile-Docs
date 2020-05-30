@@ -26,5 +26,5 @@ When displaying a [FormField](https://github.com/SparkDevNetwork/Rock.Mobile/wik
 </Rock:FormFieldStack>
 ```
 
-![](../../.gitbook/assets/formfieldstack-1.png)
+![](../../../.gitbook/assets/formfieldstack-1.png)
 

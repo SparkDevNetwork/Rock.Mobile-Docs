@@ -2,7 +2,7 @@
 
 Applies to: [VisualElement](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.visualelement?view=xamarin-forms)
 
-We've seen the [colors that the Downhill framework provides](colors.md) us for use in our applications. These colors can be used to specify background colors.
+We've seen the [colors that the Downhill framework provides](../colors.md) us for use in our applications. These colors can be used to specify background colors.
 
 ## Application Colors
 

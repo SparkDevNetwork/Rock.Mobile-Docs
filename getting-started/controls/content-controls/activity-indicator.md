@@ -18,5 +18,5 @@ The ActivityIndicator will begin "working" when it becomes visible on screen. In
 <Rock:ActivityIndicator />
 ```
 
-![](../../.gitbook/assets/activityindicator-1.jpg)
+![](../../../.gitbook/assets/activityindicator-1.jpg)
 

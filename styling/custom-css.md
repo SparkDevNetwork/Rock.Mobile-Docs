@@ -128,7 +128,7 @@ Downhill includes several color variables that you can use in your CSS to refere
 
 ### Palette Colors
 
-[Palette colors](text/color.md#palette-colors) can be referenced with the following notation.
+[Palette colors](helper-classes/text/color.md#palette-colors) can be referenced with the following notation.
 
 `?color-{color}-{intensity}`
 

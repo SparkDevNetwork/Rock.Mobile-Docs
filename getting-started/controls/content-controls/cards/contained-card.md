@@ -8,7 +8,7 @@ description: >-
 
 _Inherits from_ [_StyledView_ ](../styled-view.md)_&gt;_ [_PancakeView_](https://github.com/sthewissen/Xamarin.Forms.PancakeView)
 
-![Contained Card](../../../.gitbook/assets/image%20%2835%29.png)
+![Contained Card](../../../../.gitbook/assets/image%20%2835%29.png)
 
 Below is a listing of the various properties for the contained card.
 

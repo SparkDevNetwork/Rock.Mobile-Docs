@@ -16,7 +16,7 @@ For cards of type Block and Contains the mask is places on the image while the m
 
 While you can provide your own masks via a URL, you can save load time and bandwidth by using one of the built in masks. These are highlighted below.
 
-![](../../../.gitbook/assets/card-masks%20%281%29.jpg)
+![](../../../../.gitbook/assets/card-masks%20%281%29.jpg)
 
 These five masks give you several different options to start from. Adjusting the mask opacity and color gives you many more ways to design. You can also append `-Flip` to the end of the mask name to flip the mask 180 degrees. So if you wanted a light fade flipped use `Fade-Light-Flip`.
 
@@ -24,7 +24,7 @@ These five masks give you several different options to start from. Adjusting the
 
 As you set out to design with masks keep in mind that the best designs will be a recipe that incorporates the properties of the card, image and mask. Take for example the design below. The effect of the card comes from the card's background, the effects on the image as well as the mask.
 
-![](../../../.gitbook/assets/designed.jpg)
+![](../../../../.gitbook/assets/designed.jpg)
 
 ```text
 <Rock:InlineCard 

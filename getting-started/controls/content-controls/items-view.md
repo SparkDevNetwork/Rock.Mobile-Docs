@@ -53,7 +53,7 @@ In the following examples we are specifying an array of strings as the `ItemsSou
 </Rock:ItemsView>
 ```
 
-![](../../.gitbook/assets/itemsview-1.png)
+![](../../../.gitbook/assets/itemsview-1.png)
 
 **Example**
 
@@ -102,7 +102,7 @@ In the following examples we are specifying an array of strings as the `ItemsSou
 </Rock:ItemsView>
 ```
 
-![](../../.gitbook/assets/itemsview-2.png)
+![](../../../.gitbook/assets/itemsview-2.png)
 
 If we had enough items to fill the screen in this second example, you would see that initially only the **Fixed Header**, **Header**, a number of items and the **Fixed Footer** would be visible. The **Footer** would be off-screen because it would be inside the scroll view. If you were to scroll that long list of items up you would push the **Header** off screen and eventually the **Footer** would appear. Both the **Fixed Header** and **Fixed Footer** would always stay visible.
 

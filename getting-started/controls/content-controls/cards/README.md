@@ -10,7 +10,7 @@ There are three types of cards for you to choose from. While they share many of 
 
 The contained card is the classic design that keeps all of the content inside of a frame. There's plenty of options to adjust both the frame and content.
 
-![Contained Card](../../../.gitbook/assets/image%20%2834%29.png)
+![Contained Card](../../../../.gitbook/assets/image%20%2834%29.png)
 
 ```text
 <Rock:ContainedCard 
@@ -25,7 +25,7 @@ The contained card is the classic design that keeps all of the content inside of
 
 The block card is very similar to the Contained Card but the content is not in a clearly visible frame.
 
-![Block Card](../../../.gitbook/assets/image%20%2833%29.png)
+![Block Card](../../../../.gitbook/assets/image%20%2833%29.png)
 
 ```text
 <Rock:BlockCard 
@@ -40,7 +40,7 @@ The block card is very similar to the Contained Card but the content is not in a
 
 The Inline Card places the image behind the content and provides several options to create striking designs.
 
-![Inline Card](../../../.gitbook/assets/image%20%2832%29.png)
+![Inline Card](../../../../.gitbook/assets/image%20%2832%29.png)
 
 ```text
 <Rock:InlineCard 

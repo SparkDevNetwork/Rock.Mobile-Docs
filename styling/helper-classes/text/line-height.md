@@ -13,5 +13,5 @@ Leading is the amount of space between the lines of a paragraph. Below are utili
 | .leading-relaxed | line-height: 1.4; |
 | .leading-loose | line-height: 1.6; |
 
-![](../../.gitbook/assets/leading-example.jpg)
+![](../../../.gitbook/assets/leading-example.jpg)
 

@@ -39,7 +39,7 @@ The example below demonstrates how to display a group's name and a following ico
 </StackLayout>
 ```
 
-![](../../.gitbook/assets/followingicon-1.jpg)
+![](../../../.gitbook/assets/followingicon-1.jpg)
 
-![](../../.gitbook/assets/followingicon-2.jpg)
+![](../../../.gitbook/assets/followingicon-2.jpg)
 

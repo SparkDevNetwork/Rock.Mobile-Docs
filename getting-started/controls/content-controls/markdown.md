@@ -38,5 +38,5 @@ This is some **bold** text.
 </Rock:Markdown>
 ```
 
-![](../../.gitbook/assets/markdown-1.png)
+![](../../../.gitbook/assets/markdown-1.png)
 

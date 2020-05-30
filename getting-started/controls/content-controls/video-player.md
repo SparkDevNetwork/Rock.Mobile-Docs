@@ -24,5 +24,5 @@ If a video is not set to AutoPlay then a thumbnail will be displayed. If you spe
                   AutoPlay="false" />
 ```
 
-![](../../.gitbook/assets/videoplayer-1.png)
+![](../../../.gitbook/assets/videoplayer-1.png)
 

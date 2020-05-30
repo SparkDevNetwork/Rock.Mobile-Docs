@@ -27,7 +27,7 @@ Unlike on the web, you must specify the icon family that you wish to display fro
 </StackLayout>
 ```
 
-![](../../.gitbook/assets/icon-1.png)
+![](../../../.gitbook/assets/icon-1.png)
 
 ## Supported Font Families
 

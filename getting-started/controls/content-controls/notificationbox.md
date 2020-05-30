@@ -22,5 +22,5 @@ The NotificationBox allows you to display a color-coded notification on the page
                       Text="Please update your information below to keep our records current." />
 ```
 
-![](../../.gitbook/assets/notificationbox-1.png)
+![](../../../.gitbook/assets/notificationbox-1.png)
 
