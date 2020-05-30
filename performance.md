@@ -12,7 +12,7 @@ The most important aspect of layout-level optimization is knowing when you shoul
 * In addition, don’t attempt to reproduce the appearance of a specific layout by using a combination of other layouts, as this results in unnecessary layout calculations being performed, and at the end of the day it doesn’t make much sense. For example, don’t attempt to reproduce a `Grid` _\_layout by using a combination of `StackLayouts`_.\_
 * Don’t set the [`VerticalOptions`](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.view.verticaloptions#Xamarin_Forms_View_VerticalOptions) and [`HorizontalOptions`](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.view.verticaloptions#Xamarin_Forms_View_VerticalOptions) of a layout unless required. The default values for it, i.e.[`LayoutOptions.Fill`](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.layoutoptions.fill) and [`LayoutOptions.FillAndExpand`](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.layoutoptions.fillandexpand), allow for the best layout optimization.
 * Changing these properties has a cost and consumes memory, even when setting them to the default values. Hence, if your requirement is fulfilled using `Fill/FillAndExpand`, not mentioning it during the views creation is the best practice.
-* Avoid using a `RelativeLayout` _\*\*_if at all possible. It has significant overhead and is never recommended.
+* Avoid using a `RelativeLayout` \_\*\*\_if at all possible. It has significant overhead and is never recommended.
 * When using an `AbsoluteLayout`, avoid using the `AbsoluteLayout.Autosize` \_\_property whenever possible.
 * Pack your views in the constructor rather than `OnAppearing`.
 * Bypass transparency—if you can achieve the same \(or close enough\) effect with full opacity, do so.
@@ -55,11 +55,11 @@ The most important aspect of layout-level optimization is knowing when you shoul
 
 ### CarouselPage <a id="84b0"></a>
 
-* Avoid _\*\*_using the `CarouselPage` \_\_as much as possible; instead use a `CarouselView` within a `ContentPage`. The reason for this is that `CarouselPage` loads all the data at once, which hampers performance at extreme levels.
+* Avoid _\*\*\_using the `CarouselPage` \_\_as much as possible; instead use a `CarouselView` within a `ContentPage`. The reason for this is that `CarouselPage` loads all the data at once, which hampers performance at extreme levels.
 
 List above comes from [Techniques for Improving Performance in a Xamarin.Forms Application by Gulam Ali Hakim](https://heartbeat.fritz.ai/techniques-for-improving-performance-in-a-xamarin-forms-application-b439f2f04156).
 
 Additional Resources:
 
-* \[Jason Smith's Xamarin Forms Performance Tips\]\([https://kent-boogaart.com/blog/jason-smith's-xamarin-forms-performance-tips](https://kent-boogaart.com/blog/jason-smith's-xamarin-forms-performance-tips)\)
+* \[Jason Smith's Xamarin Forms Performance Tips\]\(\[[https://kent-boogaart.com/blog/jason-smith's-xamarin-forms-performance-tips\]\(https://kent-boogaart.com/blog/jason-smith's-xamarin-forms-performance-tips\)\](https://kent-boogaart.com/blog/jason-smith's-xamarin-forms-performance-tips]%28https://kent-boogaart.com/blog/jason-smith's-xamarin-forms-performance-tips%29\)\)
 
