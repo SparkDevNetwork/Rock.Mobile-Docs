@@ -278,18 +278,22 @@ Want to go to the next level with you're images? Layer them! Look at the sample 
         Aspect="Fill"
         HeightRequest="360"
         HorizontalOptions="FillAndExpand"
-        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
-             <Rock:TintTransformation Color="#41BFD0" />
-     </Rock:Image>
+        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}">
+        
+        <Rock:TintTransformation Color="#53AFBE" />
+                
+    </Rock:Image>
+
      <Rock:Image 
          Opacity="1"
-         Source="https://server.com/image-mask.png" 
+         Source="https://server.com/mask.png" 
          Aspect="Fill"
          HeightRequest="360"
          HorizontalOptions="FillAndExpand"
-         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
-               <Rock:FillColorTransformation Color="#41BFD0" />
-      </Rock:Image>
+         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=0}">
+         
+         <Rock:FillColorTransformation Color="#53AFBE" />
+     </Rock:Image>
 </RelativeLayout>
 ```
 
