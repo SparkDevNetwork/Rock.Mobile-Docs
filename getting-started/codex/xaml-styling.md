@@ -9,7 +9,7 @@ Below are various styling rules we recommend when writing XAML.
 
 ### Horizontal Alignments
 
-When you need to align controls horizontally you have quite a few options. We recommend using the following guidelines when selecting when selecting a strategy.
+When you need to align controls horizontally you have quite a few options. We recommend using the following guidelines when selecting a strategy.
 
 1. [StackLayout ](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/stacklayout)- StackLayouts are a performant away to align controls horizontally \(Orientation="Horizontal"\). StackLayouts don't offer a lot in the way of placement options. _Web Equivalent: DIVs with floats_ 
 2.  ResponsiveLayout - ResponsiveLayouts are a Rock Mobile addition that create column grids much like Bootstrap's grid in CSS. It allows you to provide a different number and size of columns based on the size of the view. _Web Equivalent: Bootstrap Grids_ 
