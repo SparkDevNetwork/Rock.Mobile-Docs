@@ -45,6 +45,7 @@
   * [Application Strategy](getting-started/codex/application-strategy.md)
   * [Style](getting-started/codex/style.md)
   * [XAML Styling](getting-started/codex/xaml-styling.md)
+  * [Resources](getting-started/codex/resources.md)
 
 ## Styling
 
