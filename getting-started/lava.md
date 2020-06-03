@@ -10,6 +10,14 @@ description: >-
 
 The [Community](https://community.rockrms.com/lava) page has a list of all the filters that are available. If a filter is available on the Mobile application it will be marked as such.
 
+### The Escape Filter
+
+It is recommended to always include the [Escape](https://community.rockrms.com/lava/filters/text-filters#escape) filter when using Lava text strings in a mobile application. This will encode the string, in case there are some crazy characters included in there that could break things.
+
+```text
+{{ item.Title | Escape }}
+```
+
 ## Shell Lava Variables
 
 The following variables and properties are available in all Lava contexts when executing Lava on the mobile application shell.

@@ -57,10 +57,10 @@ Not to add yet another sizing pattern, but we've added utility classes for headi
 
 | Class | Property |
 | :--- | :--- |
-| .heading1 | 27 |
-| .heading2 | 20 |
-| .heading3 | 18 |
-| .heading4 | 16 |
-| .heading5 | 14 |
-| .heading6 | 14 |
+| .h1 | 27 |
+| .h2 | 20 |
+| .h3 | 18 |
+| .h4 | 16 |
+| .h5 | 14 |
+| .h6 | 14 |
 
