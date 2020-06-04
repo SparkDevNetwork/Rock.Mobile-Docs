@@ -1,6 +1,6 @@
 # Accessing Your App
 
-When you first install and launch the Rock Mobile app, you'll be greeted with a screen like this:
+When you first install and launch the Rock Mobile demo app, you'll be greeted with a screen like this:
 
 ![](../../.gitbook/assets/rock-mobile-landing.png)
 
