@@ -1,4 +1,4 @@
-# NotificationBox
+# Notification Box
 
 _Inherits from_ [_Xamarin.Forms.Frame_](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.frame)
 
